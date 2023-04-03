@@ -11,8 +11,8 @@
     </select>
 
     <!--로그인 계정체크-->
-    <select id="LoginCheck" parameterType="hashmap" resultType="_int">
-        select  count(*)
+    <select id="LoginCheck" parameterType="hashmap" resultType="UDTO">
+        select  *
         from    tbluser
         where   userid = #{userid}
         and     userpw = #{userpw}
@@ -113,7 +113,7 @@
     </update>
 
     <!-- 제품 삭제 -->
-    <delete id="ProduceDelete" parameterType="_int">
+    <delete id="ProductDelete" parameterType="_int">
         delete from product
         where productnum = #{productnum}
     </delete>
