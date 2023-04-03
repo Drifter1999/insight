@@ -84,9 +84,6 @@
         from    product
         where   productnum = #{productnum}
     </select>
-    <insert id="insert" parameterType="UDTO">
-        insert into tbluser values (#{userid}, #{username} , #{userpw}, #{useremail} #{useraddr}, #{userphone})
-    </insert>
 </mapper>
 
 
