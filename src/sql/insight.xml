@@ -32,7 +32,7 @@
     </insert>
 
     <!--회원 정보 변경-->
-    <update id="UserUpdate" parameterType="string">
+    <update id="UserUpdate" parameterType="UDTO">
         update  tblUser
         set     username = #{username},
             userpw = #{userpw},
@@ -41,6 +41,11 @@
             userphone = #{userphone}
         where   userid = #{userid}
     </update>
+
+    <!--회원 정보 삭제-->
+    <delete id="UserDelete" parameterType="string">
+        delete from tbluser where userid = #{userid}
+    </delete>
 
     <!-- product  -->
     <!--등록된 판매중인 상품 조회 (가장 최근 순)-->
@@ -84,6 +89,30 @@
         from    product
         where   productnum = #{productnum}
     </select>
+
+    <!--제품 수정-->
+    <update id="ProductUpdate" parameterType="PDTO">
+        UPDATE 	PRODUCT
+        SET		PRODUCTCATEGORYNUM = #{productcategorynum},
+                USERID = #{userid},
+                PRODUCTNAME = #{productname},
+                PRODUCTTITLE = #{producttitle},
+                PRODUCTDETAIL = #{productdetail},
+                PRODUCTQUANTITY = #{productquantity},
+                PRODUCTPRICE = #{productprice},
+                PRODUCTIMAGE1 = 'none',
+                PRODUCTIMAGE2 = 'none',
+                PRODUCTIMAGE3 = 'none',
+                PRODUCTDATE = SYSDATE ,
+                PRODUCTSTATE = #{productstate}
+        WHERE 	PRODUCTNUM = #{productnum}
+    </update>
+
+    <!-- 제품 삭제 -->
+    <delete id="ProduceDelete" parameterType="_int">
+        delete from product
+        where productnum = #{productnum}
+    </delete>
 </mapper>
 
 
