@@ -20,6 +20,13 @@ public class RegisterAction implements Action{
         String useraddr = request.getParameter("useraddr");
         String userphone = request.getParameter("userphone");
 
+        System.out.println("userid : "+userid);
+        System.out.println("username : "+username);
+        System.out.println("userpw : "+userpw);
+        System.out.println("useremail : "+useremail);
+        System.out.println("useraddr : "+useraddr);
+        System.out.println("userphone : "+userphone);
+
         user.setUserid(userid);
         user.setUserid(username);
         user.setUserid(userpw);

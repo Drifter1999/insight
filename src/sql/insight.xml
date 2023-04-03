@@ -28,7 +28,13 @@
 <!--        )-->
 <!--    </insert>-->
     <insert id="insert" parameterType="UDTO">
-        insert into tbluser values (#{userid}, #{username} , #{userpw}, #{useremail}, #{useraddr}, #{userphone})
+        insert into tbluser values (
+        #{userid, jdbcType=VARCHAR},
+        #{username, jdbcType=VARCHAR},
+        #{userpw, jdbcType=VARCHAR},
+        #{useremail, jdbcType=VARCHAR},
+        #{useraddr, jdbcType=VARCHAR},
+        #{userphone, jdbcType=VARCHAR})
     </insert>
 
     <!--회원 정보 변경-->
