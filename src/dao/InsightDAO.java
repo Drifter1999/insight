@@ -15,6 +15,7 @@ public class InsightDAO {
 
     public boolean register(UserDTO dto){
         boolean result = false;
+
         if(sqlSession.insert("Insight.insert", dto) == 1){
             result = true;
         }
