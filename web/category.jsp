@@ -145,24 +145,33 @@
 </header>
 <!--================ End Header Menu Area =================-->
 
-<!-- ================ start banner area ================= -->
-<section class="blog-banner-area" id="category">
-    <div class="container h-100">
-        <div class="blog-banner">
-            <div class="text-center">
-                <h1>Shop Category</h1>
-                <nav aria-label="breadcrumb" class="banner-breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <!--      <li class="breadcrumb-item active" aria-current="page">Shop Category</li> 아래한글로대체 -->
-                        <li class="breadcrumb-item active" aria-current="page">카테고리</li>
-                    </ol>
-                </nav>
-            </div>
+<!--================ 배너  Carousel start =================-->
+<section class="section-margin mt-0">
+    <div class="owl-carousel owl-theme hero-carousel">
+        <div class="hero-carousel__slide">
+            <img src="img/home/hero-slide1.png" alt="" class="img-fluid">
+            <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
+                <h3>Wireless Headphone</h3>
+                <p>Accessories Item</p>
+            </a>
+        </div>
+        <div class="hero-carousel__slide">
+            <img src="img/home/hero-slide2.png" alt="" class="img-fluid">
+            <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
+                <h3>Wireless Headphone</h3>
+                <p>Accessories Item</p>
+            </a>
+        </div>
+        <div class="hero-carousel__slide">
+            <img src="img/home/hero-slide3.png" alt="" class="img-fluid">
+            <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
+                <h3>Wireless Headphone</h3>
+                <p>Accessories Item</p>
+            </a>
         </div>
     </div>
 </section>
-<!-- ================ end banner area ================= -->
+<!--================ 배너  Carousel end =================-->
 
 
 <!-- ================ category section start ================= -->
