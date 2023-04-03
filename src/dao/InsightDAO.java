@@ -25,7 +25,6 @@ public class InsightDAO {
     }
 
     public UserDTO login(String userid, String userpw) {
-        boolean result = false;
         HashMap<String, String> data = new HashMap<>();
         data.put("userid", userid);
         data.put("userpw", userpw);
