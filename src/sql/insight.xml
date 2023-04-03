@@ -19,8 +19,16 @@
         from    tbluser
     </select>
 
+    <!--회원 가입-->
+<!--    <insert id="UserInsert" parameterType="UCDTO">-->
+<!--        insert into tbluser valuse (-->
+<!--            #{userid}, #{username},-->
+<!--            #{userpw}, #{useremail},-->
+<!--            #{useraddr}, #{userphone}-->
+<!--        )-->
+<!--    </insert>-->
     <insert id="insert" parameterType="UDTO">
-        insert into tbluser values (#{userid}, #{username} , #{userpw}, #{useremail} #{useraddr}, #{userphone})
+        insert into tbluser values (#{userid}, #{username} , #{userpw}, #{useremail}, #{useraddr}, #{userphone})
     </insert>
 
     <!--회원 정보 변경-->
