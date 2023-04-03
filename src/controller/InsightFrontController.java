@@ -30,7 +30,6 @@ public class InsightFrontController extends HttpServlet {
 
         switch(requestURI) {
             case "/login.in":
-                System.out.println("인텔리제이 체크");
                 forward = new LoginAction().execute(request, response);
 
                 break;
