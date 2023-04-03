@@ -4,7 +4,10 @@
  "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="dao.BoardBean" alias="boardbean" />
+		<typeAlias type="dto.ProductCategoryDTO" alias="PCDTO" />
+		<typeAlias type="dto.ProductDTO" alias="PDTO"/>
+		<typeAlias type="dto.UserCommentDTO" alias="UCDTO"/>
+		<typeAlias type="dto.UserDTO" alias="UDTO"/>
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
