@@ -26,7 +26,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
         <a class="navbar-brand logo_h" href="index.jsp"
-        ><img src="img/logo.png" alt=""
+        ><img src="img/insightlogo.JPG" alt=""
         /></a>
         <button
                 class="navbar-toggler"
@@ -123,20 +123,20 @@
             </li>-->
           </ul>
 
-          <ul class="nav-shop">
-            <li class="nav-item">
-              <button><i class="ti-search"></i></button>
-            </li>
-            <!-- <li class="nav-item">
-              <button>
-                <i class="ti-shopping-cart"></i
-                ><span class="nav-shop__circle">3</span>
-              </button>
-            </li> -->
-            <!-- <li class="nav-item">
-              <a class="button button-header" href="#">Buy Now</a>
-            </li> -->
-          </ul>
+<%--          <ul class="nav-shop">--%>
+<%--            <li class="nav-item">--%>
+<%--              <button><i class="ti-search"></i></button>--%>
+<%--            </li>--%>
+<%--            <!-- <li class="nav-item">--%>
+<%--              <button>--%>
+<%--                <i class="ti-shopping-cart"></i--%>
+<%--                ><span class="nav-shop__circle">3</span>--%>
+<%--              </button>--%>
+<%--            </li> -->--%>
+<%--            <!-- <li class="nav-item">--%>
+<%--              <a class="button button-header" href="#">Buy Now</a>--%>
+<%--            </li> -->--%>
+<%--          </ul>--%>
         </div>
       </div>
     </nav>
@@ -354,22 +354,7 @@
 <script src="vendors/mail-script.js"></script>
 <script src="js/main.js"></script>
 <!-- 로그인 버튼을 눌렀을 때 아이디와 비밀번호가 빈값인지 확인하고 알림창을 띄우는 기능을 추가하기 위한 코드-->
-<script>
-  function submitForm() {
-    const userid = document.getElementById("userid").value;
-    const userpw = document.getElementById("userpw").value;
-
-    if (userid === "" && userpw === "") {
-      alert("아이디와 비밀번호를 입력해주세요.");
-    } else if (userid === "") {
-      alert("아이디를 입력해주세요.");
-    } else if (userpw === "") {
-      alert("비밀번호를 입력해주세요.");
-    } else {
-      document.getElementById("loginForm").submit();
-    }
-  }
-</script>
+<script src="js/login.js"></script>
 
 </body>
 </html>
