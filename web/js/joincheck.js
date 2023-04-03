@@ -18,79 +18,79 @@ function joincheck() {
 
 
     if (username.value == "") {
-        alert("이름을 입력하세요.");
+        alert("이름을 입력하세요");
         username.focus();
         return false;
     }
-    ;
+
 
     if(!nameKor.test(username.value)){
-        alert("한글로 이름을 입력하세요.");
+        alert("한글로 이름을 입력하세요");
         return false;
     }
 
     if (userid.value == "") { //해당 입력값이 없을 경우 같은말: if(!userid.value)
-        alert("아이디를 입력하세요.");
+        alert("아이디를 입력하세요");
         userid.focus(); //focus(): 커서가 깜빡이는 현상, blur(): 커서가 사라지는 현상
         return false; //return: 반환하다 return false:  아무것도 반환하지 말아라 아래 코드부터 아무것도 진행하지 말것
     }
-    ;
+
 
     if (!idch.test(userid.value)) {
-        alert("아이디는 2~20자 이내의 영문,숫자를 사용하세요.");
+        alert("아이디는 2~20자 이내의 영문, 숫자를 사용하세요");
         idch.focus();
         return false;
     }
-    ;
+
 
     if (userpw.value == "") {
-        alert("비밀번호를 입력하세요.");
+        alert("비밀번호를 입력하세요");
         userpw.focus();
         return false;
     }
-    ;
+
 
 
     if (!pwcheck.test(userpw.value)) {
-        alert("비밀번호는 영문자+숫자+특수문자 조합으로 8~25자리 사용해야 합니다.");
+        alert("영문, 숫자, 특수문자 조합의 8~25자리 비밀번호를 사용하세요");
         pwcheck.focus();
         return false;
     }
-    ;
+
 
     if (userpwcheck.value !== userpw.value) {
-        alert("비밀번호가 일치하지 않습니다.");
+        alert("비밀번호가 일치하지 않습니다");
         userpwcheck.focus();
         return false;
     }
-    ;
+
 
     if (useraddr.value == "") {
-        alert("주소를 입력하세요.");
+        alert("주소를 입력하세요");
         useraddr.focus();
         return false;
     }
-    ;
+
 
 
     if (!phnum.test(userphone.value)) {
-        alert("올바른 전화번호를 입력해주세요.");
+        alert("올바른 전화번호를 입력해주세요");
         userphone.focus();
         return false;
     }
 
     if (useremail.value == "") {
-        alert("이메일 주소를 입력하세요.");
+        alert("이메일 주소를 입력하세요");
         useremail.focus();
         return false;
     }
 
     if (!emcheck.test(useremail.value)) {
-        alert("올바른 이메일을 입력하세요.");
+        alert("올바른 이메일을 입력하세요");
         useremail.focus();
         return false;
     }
-    ;
+
 
     //입력 값 전송
     document.joinform.submit();

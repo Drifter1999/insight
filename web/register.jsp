@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <a class="navbar-brand logo_h" href="index.jsp"
-                ><img src="img/logo.png" alt=""
+                ><img src="img/insightlogo.JPG" alt=""
                 /></a>
                 <button
                         class="navbar-toggler"
@@ -46,7 +46,7 @@
                 >
                     <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">홈</a>
+                            <a class="nav-link" href="mainhome.jsp">홈</a>
                         </li>
                         <li class="nav-item submenu dropdown">
                             <a
@@ -63,36 +63,36 @@
                                     <a class="nav-link" href="category.jsp">카테고리</a>
                                 </li>
                                 <!-- <li class="nav-item">
-                                              <a class="nav-link" href="productdetail.html"
-                                                >Blog Details</a
-                                              >
-                                            </li> -->
-                                <!-- <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
-                                          <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
-                                          <li class="nav-item"><a class="nav-link" href="mypage.html">Shopping Cart</a></li> -->
+                                  <a class="nav-link" href="productdetail.jsp"
+                                    >Blog Details</a
+                                  >
+                                </li> -->
+                                <!-- <li class="nav-item"><a class="nav-link" href="checkout.jsp">Product Checkout</a></li>
+                              <li class="nav-item"><a class="nav-link" href="confirmation.jsp">Confirmation</a></li>
+                              <li class="nav-item"><a class="nav-link" href="mypage.jsp">Shopping Cart</a></li> -->
                             </ul>
                         </li>
                         <!-- <li class="nav-item submenu dropdown">
-                                  <a
-                                    href="#"
-                                    class="nav-link dropdown-toggle"
-                                    data-toggle="dropdown"
-                                    role="button"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                    >Blog</a
-                                  >
-                                  <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                      <a class="nav-link" href="blog.html">Blog</a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a class="nav-link" href="single-blog.html"
-                                        >Blog Details</a
-                                      >
-                                    </li>
-                                  </ul>
-                                </li> -->
+                          <a
+                            href="#"
+                            class="nav-link dropdown-toggle"
+                            data-toggle="dropdown"
+                            role="button"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            >Blog</a
+                          >
+                          <ul class="dropdown-menu">
+                            <li class="nav-item">
+                              <a class="nav-link" href="blog.jsp">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="single-blog.jsp"
+                                >Blog Details</a
+                              >
+                            </li>
+                          </ul>
+                        </li> -->
                         <li class="nav-item active submenu dropdown">
                             <a
                                     href="#"
@@ -111,31 +111,31 @@
                                     <a class="nav-link" href="register.jsp">회원가입</a>
                                 </li>
                                 <!-- <li class="nav-item">
-                                              <a class="nav-link" href="tracking-order.html"
-                                                >Tracking</a
-                                              >
-                                            </li> -->
+                                  <a class="nav-link" href="tracking-order.jsp"
+                                    >Tracking</a
+                                  >
+                                </li> -->
                             </ul>
                         </li>
                         <!-- <li class="nav-item">
-                                  <a class="nav-link" href="contact.html">Contact</a>
-                                </li>-->
+                          <a class="nav-link" href="contact.jsp">Contact</a>
+                        </li>-->
                     </ul>
 
-                    <ul class="nav-shop">
-                        <li class="nav-item">
-                            <button><i class="ti-search"></i></button>
-                        </li>
-                        <!-- <li class="nav-item">
-                                  <button>
-                                    <i class="ti-shopping-cart"></i
-                                    ><span class="nav-shop__circle">3</span>
-                                  </button>
-                                </li> -->
-                        <!-- <li class="nav-item">
-                                  <a class="button button-header" href="#">Buy Now</a>
-                                </li> -->
-                    </ul>
+                    <%--          <ul class="nav-shop">--%>
+                    <%--            <li class="nav-item">--%>
+                    <%--              <button><i class="ti-search"></i></button>--%>
+                    <%--            </li>--%>
+                    <%--            <!-- <li class="nav-item">--%>
+                    <%--              <button>--%>
+                    <%--                <i class="ti-shopping-cart"></i--%>
+                    <%--                ><span class="nav-shop__circle">3</span>--%>
+                    <%--              </button>--%>
+                    <%--            </li> -->--%>
+                    <%--            <!-- <li class="nav-item">--%>
+                    <%--              <a class="button button-header" href="#">Buy Now</a>--%>
+                    <%--            </li> -->--%>
+                    <%--          </ul>--%>
                 </div>
             </div>
         </nav>
@@ -177,7 +177,7 @@
                             <!-- 이름 입력 -->
                             <input
                                     type="text"
-                                    title="두 자 이상의 한글로 입력하세요."
+                                    title="두 자 이상의 한글로 입력하세요"
                                     class="form-control"
                                     id="username"
                                     name="username"
@@ -190,7 +190,7 @@
                             <!-- 아이디 입력 -->
                             <input
                                     type="text"
-                                    title="2~20자 이내의 영문,숫자를 사용하세요."
+                                    title="2~20자 이내의 영문,숫자를 사용하세요"
                                     id="userid"
                                     name="userid"
                                     placeholder="아이디"
@@ -210,7 +210,7 @@
                             <!-- 비밀번호 입력 -->
                             <input
                                     type="password"
-                                    title="영문,숫자,특수문자 조합의 8~25자리 비밀번호를 사용하세요."
+                                    title="영문,숫자,특수문자 조합의 8~25자리 비밀번호를 사용하세요"
                                     class="form-control"
                                     id="userpw"
                                     name="userpw"
@@ -223,7 +223,7 @@
                             <!-- 비밀번호 확인 -->
                             <input
                                     type="password"
-                                    title="영문,숫자,특수문자 조합의 8~25자리 비밀번호를 사용하세요."
+                                    title="영문,숫자,특수문자 조합의 8~25자리 비밀번호를 사용하세요"
                                     class="form-control"
                                     id="userpwcheck"
                                     name="userpwcheck"
@@ -236,7 +236,7 @@
                             <!-- 주소 입력 -->
                             <input
                                     type="text"
-                                    title="한글로 입력하세요."
+                                    title="한글로 입력하세요"
                                     class="form-control"
                                     id="useraddr"
                                     name="useraddr"
@@ -249,7 +249,7 @@
                             <!-- 전화번호 입력 -->
                             <input
                                     type="text"
-                                    title="-을 제외하여 입력하세요."
+                                    title="-을 제외하고 입력하세요"
                                     class="form-control"
                                     id="userphone"
                                     name="userphone"
