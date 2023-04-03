@@ -3,6 +3,87 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Insight">
+    <!-- tbluserTable CRUD -->
+
+
+    <!--해당 회원의 모든 정보 보기-->
+    <select id="UserSelectOne" parameterType="string" resultType="UCDTO">
+        select  *
+        from    tbluser
+        where   userid = #{userid}
+    </select>
+
+    <!--모든 회원 보기-->
+    <select id="UserSelectAll" resultType="UCDTO">
+        select  *
+        from    tbluser
+    </select>
+
+    <!--회원 가입-->
+<!--    <insert id="UserInsert" parameterType="UCDTO">-->
+<!--        insert into tbluser valuse (-->
+<!--            #{userid}, #{username},-->
+<!--            #{userpw}, #{useremail},-->
+<!--            #{useraddr}, #{userphone}-->
+<!--        )-->
+<!--    </insert>-->
+    <insert id="insert" parameterType="UDTO">
+        insert into tbluser values (#{userid}, #{username} , #{userpw}, #{useremail} #{useraddr}, #{userphone})
+    </insert>
+
+    <!--회원 정보 변경-->
+    <update id="UserUpdate" parameterType="string">
+        update  tblUser
+        set     username = #{username},
+            userpw = #{userpw},
+            useremail = #{useremail},
+            useraddr = #{useraddr},
+            userphone = #{userphone}
+        where   userid = #{userid}
+    </update>
+
+    <!-- product  -->
+    <!--등록된 판매중인 상품 조회 (가장 최근 순)-->
+    <select id="ProductSelectDESC" resultType="PDTO">
+        select  *
+        from    product
+        where   productstate = 'Y'
+        order by productdate desc
+    </select>
+
+    <!--등록된 판매중인 상품 조회 (오래된 순)-->
+    <select id="ProductSelectDESC" resultType="PDTO">
+        select  *
+        from    product
+        where   productstate = 'Y'
+        order by productdate
+    </select>
+
+    <!--상품 등록 -->
+    <insert id="ProductInsert" parameterType="hashmap">
+        insert into PRODUCT values (
+            product_seq.NEXTVAL,
+            #{productCategoryNum},
+            #{userid},
+            #{productname},
+            #{producttitle},
+            #{productdetail},
+            #{productquantity},
+            #{productprice},
+            'none',
+            'none',
+            'none',
+            SYSDATE,
+            'Y'
+        );
+    </insert>
+
+    <!--상품 상세 내역-->
+    <select id="ProductDetail" resultType="PDTO" parameterType="_int">
+        select  *
+        from    product
+        where   productnum = #{productnum}
+    </select>
     <insert id="insert" parameterType="UDTO">
         insert into tbluser values (#{userid}, #{username} , #{userpw}, #{useremail} #{useraddr}, #{userphone})
     </insert>

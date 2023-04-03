@@ -7,7 +7,7 @@ public class ProductDTO {
     private int productcategorynum;
     private String userid;
     private String productname;
-    private String productitle;
+    private String producttitle;
     private String productdetail;
     private String productquantity;
     private String productprice;
@@ -49,12 +49,12 @@ public class ProductDTO {
         this.productname = productname;
     }
 
-    public String getProductitle() {
-        return productitle;
+    public String getProducttitle() {
+        return producttitle;
     }
 
-    public void setProductitle(String productitle) {
-        this.productitle = productitle;
+    public void setProducttitle(String producttitle) {
+        this.producttitle = producttitle;
     }
 
     public String getProductdetail() {
