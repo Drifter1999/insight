@@ -24,15 +24,13 @@ public class InsightDAO {
         return result;
     }
 
-    public boolean login(String userid, String userpw) {
+    public UserDTO login(String userid, String userpw) {
         boolean result = false;
         HashMap<String, String> data = new HashMap<>();
         data.put("userid", userid);
         data.put("userpw", userpw);
-        if(sqlSession.selectOne("Insight.LoginCheck", data)){
 
-        }
-        return result;
+        return sqlSession.selectOne("Insight.LoginCheck", data);
     }
 
 
