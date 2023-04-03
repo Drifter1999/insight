@@ -1,6 +1,6 @@
 package dto;
 
-public class userCommentDTO {
+public class UserCommentDTO {
     private String commentnum;
     private String userid;
     private String commentwriter;

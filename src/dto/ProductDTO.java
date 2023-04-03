@@ -2,7 +2,7 @@ package dto;
 
 import java.sql.Date;
 
-public class ProducDTO {
+public class ProductDTO {
     private int productnum;
     private int productcategorynum;
     private String userid;
