@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 <!--================ Start Header Menu Area =================-->
@@ -176,6 +177,7 @@
                             <!-- 이름 입력 -->
                             <input
                                     type="text"
+                                    title="두 자 이상의 한글로 입력하세요."
                                     class="form-control"
                                     id="username"
                                     name="username"
@@ -188,6 +190,7 @@
                             <!-- 아이디 입력 -->
                             <input
                                     type="text"
+                                    title="2~20자 이내의 영문,숫자를 사용하세요."
                                     id="userid"
                                     name="userid"
                                     placeholder="아이디"
@@ -207,6 +210,7 @@
                             <!-- 비밀번호 입력 -->
                             <input
                                     type="password"
+                                    title="영문,숫자,특수문자 조합의 8~25자리 비밀번호를 사용하세요."
                                     class="form-control"
                                     id="userpw"
                                     name="userpw"
@@ -219,6 +223,7 @@
                             <!-- 비밀번호 확인 -->
                             <input
                                     type="password"
+                                    title="영문,숫자,특수문자 조합의 8~25자리 비밀번호를 사용하세요."
                                     class="form-control"
                                     id="userpwcheck"
                                     name="userpwcheck"
@@ -231,6 +236,7 @@
                             <!-- 주소 입력 -->
                             <input
                                     type="text"
+                                    title="한글로 입력하세요."
                                     class="form-control"
                                     id="useraddr"
                                     name="useraddr"
@@ -243,6 +249,7 @@
                             <!-- 전화번호 입력 -->
                             <input
                                     type="text"
+                                    title="-을 제외하여 입력하세요."
                                     class="form-control"
                                     id="userphone"
                                     name="userphone"
@@ -255,6 +262,7 @@
                             <!-- 이메일 입력 -->
                             <input
                                     type="text"
+                                    title="(ex. ist@insight.com)"
                                     class="form-control"
                                     id="useremail"
                                     name="useremail"
