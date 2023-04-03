@@ -1,2 +1,5 @@
+# no .iml files
+*.iml
+
 # Project exclude paths
 /out/

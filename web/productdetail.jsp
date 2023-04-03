@@ -22,43 +22,118 @@
     <div class="main_menu">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <a class="navbar-brand logo_h" href="index.jsp"><img src="img/logo.png" alt=""></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand logo_h" href="index.jsp"
+                ><img src="img/insightlogo.JPG" alt=""
+                /></a>
+                <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                >
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                <div
+                        class="collapse navbar-collapse offset"
+                        id="navbarSupportedContent"
+                >
                     <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.jsp">메인페이지</a></li>
-                        <li class="nav-item active submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">제품 보기</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="category.jsp">카테고리 및 검색</a></li>
-                                <li class="nav-item"><a class="nav-link" href="productdetail.jsp">제품 상세</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mainhome.jsp">홈</a>
                         </li>
-
                         <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">로그인 및 마이페이지</a>
+                            <a
+                                    href="#"
+                                    class="nav-link dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                            >상품</a
+                            >
                             <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="index.jsp">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="register.jsp">Register</a></li>
-                                <li class="nav-item"><a class="nav-link" href="mypage.jsp">마이 페이지</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="category.jsp">카테고리</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                  <a class="nav-link" href="productdetail.jsp"
+                                    >Blog Details</a
+                                  >
+                                </li> -->
+                                <!-- <li class="nav-item"><a class="nav-link" href="checkout.jsp">Product Checkout</a></li>
+                              <li class="nav-item"><a class="nav-link" href="confirmation.jsp">Confirmation</a></li>
+                              <li class="nav-item"><a class="nav-link" href="mypage.jsp">Shopping Cart</a></li> -->
                             </ul>
                         </li>
+                        <!-- <li class="nav-item submenu dropdown">
+                          <a
+                            href="#"
+                            class="nav-link dropdown-toggle"
+                            data-toggle="dropdown"
+                            role="button"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            >Blog</a
+                          >
+                          <ul class="dropdown-menu">
+                            <li class="nav-item">
+                              <a class="nav-link" href="blog.jsp">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="single-blog.jsp"
+                                >Blog Details</a
+                              >
+                            </li>
+                          </ul>
+                        </li> -->
+                        <li class="nav-item active submenu dropdown">
+                            <a
+                                    href="#"
+                                    class="nav-link dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                            >로그인 / 회원가입</a
+                            >
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.jsp">로그인</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="register.jsp">회원가입</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                  <a class="nav-link" href="tracking-order.jsp"
+                                    >Tracking</a
+                                  >
+                                </li> -->
+                            </ul>
+                        </li>
+                        <!-- <li class="nav-item">
+                          <a class="nav-link" href="contact.jsp">Contact</a>
+                        </li>-->
                     </ul>
 
-                    <ul class="nav-shop">
-                        <li class="nav-item"><button><i class="ti-search"></i></button></li>
-                        <li class="nav-item"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">1</span></button> </li>
-                        <li class="nav-item"><a class="button button-header" href="#">대화 요청???</a></li>
-                        <!-- 메뉴바 수정 홈 /제품 검색 설명 댓글 보기/ 로그인 회원가입 마이페이지/-->
-                        <!-- 카트 대신 메세지 수신 알림? buy now 대화요청으로 수정 -->
-                    </ul>
+                    <%--          <ul class="nav-shop">--%>
+                    <%--            <li class="nav-item">--%>
+                    <%--              <button><i class="ti-search"></i></button>--%>
+                    <%--            </li>--%>
+                    <%--            <!-- <li class="nav-item">--%>
+                    <%--              <button>--%>
+                    <%--                <i class="ti-shopping-cart"></i--%>
+                    <%--                ><span class="nav-shop__circle">3</span>--%>
+                    <%--              </button>--%>
+                    <%--            </li> -->--%>
+                    <%--            <!-- <li class="nav-item">--%>
+                    <%--              <a class="button button-header" href="#">Buy Now</a>--%>
+                    <%--            </li> -->--%>
+                    <%--          </ul>--%>
                 </div>
             </div>
         </nav>
@@ -66,23 +141,34 @@
 </header>
 <!--================ End Header Menu Area =================-->
 
-<!-- ================ start banner area ================= -->
-<section class="blog-banner-area" id="blog">
-    <div class="container h-100">
-        <div class="blog-banner">
-            <div class="text-center">
-                <h1>사진?? 혹은 광고</h1>
-                <nav aria-label="breadcrumb" class="banner-breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">이부분은</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">뭘 넣어놔야 좋을까 배너 같은데</li>
-                    </ol>
-                </nav>
-            </div>
+
+<!--================ 배너  Carousel start =================-->
+<section class="section-margin mt-0">
+    <div class="owl-carousel owl-theme hero-carousel">
+        <div class="hero-carousel__slide">
+            <img src="img/home/hero-slide1.png" alt="" class="img-fluid">
+            <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
+                <h3>Wireless Headphone</h3>
+                <p>Accessories Item</p>
+            </a>
+        </div>
+        <div class="hero-carousel__slide">
+            <img src="img/home/hero-slide2.png" alt="" class="img-fluid">
+            <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
+                <h3>Wireless Headphone</h3>
+                <p>Accessories Item</p>
+            </a>
+        </div>
+        <div class="hero-carousel__slide">
+            <img src="img/home/hero-slide3.png" alt="" class="img-fluid">
+            <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
+                <h3>Wireless Headphone</h3>
+                <p>Accessories Item</p>
+            </a>
         </div>
     </div>
 </section>
-<!-- ================ end banner area ================= -->
+<!--================ 배너  Carousel end =================-->
 
 
 <!--================Single Product Area =================-->
@@ -551,33 +637,34 @@
 <!--================ end related Product area =================-->
 
 <!--================ Start footer Area  =================-->
-<footer>
-    <div class="footer-area footer-only">
+<footer class="footer">
+    <div class="footer-area">
         <div class="container">
             <div class="row section_gap">
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-footer-widget tp_widgets ">
-                        <h4 class="footer_title large_title">인사이트 란</h4>
+                    <div class="single-footer-widget tp_widgets">
+                        <h4 class="footer_title large_title">우리들이 할일</h4>
                         <p>
-                            많은 사람들이 이 통찰력을 키워 나가는 것을 상당히 어려워한다.
-                            사실 통찰력이라는 것 자체가 재능의 영향을 가장 많이 받는다고 생각하는게 주된 인식.
-                            무엇보다 통찰력은 학교나 군대나 직장 등에서도 쉽게 알려주지 않고,
-                            윗사람도 시야가 좁아서 그 통찰을 이해 못 할 경우(...)
-                            오히려 헛소리하지 말라고 욕만 하기 십상이다. 설령 윗사람들이 통찰력을 키워주는 방법을 안다고 해도
-                            쉽게 설명을 하지 못한다.
-                            그런 만큼 통찰력은 자기 자신이 스스로 알아서 잘 챙겨야 한다.
+                            4월 12일이 발표이므로 그 떄 까지 중고거래 사이트를
+                            완성시켜야함. 해당 사이트는 유저간 거래 중개 사이트이므로,
+                            우리는 중고거래의 개입하지 않는다.
                         </p>
-
+                        <p>
+                            그러므로 거래 시 더 치트 같은 사이트를 이용하여서 사기를
+                            미연에 방지하자.
+                        </p>
                     </div>
                 </div>
                 <div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
                     <div class="single-footer-widget tp_widgets">
-                        <h4 class="footer_title">바로 가기</h4>
+                        <h4 class="footer_title">조원 이름</h4>
                         <ul class="list">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Shop</a></li>
-                            <li><a href="#">Product</a></li>
-
+                            <li><a href="https://github.com/rilac">임대연(조장님)</a></li>
+                            <li><a href="https://github.com/m1nwook">김민욱</a></li>
+                            <li><a href="https://github.com/GEONU-MOON">문건우</a></li>
+                            <li><a href="https://github.com/shinjunsu">신준수</a></li>
+                            <li><a href="https://github.com/Drifter1999">이상기</a></li>
+                            <li><a href="https://github.com/taehalee615">이태하</a></li>
                         </ul>
                     </div>
                 </div>
@@ -585,41 +672,59 @@
                     <div class="single-footer-widget instafeed">
                         <h4 class="footer_title">Gallery</h4>
                         <ul class="list instafeed d-flex flex-wrap">
-                            <li><img src="img/gallery/r1.jpg" alt=""></li>
-                            <li><img src="img/gallery/r2.jpg" alt=""></li>
-                            <li><img src="img/gallery/r3.jpg" alt=""></li>
-                            <li><img src="img/gallery/r5.jpg" alt=""></li>
-                            <li><img src="img/gallery/r7.jpg" alt=""></li>
-                            <li><img src="img/gallery/r8.jpg" alt=""></li>
+                            <li><img src="img/gallery/r1.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r2.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r3.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r5.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r7.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r8.jpg" alt="" /></li>
                         </ul>
                     </div>
                 </div>
-                <div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
+                <!-- 이메일 주소가 길어서 이름이랑 이메일 주소가 한 줄에 표현이 안되는 것 같아서 따로 스타일 선언해서 제가 수정했습니다! 3/31 문건우 -->
+                <div
+                        class="offset-lg-1 col-lg-3 col-md-6 col-sm-6"
+                        style="
+                width: 100px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                padding-bottom: 0.14px;
+              "
+                >
                     <div class="single-footer-widget tp_widgets">
-                        <h4 class="footer_title">문의</h4>
+                        <h4 class="footer_title">Contact Us</h4>
                         <div class="ml-40">
-                            <p class="sm-head">
-                                <span class="fa fa-location-arrow"></span>
-                                인사이트 위치
+                            <!-- <p class="sm-head">
+                              <span class="fa fa-location-arrow"></span>
+                              본사
                             </p>
-                            <p>강남구 테헤란로 12번길</p>
+                            <p>율도국 전우치로49 101</p> -->
 
                             <p class="sm-head">
                                 <span class="fa fa-phone"></span>
-                                인사이트 번호
+                                GitHub
                             </p>
                             <p>
-                                +82 010 9178 4990 <br>
-                                +82 02 7890
+                                임대연 : rilac<br />
+                                김민욱 : m1nwook<br />
+                                문건우 : GEONU-MOON<br />
+                                신준수 : shinjunsu<br />
+                                이상기 : Drifter1999<br />
+                                이태하 : taehalee615
                             </p>
 
                             <p class="sm-head">
                                 <span class="fa fa-envelope"></span>
-                                Email
+                                이메일
                             </p>
                             <p>
-                                free@infoexample.com <br>
-                                www.infoexample.com
+                                임대연 : eodos6480@gmail.com<br />
+                                김민욱 : supermin0317@naver.com<br />
+                                문건우 : moondy2209@naver.com<br />
+                                신준수 : sjs990306@gmail.com<br />
+                                이상기 : yah9600@gmail.com<br />
+                                이태하 : leeari0615@gmail.com
                             </p>
                         </div>
                     </div>
@@ -633,8 +738,15 @@
             <div class="row d-flex">
                 <p class="col-lg-12 footer-text text-center">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">인사이트 GB_5</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    Copyright &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    All rights reserved | This template is made with
+                    <i class="fa fa-heart" aria-hidden="true"></i> by
+                    <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
             </div>
         </div>
     </div>
