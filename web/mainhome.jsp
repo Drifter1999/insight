@@ -168,55 +168,35 @@
 <!--================ End Header Menu Area =================-->
 <main class="site-main">
 
-    <!--================ Hero banner start =================-->
-    <section class="hero-banner">
-        <div class="container">
-            <div class="row no-gutters align-items-center pt-60px">
-                <div class="col-5 d-none d-sm-block">
-                    <div class="hero-banner__img">
-                        <img class="img-fluid" src="img/home/hero-banner.png" alt="">
-                    </div>
-                </div>
-                <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
-                    <div class="hero-banner__content">
-                        <h4>살려줘요</h4>
-                        <h1>대충 메인 홈</h1>
-                        <p>우리는 지적이고 매너있고 잘생기고 담력있는 사람을 상대하는 중고마켓입니다. 사기꾼 체포율 100%</p>
-                        <!--              <a class="button button-hero" href="#">Browse Now</a>-->
-                    </div>
-                </div>
+
+
+    <!--================ 배너  Carousel start =================-->
+    <section class="section-margin mt-0">
+        <div class="owl-carousel owl-theme hero-carousel">
+            <div class="hero-carousel__slide">
+                <img src="img/home/hero-slide1.png" alt="" class="img-fluid">
+                <a href="#" class="hero-carousel__slideOverlay">
+                    <h3>Wireless Headphone</h3>
+                    <p>Accessories Item</p>
+                </a>
+            </div>
+            <div class="hero-carousel__slide">
+                <img src="img/home/hero-slide2.png" alt="" class="img-fluid">
+                <a href="#" class="hero-carousel__slideOverlay">
+                    <h3>Wireless Headphone</h3>
+                    <p>Accessories Item</p>
+                </a>
+            </div>
+            <div class="hero-carousel__slide">
+                <img src="img/home/hero-slide3.png" alt="" class="img-fluid">
+                <a href="#" class="hero-carousel__slideOverlay">
+                    <h3>Wireless Headphone</h3>
+                    <p>Accessories Item</p>
+                </a>
             </div>
         </div>
     </section>
-    <!--================ Hero banner start =================-->
-
-    <!--================ Hero Carousel start =================-->
-    <!--    <section class="section-margin mt-0">-->
-    <!--      <div class="owl-carousel owl-theme hero-carousel">-->
-    <!--        <div class="hero-carousel__slide">-->
-    <!--          <img src="img/home/hero-slide1.png" alt="" class="img-fluid">-->
-    <!--          <a href="#" claess Headphone</h3>-->
-    <!--          <p>Accessss="hero-carousel__slideOverlay">-->
-    <!--            <h3>Wirelories Item</p>-->
-    <!--          </a>-->
-    <!--        </div>-->
-    <!--        <div class="hero-carousel__slide">-->
-    <!--          <img src="img/home/hero-slide2.png" alt="" class="img-fluid">-->
-    <!--          <a href="#" class="hero-carousel__slideOverlay">-->
-    <!--            <h3>Wireless Headphone</h3>-->
-    <!--            <p>Accessories Item</p>-->
-    <!--          </a>-->
-    <!--        </div>-->
-    <!--        <div class="hero-carousel__slide">-->
-    <!--          <img src="img/home/hero-slide3.png" alt="" class="img-fluid">-->
-    <!--          <a href="#" class="hero-carousel__slideOverlay">-->
-    <!--            <h3>Wireless Headphone</h3>-->
-    <!--            <p>Accessories Item</p>-->
-    <!--          </a>-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--    </section>-->
-    <!--================ Hero Carousel end =================-->
+    <!--================ 배너  Carousel end =================-->
 
     <!-- ================ trending product section start ================= -->
     <!--제품이 카드로 되어있고 제품 수만큼 나와야하므로 js로 반복문 사용해야 함.-->
