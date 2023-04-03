@@ -4,7 +4,19 @@
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Insight">
     <!-- tbluserTable CRUD -->
+    <select id="UserCheck" parameterType="string" resultType="_int">
+        select  count(*)
+        from    tbluser
+        where   userid = #{userid}
+    </select>
 
+    <!--로그인 계정체크-->
+    <select id="LoginCheck" parameterType="hashmap" resultType="_int">
+        select  count(*)
+        from    tbluser
+        where   userid = #{userid}
+        and     userpw = #{userpw}
+    </select>
 
     <!--해당 회원의 모든 정보 보기-->
     <select id="UserSelectOne" parameterType="string" resultType="UCDTO">
@@ -19,14 +31,6 @@
         from    tbluser
     </select>
 
-    <!--회원 가입-->
-<!--    <insert id="UserInsert" parameterType="UCDTO">-->
-<!--        insert into tbluser valuse (-->
-<!--            #{userid}, #{username},-->
-<!--            #{userpw}, #{useremail},-->
-<!--            #{useraddr}, #{userphone}-->
-<!--        )-->
-<!--    </insert>-->
     <insert id="insert" parameterType="UDTO">
         insert into tbluser values (#{userid}, #{username}, #{userpw}, #{useremail}, #{useraddr}, #{userphone})
     </insert>
