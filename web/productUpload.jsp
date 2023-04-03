@@ -27,76 +27,23 @@
     <link rel="stylesheet" href="vendors/nice-select/nice-select.css">
     <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        #preview-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .preview {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-<!--================ Start Header Menu Area =================-->
-<%--<header class="header_area">--%>
-<%--    <div class="main_menu">--%>
-<%--        <nav class="navbar navbar-expand-lg navbar-light">--%>
-<%--            <div class="container">--%>
-<%--                <a class="navbar-brand logo_h" href="index.jsp"><img src="img/logo.png" alt=""></a>--%>
-<%--                <button class="navbar-toggler" type="button" data-toggle="collapse"--%>
-<%--                        data-target="#navbarSupportedContent"--%>
-<%--                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">--%>
-<%--                    <span class="icon-bar"></span>--%>
-<%--                    <span class="icon-bar"></span>--%>
-<%--                    <span class="icon-bar"></span>--%>
-<%--                </button>--%>
-<%--                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">--%>
-<%--                    <!-- 이 부분 마이페이지 눌렀을때 회원정보 보이게 -->--%>
-<%--                    <ul class="nav navbar-nav menu_nav ml-auto mr-auto">--%>
-<%--                        <li class="nav-item"><a class="nav-link" href="mainhome.jsp">홈</a></li>--%>
-<%--                        <li class="nav-item active submenu dropdown">--%>
-<%--                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"--%>
-<%--                               aria-haspopup="true"--%>
-<%--                               aria-expanded="false">샵</a>--%>
-<%--                            <ul class="dropdown-menu">--%>
-<%--                                <li class="nav-item"><a class="nav-link" href="category.jsp">분류</a></li>--%>
-<%--                                <li class="nav-item"><a class="nav-link" href="single-product.jsp">제품 정보</a></li>--%>
-<%--                                <li class="nav-item"><a class="nav-link" href="checkout.jsp">구매하기</a></li>--%>
-<%--                                <li class="nav-item"><a class="nav-link" href="confirmation.jsp">확인</a></li>--%>
-<%--                                <li class="nav-item"><a class="nav-link" href="mypage.jsp">장바구니</a></li>--%>
-<%--                            </ul>--%>
-<%--                        </li>--%>
-<%--                        <li class="nav-item submenu dropdown">--%>
-<%--                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"--%>
-<%--                               aria-haspopup="true"--%>
-<%--                               aria-expanded="false">블로그</a>--%>
-<%--                            <ul class="dropdown-menu">--%>
-<%--                                <li class="nav-item"><a class="nav-link" href="blog.jsp">블로그</a></li>--%>
-<%--                                <li class="nav-item"><a class="nav-link" href="register.jsp">가입하기</a></li>--%>
-<%--                                <li class="nav-item"><a class="nav-link" href="single-blog.jsp">블로그 정보</a></li>--%>
-<%--                            </ul>--%>
-<%--                        </li>--%>
-<%--                        <li class="nav-item submenu dropdown">--%>
-<%--                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"--%>
-<%--                               aria-haspopup="true"--%>
-<%--                               aria-expanded="false">페이지</a>--%>
-<%--                            <ul class="dropdown-menu">--%>
-<%--                                <li class="nav-item"><a class="nav-link" href="index.jsp">로그인</a></li>--%>
-<%--                                <li class="nav-item"><a class="nav-link" href="tracking-order.jsp">배송조회</a></li>--%>
-<%--                            </ul>--%>
-<%--                        </li>--%>
-<%--                        <li class="nav-item"><a class="nav-link" href="contact.jsp">고객센터</a></li>--%>
-<%--                    </ul>--%>
-
-<%--                    <!-- 장바구니 / 구매하기 버튼 삭제  -->--%>
-<%--                    <ul class="nav-shop">--%>
-<%--                        <li class="nav-item">--%>
-<%--                            <button><i class="ti-search"></i></button>--%>
-<%--                        </li>--%>
-<%--                        <li class="nav-item">--%>
-<%--                            <button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></button>--%>
-<%--                        </li>--%>
-<%--                        <li class="nav-item"><a class="button button-header" href="#">구매하기</a></li>--%>
-<%--                    </ul>--%>
-
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </nav>--%>
-<%--    </div>--%>
-<%--</header>--%>
-<!-- 헤더 스타트 통일( 기준 login파일헤더  )-->
 <header class="header_area">
     <div class="main_menu">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -218,7 +165,6 @@
         </nav>
     </div>
 </header>
-<!-- 헤더 끝 index파일 헤더로 통일 -->
 <!--================ End Header Menu Area =================-->
 
 <!-- ================ start banner area ================= -->
@@ -256,52 +202,64 @@
                         </tr>
                         </thead>
                         <tbody>
+<%--                        이미지 업로드--%>
                         <tr>
                             <td>
                                 <div class="media">
                                     <div class="media-body">
-                                        <label for="productImage1">*상품 이미지:</label>
+                                        <label for="productImage">*상품 이미지:</label>
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                <input type="file" name="productImage1" id="productImage1" accept="image/*" multiple required>
-                                <%--FileItemFactory factory = new DiskFileItemFactory();
-                                ServletFileUpload upload = new ServletFileUpload(factory);
-
-                                List<FileItem> items = upload.parseRequest(request);
-                                int numFiles = 0;
-                                String[] fileNames = new String[3];
-                                for (FileItem item : items) {
-                                if (!item.isFormField()) {
-                                if (numFiles < 3) {
-                                fileNames[numFiles++] = item.getName();
-                                // 파일 처리 코드
-                                } else {
-                                // 네 번째 파일부터는 무시
-                                }
-                                } else {
-                                // 일반 필드 처리 코드
-                                }
-                                }
-                                // FileItem 객체를 배열 형태로 선언, 최대 3개까지 파일을 저장.
-                                numFiles 변수를 사용하여 현재 업로드된 파일의 수를 카운트하고,
-                                업로드된 파일이 최대 3개를 넘어가면 처리x.
-                                파일 처리 코드에서는 fileNames 배열에 파일 이름을 저장, 파일을 업로드등의 작업을 수행
-                                이런식으로 작성 하면 될듯
-
-                                추가로 썸네일을 보여줄때 변수에 담을 수 있도록 하면 될듯
-                                String thumbnail = "";
-                                if (numFiles == 1) {
-
-                                // 첫 번째 파일을 썸네일로 사용
-                                thumbnail = item.getName();
-                                    // 썸네일 처리 코드
-                                }
-
-                                --%>
+                                <input type="file" name="productImage" id="productImage" accept="image/*" multiple required onchange="previewImage(event)">
+                                <p id="upload-count"></p>
+                                <p> 최대 3개 까지 업로드 가능합니다.</p>
                             </td>
                         </tr>
+<%--                        이미지 미리보기--%>
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="media-body">
+                                        <label>*이미지 미리보기:</label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+<%--                                <img id="preview" class="preview" src="" alt="Preview Image">--%>
+                                <div id="preview-container"></div>
+                                <p> 이미지를 클릭하면 새 브라우저에서 확인 가능합니다.</p>
+                                <p> 첫 번째 이미지가 게시글의 썸네일 입니다.</p>
+                            </td>
+                        </tr>
+<%--                            카테고리 선택--%>
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="media-body">
+                                        <label for="productCategoryNum">카테고리 선택:</label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <select id="productCategoryNum" name="productCategoryNum" onchange="updateSelectedCategory()">
+                                    <option value="1">의류</option>
+                                    <option value="2">잡화</option>
+                                    <option value="3">전자기기</option>
+                                    <option value="4">서적</option>
+                                    <option value="5">악세서리</option>
+                                    <option value="6">기타</option>
+                                </select>
+                                <br><br>
+                                <p>
+                                    <div id="selectedCategory">
+                                        선택한 카테고리:
+                                    </div>
+                                </p>
+                            </td>
+                        </tr>
+<%--                        제목 입력--%>
                         <tr>
                             <td>
                                 <div class="media">
@@ -315,6 +273,7 @@
                                 <span id="titleError" style="display:none; color:red;">상품명을 2자 이상 입력해주세요.</span><br>
                             </td>
                         </tr>
+<%--                           상품 입력--%>
                         <tr>
                             <td>
                                 <div class="media">
@@ -327,6 +286,7 @@
                                 <input type="text" name="productName" id="productName" required>
                             </td>
                         </tr>
+<%--                            상품 설명--%>
                         <tr>
                             <td>
                                 <div class="media">
@@ -339,6 +299,7 @@
                                 <textarea name="productDetail" id="productDetail" required></textarea>
                             </td>
                         </tr>
+<%--                             상품 가격--%>
                         <tr>
                             <td>
                                 <div class="media">
@@ -357,6 +318,7 @@
                                 <label for="shippingIncluded">배송비 포함</label>
                             </td>
                         </tr>
+<%--                                상품 수량--%>
                         <tr>
                             <td>
                                 <div class="media">
@@ -369,7 +331,7 @@
                                 <input type="number" name="productQuantity" id="productQuantity" required><br>
                             </td>
                         </tr>
-
+<%--                상품 등록 버튼--%>
                         <tr class="out_button_area">
                             <td class="d-none-l">
 
@@ -386,6 +348,7 @@
                                 </div>
                             </td>
                         </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -398,95 +361,6 @@
 
 
 <!--================ Start footer Area  =================-->
-<%--<footer>--%>
-<%--    <div class="footer-area footer-only">--%>
-<%--        <div class="container">--%>
-<%--            <div class="row section_gap">--%>
-<%--                <div class="col-lg-3 col-md-6 col-sm-6">--%>
-<%--                    <div class="single-footer-widget tp_widgets ">--%>
-<%--                        <h4 class="footer_title large_title">우리 목표</h4>--%>
-<%--                        <p>--%>
-<%--                            개빠르게 배송하기--%>
-<%--                        </p>--%>
-<%--                        <p>--%>
-<%--                            극한의 가성비--%>
-<%--                        </p>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">--%>
-<%--                    <div class="single-footer-widget tp_widgets">--%>
-<%--                        <h4 class="footer_title">바로가기</h4>--%>
-<%--                        <ul class="list">--%>
-<%--                            <li><a href="#">홈</a></li>--%>
-<%--                            <li><a href="#">샵</a></li>--%>
-<%--                            <li><a href="#">블로그</a></li>--%>
-<%--                            <li><a href="#">제품</a></li>--%>
-<%--                            <li><a href="#">브랜드</a></li>--%>
-<%--                            <li><a href="#">고객문의</a></li>--%>
-<%--                        </ul>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="col-lg-2 col-md-6 col-sm-6">--%>
-<%--                    <div class="single-footer-widget instafeed">--%>
-<%--                        <h4 class="footer_title">사진</h4>--%>
-<%--                        <ul class="list instafeed d-flex flex-wrap">--%>
-<%--                            <li><img src="img/gallery/r1.jpg" alt=""></li>--%>
-<%--                            <li><img src="img/gallery/r2.jpg" alt=""></li>--%>
-<%--                            <li><img src="img/gallery/r3.jpg" alt=""></li>--%>
-<%--                            <li><img src="img/gallery/r5.jpg" alt=""></li>--%>
-<%--                            <li><img src="img/gallery/r7.jpg" alt=""></li>--%>
-<%--                            <li><img src="img/gallery/r8.jpg" alt=""></li>--%>
-<%--                        </ul>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">--%>
-<%--                    <div class="single-footer-widget tp_widgets">--%>
-<%--                        <h4 class="footer_title">고객문의</h4>--%>
-<%--                        <div class="ml-40">--%>
-<%--                            <p class="sm-head">--%>
-<%--                                <span class="fa fa-location-arrow"></span>--%>
-<%--                                사무실--%>
-<%--                            </p>--%>
-<%--                            <p>뉴욕시티다</p>--%>
-
-<%--                            <p class="sm-head">--%>
-<%--                                <span class="fa fa-phone"></span>--%>
-<%--                                Phone Number--%>
-<%--                            </p>--%>
-<%--                            <p>--%>
-<%--                                02-111-1111 <br>--%>
-<%--                                010-1111-1111--%>
-<%--                            </p>--%>
-
-<%--                            <p class="sm-head">--%>
-<%--                                <span class="fa fa-envelope"></span>--%>
-<%--                                이메일--%>
-<%--                            </p>--%>
-<%--                            <p>--%>
-<%--                                free@infoexample.com <br>--%>
-<%--                                www.infoexample.com--%>
-<%--                            </p>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-
-<%--    <div class="footer-bottom">--%>
-<%--        <div class="container">--%>
-<%--            <div class="row d-flex">--%>
-<%--                <p class="col-lg-12 footer-text text-center">--%>
-<%--                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->--%>
-<%--                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>--%>
-<%--                    All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by--%>
-<%--                    <a href="https://colorlib.com" target="_blank">Colorlib</a>--%>
-<%--                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</footer>--%>
-<!-- 푸터 index 통일 스타트 라인 -->
 <footer class="footer">
     <div class="footer-area">
         <div class="container">
@@ -495,10 +369,13 @@
                     <div class="single-footer-widget tp_widgets">
                         <h4 class="footer_title large_title">우리들이 할일</h4>
                         <p>
-                            4월 12일이 발표이므로 그 떄 까지 중고거래 사이트를 완성시켜야함. 해당 사이트는 유저간 거래 중개 사이트이므로, 우리는 중고거래의 개입하지 않는다.
+                            4월 12일이 발표이므로 그 떄 까지 중고거래 사이트를
+                            완성시켜야함. 해당 사이트는 유저간 거래 중개 사이트이므로,
+                            우리는 중고거래에 개입하지 않는다.
                         </p>
                         <p>
-                            그러므로 거래 시 더 치트 같은 사이트를 이용하여서 사기를 미연에 방지하자.
+                            그러므로 거래 시 더 치트 같은 사이트를 이용하여서 사기를
+                            미연에 방지하자.
                         </p>
                     </div>
                 </div>
@@ -506,12 +383,12 @@
                     <div class="single-footer-widget tp_widgets">
                         <h4 class="footer_title">조원 이름</h4>
                         <ul class="list">
-                            <li><a href="#">임대연(조장님)</a></li>
-                            <li><a href="#">김민욱</a></li>
-                            <li><a href="#">문건우</a></li>
-                            <li><a href="#">신준수</a></li>
-                            <li><a href="#">이상기</a></li>
-                            <li><a href="#">이태하</a></li>
+                            <li><a href="https://github.com/rilac">임대연(조장님)</a></li>
+                            <li><a href="https://github.com/m1nwook">김민욱</a></li>
+                            <li><a href="https://github.com/GEONU-MOON">문건우</a></li>
+                            <li><a href="https://github.com/shinjunsu">신준수</a></li>
+                            <li><a href="https://github.com/Drifter1999">이상기</a></li>
+                            <li><a href="https://github.com/taehalee615">이태하</a></li>
                         </ul>
                     </div>
                 </div>
@@ -519,32 +396,46 @@
                     <div class="single-footer-widget instafeed">
                         <h4 class="footer_title">Gallery</h4>
                         <ul class="list instafeed d-flex flex-wrap">
-                            <li><img src="img/gallery/r1.jpg" alt=""></li>
-                            <li><img src="img/gallery/r2.jpg" alt=""></li>
-                            <li><img src="img/gallery/r3.jpg" alt=""></li>
-                            <li><img src="img/gallery/r5.jpg" alt=""></li>
-                            <li><img src="img/gallery/r7.jpg" alt=""></li>
-                            <li><img src="img/gallery/r8.jpg" alt=""></li>
+                            <li><img src="img/gallery/r1.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r2.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r3.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r5.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r7.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r8.jpg" alt="" /></li>
                         </ul>
                     </div>
                 </div>
-                <div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
+                <!-- 이메일 주소가 길어서 이름이랑 이메일 주소가 한 줄에 표현이 안되는 것 같아서 따로 스타일 선언해서 제가 수정했습니다! 3/31 문건우 -->
+                <div
+                        class="offset-lg-1 col-lg-3 col-md-6 col-sm-6"
+                        style="
+                width: 100px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                padding-bottom: 0.14px;
+              "
+                >
                     <div class="single-footer-widget tp_widgets">
                         <h4 class="footer_title">Contact Us</h4>
                         <div class="ml-40">
-                            <p class="sm-head">
-                                <span class="fa fa-location-arrow"></span>
-                                본사
+                            <!-- <p class="sm-head">
+                              <span class="fa fa-location-arrow"></span>
+                              본사
                             </p>
-                            <p>율도국 전우치로49 101</p>
+                            <p>율도국 전우치로49 101</p> -->
 
                             <p class="sm-head">
                                 <span class="fa fa-phone"></span>
-                                연락처
+                                GitHub
                             </p>
                             <p>
-                                010-1234-5678 <br>
-                                010-2345-6789
+                                임대연 : rilac<br />
+                                김민욱 : m1nwook<br />
+                                문건우 : GEONU-MOON<br />
+                                신준수 : shinjunsu<br />
+                                이상기 : Drifter1999<br />
+                                이태하 : taehalee615
                             </p>
 
                             <p class="sm-head">
@@ -552,8 +443,12 @@
                                 이메일
                             </p>
                             <p>
-                                aaa@mukgosib.da <br>
-                                aaa@mukgisil.da
+                                임대연 : eodos6480@gmail.com<br />
+                                김민욱 : supermin0317@naver.com<br />
+                                문건우 : moondy2209@naver.com<br />
+                                신준수 : sjs990306@gmail.com<br />
+                                이상기 : yah9600@gmail.com<br />
+                                이태하 : leeari0615@gmail.com
                             </p>
                         </div>
                     </div>
@@ -567,74 +462,23 @@
             <div class="row d-flex">
                 <p class="col-lg-12 footer-text text-center">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    Copyright &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    All rights reserved | This template is made with
+                    <i class="fa fa-heart" aria-hidden="true"></i> by
+                    <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
             </div>
         </div>
     </div>
 </footer>
-
-<!-- 푸터 통일 -->
 <!--================ End footer Area  =================-->
 
-<script>
-    function checkTitle() {
-        var titleInput = document.getElementById("title");
-        var titleError = document.getElementById("titleError");
-        if (titleInput.value.length < 2) {
-            titleError.style.display = "inline";
-        } else {
-            titleError.style.display = "none";
-        }
-    }
-
-    function checkNumberOnly(event) {
-        var code = event.keyCode;
-        if (code < 48 || code > 57) {
-            alert("숫자만 입력해주세요.");
-            event.target.value = event.target.value.replace(/[^0-9]/g, '');
-        }
-    }
-    function validateForm() {
-        var productName = document.getElementById("productName");
-        var productTitle = document.getElementById("productTitle");
-        var productDescription = document.getElementById("productDescription");
-        var productQuantity = document.getElementById("productQuantity");
-        var productPrice = document.getElementById("productPrice");
-
-        if (productName.value.trim() === "") {
-            alert("상품 이름을 입력해주세요.");
-            productName.focus();
-            return false;
-        }
-
-        if (productTitle.value.trim() === "") {
-            alert("상품 제목을 입력해주세요.");
-            productTitle.focus();
-            return false;
-        }
-
-        if (productDescription.value.trim() === "") {
-            alert("상품 설명을 입력해주세요.");
-            productDescription.focus();
-            return false;
-        }
-
-        if (productQuantity.value.trim() === "") {
-            alert("상품 수량을 입력해주세요.");
-            productQuantity.focus();
-            return false;
-        }
-
-        if (productPrice.value.trim() === "") {
-            alert("상품 가격을 입력해주세요.");
-            productPrice.focus();
-            return false;
-        }
-
-        return true;
-    }
-</script>
+<script src="js/productUpload.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
 <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="vendors/skrollr.min.js"></script>
