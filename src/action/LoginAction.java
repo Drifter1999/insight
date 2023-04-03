@@ -15,10 +15,12 @@ public class LoginAction implements Action{
         String userid = request.getParameter("userid");
         String userpw = request.getParameter("userpw");
 
-        if (dao.login(userid, userpw)) {
+
+
+        if(dao.login(userid, userpw)){
 
         }
-
+        forward.setRedirect(true);
         return forward;
     }
 }

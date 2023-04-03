@@ -34,4 +34,6 @@ public class InsightDAO {
         }
         return result;
     }
+
+
 }
