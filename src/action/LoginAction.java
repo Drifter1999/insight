@@ -13,15 +13,21 @@ import java.util.HashMap;
 public class LoginAction implements Action{
     @Override
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-        HttpSession session = request.getSession();
+
         ActionForward forward = new ActionForward();
         InsightDAO dao = new InsightDAO();
         String userid = request.getParameter("userid");
         String userpw = request.getParameter("userpw");
+        UserDTO dto = dao.login(userid, userpw);
 
-
-        if(dao.login(userid, userpw) != null){
-            session.setAttribute("userid",userid);
+        if( dto != null){
+            /*로그인 성공 시*/
+            HttpSession session = request.getSession();
+            /*세션 객체 생성*/
+            session.setAttribute("userSession", dto);
+            /*userSession 의 이름으로 로그인 객체 저장 */
+            session.setMaxInactiveInterval(60*10);
+            /*세션 10분간 유지*/
             forward.setPath("/mainhome.in");
 
         }else{

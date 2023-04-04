@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <html lang="en">
 <head>
@@ -16,6 +17,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<%--세션 저장 --%>
+<c:set var="userSession" value="${userSession}" scope="session"/>
+
+
+
 <!-- ================ Start Header Menu Area =================
    <header class="header_area">
    <div class="main_menu">
@@ -67,17 +73,37 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item active submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index.jsp">로그인</a>
+                        <c:choose>
+                            <c:when test="${userSession eq null}">
+                                <li class="nav-item active submenu dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="index.jsp">로그인</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register.jsp">회원가입</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="register.jsp">회원가입</a>
+                            </c:when>
+                            <c:otherwise>
+                                <li class="nav-item active submenu dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username}</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="index.jsp">마이페이지</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register.jsp">비밀번호 변경</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register.jsp">구매신청</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                            </ul>
-                        </li>
+                            </c:otherwise>
+                        </c:choose>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
