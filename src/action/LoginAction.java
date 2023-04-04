@@ -17,7 +17,9 @@ public class LoginAction implements Action{
         String userid = request.getParameter("userid");
         String userpw = request.getParameter("userpw");
 
-        if(dao.login(userid, userpw) == null){
+        System.out.println("userid = "+userid);
+        System.out.println("userpw = "+userpw);
+        if(dao.login(userid, userpw) != null){
             forward.setRedirect(false);
             forward.setPath("mainhome.in?userid="+userid);
         }else{
