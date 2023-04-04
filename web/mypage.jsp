@@ -6,6 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aroma Shop - Cart</title>
+    <script>
+        function validateInfo() {
+            var userid = document.getElementById("userid").value;
+            var userpw = document.getElementById("userpw").value;
+            var userpw2 = document.getElementById("userpw2").value;
+            var useremail = document.getElementById("useremail").value;
+            var useraddr = document.getElementById("useraddr").value;
+            var userphone = document.getElementById("userphone").value;
+
+            // 아이디 유효성 검사 (2~20자 이내의 영문, 숫자)
+            var idRegex = /^(?=.*[a-zA-Z])(?=.*[0-9]).{2,20}$/;
+            if (!idRegex.test(userid)) {
+                document.getElementById("ideditError").style.display = "block";
+                return false;
+            } else {
+                document.getElementById("ideditError").style.display = "none";
+            }
+
+            // 비밀번호 유효성 검사 (영문, 숫자, 특수문자 조합의 8~25자리 비밀번호)
+            var pwRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
+            if (!pwRegex.test(userpw)) {
+                document.getElementById("pweditError").style.display = "block";
+                return false;
+            } else {
+                document.getElementById("pweditError").style.display = "none";
+            }
+
+            // 비밀번호 확인
+            if (userpw !== userpw2) {
+                document.getElementById("pweditError2").style.display = "block";
+                return false;
+            } else {
+                document.getElementById("pweditError2").style.display = "none";
+            }
+
+            // 이메일 유효성 검사
+            var emailRegex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+            if (!emailRegex.test(useremail)) {
+                document.getElementById("emerror").style.display = "block";
+                return false;
+            } else {
+                document.getElementById("emerror").style.display = "none";
+            }
+
+            // 전화번호 유효성 검사
+            var phoneRegex = /^[0-9]{2,3}[0-9]{3,4}[0-9]{4}$/;
+            if (!phoneRegex.test(userphone)) {
+                document.getElementById("phoneerror").style.display = "block";
+                return false;
+            } else {
+                document.getElementById("phoneerror").style.display = "none";
+            }
+
+            return true;
+        }
+    </script>
     <!--	<link rel="icon" href="img/Fevicon.png" type="image/png">-->
     <!--  <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">-->
     <!--  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">-->
@@ -159,199 +215,122 @@
 
 <!--================Cart Area =================-->
 <!-- 이 부분에 마이페이지 정보들 나열-->
-<section class="cart_area">
-    <div class="container">
-        <div class="cart_inner">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">상품</th>
-                        <th scope="col">가격</th>
-                        <th scope="col">수량</th>
-                        <th scope="col">총액</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <div class="media">
-                                <div class="d-flex">
-                                    <img src="img/cart/cart1.png" alt="">
+<form action="mypage.in" method="POST" enctype="multipart/form-data" onsubmit="return validateInfo();">
+    <section class="cart_area">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                        <%--                        수정할 아이디--%>
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="media-body">
+                                        <label for="userid">*아이디:</label>
+                                    </div>
                                 </div>
-                                <div class="media-body">
-                                    <p>상품명1</p>
+                            </td>
+                            <td>
+                                <input type="text" name="userid" id="userid" required  placeholder= "${userSession.userid}"><br>
+                                <span id="ideditError" style="display:none; color:red;">아이디는 2~20자 이내의 영문, 숫자를 사용하세요</span><br>
+                            </td>
+                        </tr>
+                        <%--                           변경할 비밀번호--%>
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="media-body">
+                                        <label for="userpw">*비밀번호:</label>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td>
-                            <h5>10,000</h5>
-                        </td>
-                        <td>
-                            <div class="product_count">
-                                <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
-                                       class="input-text qty">
-                                <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                        class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i>
-                                </button>
-                                <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                        class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i>
-                                </button>
-                            </div>
-                        </td>
-                        <td>
-                            <h5>10,000</h5>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="media">
-                                <div class="d-flex">
-                                    <img src="img/cart/cart2.png" alt="">
+                            </td>
+                            <td>
+                                <input type="text" name="userpw" id="userpw" required  placeholder= "${userSession.userpw}"><br>
+                                <span id="pweditError" style="display:none; color:red;">영문, 숫자, 특수문자 조합의 8~25자리 비밀번호를 사용하세요</span><br>
+                            </td>
+                        </tr>
+                        <%--                            변경할 비밀번호 확인--%>
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="media-body">
+                                        <label for="userpw">*비밀번호 확인:</label>
+                                    </div>
                                 </div>
-                                <div class="media-body">
-                                    <p>상품명2</p>
+                            </td>
+                            <td>
+                                <input type="password" name="userpw" id="userpw2" required  placeholder= ""><br>
+                                <span id="pweditError2" style="display:none; color:red;">비밀번호가 일치하지 않습니다</span><br>
+                            </td>
+                        </tr>
+                        <%--                          변경할 이메일 확인   --%>
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="media-body">
+                                        <label for="useremail">*이메일:</label>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td>
-                            <h5>10,000</h5>
-                        </td>
-                        <td>
-                            <div class="product_count">
-                                <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
-                                       class="input-text qty">
-                                <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                        class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i>
-                                </button>
-                                <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                        class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i>
-                                </button>
-                            </div>
-                        </td>
-                        <td>
-                            <h5>10,000</h5>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="media">
-                                <div class="d-flex">
-                                    <img src="img/cart/cart3.png" alt="">
+                            </td>
+                            <td>
+                                <input type="text" name="useremail" id="useremail" required  placeholder= "${userSession.useremail}" ><br>
+                                <span id="emerror" style="display:none; color:red;">올바른 이메일을 입력하세요</span><br>
+                            </td>
+                        </tr>
+                        <%--                             변경할 주소 확인  --%>
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="media-body">
+                                        <label for="useraddr">*주소:</label>
+                                    </div>
                                 </div>
-                                <div class="media-body">
-                                    <p>상품명3</p>
+                            </td>
+                            <td>
+                                <input type="text" name="useraddr" id="useraddr" required  placeholder= "${userSession.useraddr}" ><br>
+                                <span id="addrerror" style="display:none; color:red;">주소를 입력하세요</span><br>
+                            </td>
+                        </tr>
+                        <%--                             변경할 주소 확인  --%>
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="media-body">
+                                        <label for="userphone">*전화번호:</label>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td>
-                            <h5>10,000</h5>
-                        </td>
-                        <td>
-                            <div class="product_count">
-                                <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
-                                       class="input-text qty">
-                                <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                        class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i>
-                                </button>
-                                <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                        class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i>
-                                </button>
-                            </div>
-                        </td>
-                        <td>
-                            <h5>10,000</h5>
-                        </td>
-                    </tr>
-                    <tr class="bottom_button">
-                        <td>
-                            <a class="button" href="#">장바구니 갱신</a>
-                        </td>
-                        <td>
+                            </td>
+                            <td>
+                                <input type="text" name="userphone" id="userphone" required  placeholder= "${userSession.userphone}" ><br>
+                                <span id="phoneerrir" style="display:none; color:red;">올바른 전화번호를 입력해주세요</span><br>
+                            </td>
+                        </tr>
+                        <%--                수정하기--%>
+                        <tr class="out_button_area">
+                            <td class="d-none-l">
 
-                        </td>
-                        <td>
+                            </td>
+                            <td class="">
 
-                        </td>
-                        <td>
-                            <div class="cupon_text d-flex align-items-center">
-                                <input type="text" placeholder="Coupon Code">
-                                <a class="primary-btn" href="#">적용</a>
-                                <a class="button" href="#">쿠폰이 있나요?</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
+                            </td>
+                            <td>
 
-                        </td>
-                        <td>
+                            </td>
+                            <td>
+                                <div class="checkout_btn_inner d-flex align-items-center">
+                                    <input class="button button-header" type="submit" value="변경하기">
+                                </div>
+                            </td>
+                        </tr>
 
-                        </td>
-                        <td>
-                            <h5>총액</h5>
-                        </td>
-                        <td>
-                            <h5>30,000</h5>
-                        </td>
-                    </tr>
-                    <tr class="shipping_area">
-                        <td class="d-none d-md-block">
-
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-                            <h5>배송방법</h5>
-                        </td>
-                        <td>
-                            <div class="shipping_box">
-                                <ul class="list">
-                                    <li><a href="#">좀 느림: 3,000</a></li>
-                                    <li><a href="#">무료배송</a></li>
-                                    <li><a href="#">좀 더 느림: 2,000</a></li>
-                                    <li class="active"><a href="#">기본배송비: 2,000</a></li>
-                                </ul>
-                                <h6>배송지 <i class="fa fa-caret-down" aria-hidden="true"></i></h6>
-                                <select class="shipping_select">
-                                    <option value="1">한국</option>
-                                    <option value="2">일본</option>
-                                    <option value="4">중국</option>
-                                </select>
-                                <select class="shipping_select">
-                                    <option value="1">서울특별시</option>
-                                    <option value="2">대전광역시</option>
-                                    <option value="4">대구광역시</option>
-                                </select>
-                                <input type="text" placeholder="우편번호">
-                                <a class="gray_btn" href="#">상세주소</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="out_button_area">
-                        <td class="d-none-l">
-
-                        </td>
-                        <td class="">
-
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-                            <div class="checkout_btn_inner d-flex align-items-center">
-                                <a class="gray_btn" href="#">이어서 쇼핑하기</a>
-                                <a class="primary-btn ml-2" href="#">결제하기</a>
-                            </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</form>
 <!--================End Cart Area =================-->
 
 
