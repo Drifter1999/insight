@@ -26,7 +26,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
         <a class="navbar-brand logo_h" href="index.jsp"
-        ><img src="img/logo.png" alt=""
+        ><img src="img/insightlogo.JPG" alt=""
         /></a>
         <button
                 class="navbar-toggler"
@@ -123,20 +123,20 @@
             </li>-->
           </ul>
 
-          <ul class="nav-shop">
-            <li class="nav-item">
-              <button><i class="ti-search"></i></button>
-            </li>
-            <!-- <li class="nav-item">
-              <button>
-                <i class="ti-shopping-cart"></i
-                ><span class="nav-shop__circle">3</span>
-              </button>
-            </li> -->
-            <!-- <li class="nav-item">
-              <a class="button button-header" href="#">Buy Now</a>
-            </li> -->
-          </ul>
+          <%--          <ul class="nav-shop">--%>
+          <%--            <li class="nav-item">--%>
+          <%--              <button><i class="ti-search"></i></button>--%>
+          <%--            </li>--%>
+          <%--            <!-- <li class="nav-item">--%>
+          <%--              <button>--%>
+          <%--                <i class="ti-shopping-cart"></i--%>
+          <%--                ><span class="nav-shop__circle">3</span>--%>
+          <%--              </button>--%>
+          <%--            </li> -->--%>
+          <%--            <!-- <li class="nav-item">--%>
+          <%--              <a class="button button-header" href="#">Buy Now</a>--%>
+          <%--            </li> -->--%>
+          <%--          </ul>--%>
         </div>
       </div>
     </nav>
@@ -226,7 +226,6 @@
     </div>
   </div>
 </section>
-
 <!--================End Login Box Area =================-->
 
 <!--================ Start footer Area  =================-->
@@ -371,6 +370,7 @@
     }
   }
 </script>
+
 
 </body>
 </html>
