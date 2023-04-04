@@ -11,7 +11,7 @@
         }
         .sidebar-categories {
             position: sticky;
-            top: 20px; /* 원하는 위치 값으로 수정 가능 */
+            top: 100px; /* 원하는 위치 값으로 수정 가능 */
             z-index: 1; /* 다른 요소 위에 위치시키기 위해 z-index 값을 지정해줍니다. */
         }
     </style>
