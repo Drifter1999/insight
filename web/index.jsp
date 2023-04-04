@@ -46,7 +46,7 @@
                 id="navbarSupportedContent"
         >
           <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-            <li class="nav-item">
+            <%--<li class="nav-item">
               <a class="nav-link" href="mainhome.jsp">홈</a>
             </li>
             <li class="nav-item submenu dropdown">
@@ -63,17 +63,17 @@
                 <li class="nav-item">
                   <a class="nav-link" href="category.jsp">카테고리</a>
                 </li>
-                <!-- <li class="nav-item">
+                <li class="nav-item">
                   <a class="nav-link" href="productdetail.jsp"
                     >Blog Details</a
                   >
-                </li> -->
+                </li>--%>
                 <!-- <li class="nav-item"><a class="nav-link" href="checkout.jsp">Product Checkout</a></li>
               <li class="nav-item"><a class="nav-link" href="confirmation.jsp">Confirmation</a></li>
               <li class="nav-item"><a class="nav-link" href="mypage.jsp">Shopping Cart</a></li> -->
-              </ul>
+            <%--  </ul>
             </li>
-            <!-- <li class="nav-item submenu dropdown">
+            <li class="nav-item submenu dropdown">
               <a
                 href="#"
                 class="nav-link dropdown-toggle"
@@ -93,8 +93,8 @@
                   >
                 </li>
               </ul>
-            </li> -->
-            <li class="nav-item active submenu dropdown">
+            </li>--%>
+<%--            <li class="nav-item active submenu dropdown">
               <a
                       href="#"
                       class="nav-link dropdown-toggle"
@@ -117,10 +117,11 @@
                   >
                 </li> -->
               </ul>
-            </li>
+            </li>--%>
             <!-- <li class="nav-item">
               <a class="nav-link" href="contact.jsp">Contact</a>
             </li>-->
+            <li><h4>저희는 회원제 Flea Market 입니다.</h4></li>
           </ul>
 
           <%--          <ul class="nav-shop">--%>

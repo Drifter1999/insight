@@ -86,16 +86,13 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item active submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username}</a>
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'"마이페이지</a>
+                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="register.jsp">비밀번호 변경</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="register.jsp">구매신청</a>
+                                            <a class="nav-link" href="#">구매신청</a>
                                         </li>
                                     </ul>
                                 </li>
