@@ -104,7 +104,11 @@
                                             <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
                                         </li>
                                         <li class="nav-item">
+                                            <a class="nav-link" href="#">나의 상점</a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a class="nav-link" href="#">구매신청</a>
+                                        </li>
                                         </li>
                                     </ul>
                                 </li>
