@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>INSIGHT - 카테고리 </title>
+    <style>
+        .sidebar-filter {
+            display: none;
+        }
+        .sidebar-categories {
+            position: sticky;
+            top: 20px; /* 원하는 위치 값으로 수정 가능 */
+            z-index: 1; /* 다른 요소 위에 위치시키기 위해 z-index 값을 지정해줍니다. */
+        }
+    </style>
     <link rel="icon" href="img/Fevicon.png" type="image/png" />
     <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css" />
