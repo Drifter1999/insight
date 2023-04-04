@@ -292,7 +292,7 @@
                                 <span id="addrerror" style="display:none; color:red;">주소를 입력하세요</span><br>
                             </td>
                         </tr>
-                        <%--                             변경할 주소 확인  --%>
+                        <%--                             변경할 전화번호 확인  --%>
                         <tr>
                             <td>
                                 <div class="media">
@@ -303,7 +303,7 @@
                             </td>
                             <td>
                                 <input type="text" name="userphone" id="userphone" required  placeholder= "${userSession.userphone}" ><br>
-                                <span id="phoneerrir" style="display:none; color:red;">올바른 전화번호를 입력해주세요</span><br>
+                                <span id="phoneerror" style="display:none; color:red;">올바른 전화번호를 입력해주세요</span><br>
                             </td>
                         </tr>
                         <%--                수정하기--%>
