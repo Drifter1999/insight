@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -198,13 +199,8 @@
                                     onblur="this.placeholder = '아이디'"
                                     class="form-control_id"
                             />
-                            <button
-                                    type="button"
-                                    onclick="idcheck()"
-                                    class="form-control_button"
-                            >
-                                중복확인
-                            </button>
+                            <button type="button" onclick="idCheck('#userid')" class="form-control_button">중복확인</button>
+
                         </div>
                         <div class="col-md-12 form-group">
                             <!-- 비밀번호 입력 -->

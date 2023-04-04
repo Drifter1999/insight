@@ -21,14 +21,14 @@
     </select>
 
     <!--해당 회원의 모든 정보 보기-->
-    <select id="UserSelectOne" parameterType="string" resultType="UCDTO">
+    <select id="UserSelectOne" parameterType="string" resultType="UDTO">
         select  *
         from    tbluser
         where   userid = #{userid}
     </select>
 
     <!--모든 회원 보기-->
-    <select id="UserSelectAll" resultType="UCDTO">
+    <select id="UserSelectAll" resultType="UDTO">
         select  *
         from    tbluser
     </select>

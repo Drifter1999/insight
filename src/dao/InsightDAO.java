@@ -32,5 +32,13 @@ public class InsightDAO {
         return sqlSession.selectOne("Insight.LoginCheck", data);
     }
 
+    public boolean UserCheck(String userid) {
+        boolean result = false;
+        if ((Integer)sqlSession.selectOne("Insight.UserCheck", userid) != 0){
+            
+            result = true;
+        }
+        return result;
 
+    }
 }

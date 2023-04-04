@@ -96,9 +96,19 @@ function joincheck() {
     document.joinform.submit();
 }
 
-//아이디 중복체크 
-function idcheck() {
-    // DB써야함
-
-
+//아이디 중복체크
+function idCheck(selector) {
+    if($(selector).val() != '') {
+        let xhr = new XMLHttpRequest();
+        let userid = $(selector).val()
+        xhr.open("GET", "idCheckService.jsp?userid="+userid, true);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                alert(xhr.responseText);
+            }
+        }
+    }else {
+        alert("아이디을 입력해주세여.")
+    }
 }
