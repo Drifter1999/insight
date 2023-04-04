@@ -10,7 +10,7 @@ public class MainHomeAction implements Action{
 
         String userid = request.getParameter("userid");
         forward.setPath("mainhome.jsp");
-        forward.setRedirect(false);
+        forward.setRedirect(true);
 
         return forward;
     }

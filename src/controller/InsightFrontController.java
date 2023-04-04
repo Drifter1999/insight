@@ -30,16 +30,19 @@ public class InsightFrontController extends HttpServlet {
 
         switch(requestURI) {
             case "/login.in":
+                System.out.println("login controller");
                 forward = new LoginAction().execute(request, response);
 
                 break;
 
             case "/register.in":
+                System.out.println("register controller");
                 forward = new RegisterAction().execute(request, response);
 
                 break;
 
             case "/mainhome.in":
+                System.out.println("mainhome controller");
                 forward = new ActionForward(true, "mainhome.jsp");
                 break;
         }

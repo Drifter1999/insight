@@ -28,9 +28,9 @@ public class RegisterAction implements Action{
         user.setUserphone(userphone);
 
         if(dao.register(user)){
-            forward.setPath("/mainhome.in");
+            forward.setPath("mainhome.in");
         }else{
-            forward.setPath("/mainhome.in");
+            forward.setPath("mainhome.in");
         }
         forward.setRedirect(true);
         return forward;
