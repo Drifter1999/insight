@@ -44,6 +44,9 @@
     </style>
 </head>
 <body>
+<%--세션 저장 --%>
+<c:set var="userSession" value="${userSession}" scope="session"/>
+
 <header class="header_area">
     <div class="main_menu">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -96,7 +99,7 @@
                 <nav aria-label="breadcrumb" class="banner-breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">홈</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">안녕하세요 ~~~님</li>
+                        <li class="breadcrumb-item active" aria-current="page">안녕하세요 ${userSession.username}님</li>
                     </ol>
                 </nav>
             </div>
@@ -118,6 +121,7 @@
                         <tr>
                             <th scope="col">기본정보</th>
                             <th scope="col"> *필수항목</th>
+                            <input type="hidden" id="userod" name="userid" value=" ${userSession.userid}"/>
                         </tr>
                         </thead>
                         <tbody>

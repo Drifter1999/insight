@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html lang="en">
 <head>
@@ -31,6 +32,9 @@
     <link rel="stylesheet" href="css/style.css" />
 </head></head>
 <body>
+<%--세션 저장 --%>
+<c:set var="userSession" value="${userSession}" scope="session"/>
+
 <!--================ Start Header Menu Area =================-->
 <header class="header_area">
     <div class="main_menu">
@@ -44,34 +48,68 @@
                 </button>
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="mainhome.jsp">홈</a>
-                        </li>
-                        <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
-                            <ul class="dropdown-menu">
+                        <c:choose>
+                            <c:when test="${userSession eq null}">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="category.jsp">카테고리</a>
+                                    <a class="nav-link" href="index.jsp">홈</a>
                                 </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item active submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
-                            <ul class="dropdown-menu">
+                                <li class="nav-item submenu dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="category.jsp">카테고리</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item active submenu dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="index.jsp">로그인</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register.jsp">회원가입</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </c:when>
+                            <c:otherwise>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.jsp">로그인</a>
+                                    <a class="nav-link" href="mainhome.jsp">홈</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="register.jsp">회원가입</a>
+                                <li class="nav-item submenu dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="javascrip:void(0)" onclick="location.href='category.jsp'">카테고리</a>>
+                                        </li>
+                                    </ul>
                                 </li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="button button-header" href="productUpload.jsp">판매하기</a>
-                        </li>
+                                <li class="nav-item active submenu dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username}</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'"마이페이지</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register.jsp">비밀번호 변경</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register.jsp">구매신청</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>
+                                            <button type="button" class="btn-custom">
+                                                <i class="fa fa-plus"></i> 상품 등록하기
+                                            </button>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </c:otherwise>
+                        </c:choose>
                     </ul>
                 </div>
             </div>

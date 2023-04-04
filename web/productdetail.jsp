@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<%--세션 저장 --%>
+<c:set var="userSession" value="${userSession}" scope="session"/>
+
 <!--================ Start Header Menu Area =================-->
 <header class="header_area">
     <div class="main_menu">
