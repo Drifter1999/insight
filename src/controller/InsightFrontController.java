@@ -4,6 +4,7 @@ import action.Action;
 import action.ActionForward;
 import action.LoginAction;
 import action.RegisterAction;
+import action.productUploadAction;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,7 +37,6 @@ public class InsightFrontController extends HttpServlet {
 
                 break;
             case "/register.in":
-                System.out.println("register controller");
                 forward = new RegisterAction().execute(request, response);
 
                 break;
@@ -44,7 +44,12 @@ public class InsightFrontController extends HttpServlet {
             case "/mainhome.in":
                 forward = new ActionForward(true, "/mainhome.jsp");
                 break;
+
+            case "/productUpload.in":
+                forward = new productUploadAction().execute(request, response);
+                break;
         }
+
         if( forward != null) {
             if(forward.isRedirect()) {
                 //true : redirect

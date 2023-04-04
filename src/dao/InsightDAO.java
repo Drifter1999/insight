@@ -1,5 +1,6 @@
 package dao;
 
+import dto.ProductDTO;
 import dto.UserDTO;
 import mybatis.SqlMapConfig;
 import org.apache.ibatis.session.SqlSession;
@@ -40,5 +41,11 @@ public class InsightDAO {
         }
         return result;
 
+    }
+
+    public boolean productUpload(ProductDTO product) {
+        boolean result = false;
+
+        return result;
     }
 }
