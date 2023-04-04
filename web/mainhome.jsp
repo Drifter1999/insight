@@ -108,7 +108,14 @@
                                         </li>
                                     </ul>
                                 </li>
+                                </ul> <%-- 수정된 버튼 --%>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="nav-item">
+                                        <a class="button button-header" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>판매하기</a>
+                                    </li>
                                 </ul>
+
+                                <%-- 기존버튼
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="nav-item">
                                         <a class="nav-link" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>
@@ -118,9 +125,9 @@
                                         </a>
                                     </li>
                                 </ul>
+                                --%>
                             </c:otherwise>
                         </c:choose>
-
                 </div>
             </div>
         </nav>

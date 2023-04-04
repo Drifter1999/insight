@@ -49,53 +49,128 @@
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
                         <c:choose>
-                            <c:when test="${userSession eq null}">
+                        <c:when test="${userSession eq null}">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.jsp">홈</a>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="category.jsp">카테고리</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item active submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.jsp">로그인</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="register.jsp">회원가입</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </c:when>
+                        <c:otherwise>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mainhome.jsp">홈</a>
+                        </li>
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                            <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.jsp">홈</a>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.jsp'">카테고리</a>
                                 </li>
-                                <li class="nav-item submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="category.jsp">카테고리</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item active submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="index.jsp">로그인</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="register.jsp">회원가입</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </c:when>
-                            <c:otherwise>
+                            </ul>
+                        </li>
+                        <li class="nav-item active submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
+                            <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="mainhome.jsp">홈</a>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
                                 </li>
-                                <li class="nav-item submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="javascrip:void(0)" onclick="location.href='category.jsp'">카테고리</a>>
-                                        </li>
-                                    </ul>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">구매신청</a>
                                 </li>
-                                <li class="nav-item active submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">구매신청</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                            </ul>
+                        </li>
+                    </ul> <%-- 수정된 버튼 --%>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="button button-header" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>판매하기</a>
+                        </li>
+                    </ul>
+
+<%--  기존헤더 / CSS 안맞아서 일단 수정함 --%>
+<%--<header class="header_area">--%>
+<%--    <div class="main_menu">--%>
+<%--        <nav class="navbar navbar-expand-lg navbar-light">--%>
+<%--            <div class="container">--%>
+<%--                <a class="navbar-brand logo_h" href="index.jsp"><img src="img/insightlogo.JPG" alt="" /></a>--%>
+<%--                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">--%>
+<%--                    <span class="icon-bar"></span>--%>
+<%--                    <span class="icon-bar"></span>--%>
+<%--                    <span class="icon-bar"></span>--%>
+<%--                </button>--%>
+<%--                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">--%>
+<%--                    <ul class="nav navbar-nav menu_nav ml-auto mr-auto">--%>
+<%--                        <c:choose>--%>
+<%--                            <c:when test="${userSession eq null}">--%>
+<%--                                <li class="nav-item">--%>
+<%--                                    <a class="nav-link" href="index.jsp">홈</a>--%>
+<%--                                </li>--%>
+<%--                                <li class="nav-item submenu dropdown">--%>
+<%--                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>--%>
+<%--                                    <ul class="dropdown-menu">--%>
+<%--                                        <li class="nav-item">--%>
+<%--                                            <a class="nav-link" href="category.jsp">카테고리</a>--%>
+<%--                                        </li>--%>
+<%--                                    </ul>--%>
+<%--                                </li>--%>
+<%--                                <li class="nav-item active submenu dropdown">--%>
+<%--                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>--%>
+<%--                                    <ul class="dropdown-menu">--%>
+<%--                                        <li class="nav-item">--%>
+<%--                                            <a class="nav-link" href="index.jsp">로그인</a>--%>
+<%--                                        </li>--%>
+<%--                                        <li class="nav-item">--%>
+<%--                                            <a class="nav-link" href="register.jsp">회원가입</a>--%>
+<%--                                        </li>--%>
+<%--                                    </ul>--%>
+<%--                                </li>--%>
+<%--                            </c:when>--%>
+<%--                            <c:otherwise>--%>
+<%--                                <li class="nav-item">--%>
+<%--                                    <a class="nav-link" href="mainhome.jsp">홈</a>--%>
+<%--                                </li>--%>
+<%--                                <li class="nav-item submenu dropdown">--%>
+<%--                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>--%>
+<%--                                    <ul class="dropdown-menu">--%>
+<%--                                        <li class="nav-item">--%>
+<%--                                            <a class="nav-link" href="javascrip:void(0)" onclick="location.href='category.jsp'">카테고리</a>>--%>
+<%--                                        </li>--%>
+<%--                                    </ul>--%>
+<%--                                </li>--%>
+<%--                                <li class="nav-item active submenu dropdown">--%>
+<%--                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>--%>
+<%--                                    <ul class="dropdown-menu">--%>
+<%--                                        <li class="nav-item">--%>
+<%--                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>--%>
+<%--                                        </li>--%>
+<%--                                        <li class="nav-item">--%>
+<%--                                            <a class="nav-link" href="#">구매신청</a>--%>
+<%--                                        </li>--%>
+<%--                                    </ul>--%>
+<%--                                </li>--%>
+<%--                                <ul class="nav navbar-nav navbar-right">--%>
+<%--                                    <li class="nav-item">--%>
+<%--                                        <a class="button button-header" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>판매하기</a>--%>
+<%--                                    </li>--%>
+<%--                                </ul>--%>
+
+                                <%-- 기존 버튼
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="nav-item">
                                         <a class="nav-link" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>
@@ -105,6 +180,7 @@
                                         </a>
                                     </li>
                                 </ul>
+                                --%>
                             </c:otherwise>
                         </c:choose>
                     </ul>
