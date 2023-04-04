@@ -79,16 +79,6 @@
                             </ul>
                         </li>
                     </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="productUpload.jsp">
-                                <button type="button" class="btn-custom">
-                                    <i class="fa fa-plus"></i> 상품 등록하기
-                                </button>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </nav>
@@ -273,7 +263,7 @@
                             </td>
                             <td>
                                 <div class="checkout_btn_inner d-flex align-items-center">
-                                        <input class="primary-btn ml-2" type="submit" value="상품 등록">
+                                        <input class="button button-header" type="submit" value="상품 등록">
                                 </div>
                             </td>
                         </tr>

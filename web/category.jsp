@@ -70,11 +70,7 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
-                            <a class="nav-link" href="productUpload.jsp">
-                                <button type="button" class="btn-custom">
-                                    <i class="fa fa-plus"></i> 상품 등록하기
-                                </button>
-                            </a>
+                            <a class="button button-header" href="productUpload.jsp">판매하기</a>
                         </li>
                     </ul>
                 </div>
