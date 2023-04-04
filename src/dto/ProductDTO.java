@@ -1,6 +1,6 @@
 package dto;
 
-import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 public class ProductDTO {
     private int productnum;
@@ -14,7 +14,7 @@ public class ProductDTO {
     private String productimage1;
     private String productimage2;
     private String productimage3;
-    private Date   productdate;
+    private SimpleDateFormat productdate;
     private char   productstate;
 
     public int getProductnum() {
@@ -105,11 +105,11 @@ public class ProductDTO {
         this.productimage3 = productimage3;
     }
 
-    public Date getProductdate() {
+    public SimpleDateFormat getProductdate() {
         return productdate;
     }
 
-    public void setProductdate(Date productdate) {
+    public void setProductdate(SimpleDateFormat productdate) {
         this.productdate = productdate;
     }
 

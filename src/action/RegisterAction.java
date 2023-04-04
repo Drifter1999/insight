@@ -5,6 +5,8 @@ import dto.UserDTO;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class RegisterAction implements Action{
 
@@ -28,9 +30,24 @@ public class RegisterAction implements Action{
         user.setUserphone(userphone);
 
         if(dao.register(user)){
-            forward.setPath("mainhome.in");
+            PrintWriter out;
+            try {
+                out = response.getWriter();
+                out.println("<script>alert('회원가입에 성공했습니다. 로그인 페이지로 이동합니다.');</script>");
+                forward.setPath("index.in");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
         }else{
-            forward.setPath("mainhome.in");
+            try {
+                PrintWriter out;
+                out = response.getWriter();
+                out.println("<script>alert('회원가입에 실패했습니다. 다시 시도해주세요.');</script>");
+                forward.setPath("index.in");
+            } catch (IOException e){
+                throw new RuntimeException(e);
+            }
         }
         forward.setRedirect(true);
         return forward;

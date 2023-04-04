@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
 
 public class LoginAction implements Action{
     @Override
@@ -27,6 +26,7 @@ public class LoginAction implements Action{
             session.setAttribute("userSession", dto);
             /*userSession 의 이름으로 로그인 객체 저장 */
             session.setMaxInactiveInterval(60*10);
+            forward.setRedirect(true);
             /*세션 10분간 유지*/
             forward.setPath("/mainhome.in");
 
@@ -40,7 +40,7 @@ public class LoginAction implements Action{
                 e.printStackTrace();
             }
         }
-        forward.setRedirect(true);
+
         return forward;
     }
 

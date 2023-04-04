@@ -1,11 +1,9 @@
 package controller;
 
-import action.Action;
 import action.ActionForward;
 import action.LoginAction;
 import action.RegisterAction;
 import action.productUploadAction;
-import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,6 +30,7 @@ public class InsightFrontController extends HttpServlet {
         String requestURI = request.getRequestURI();
         ActionForward forward = null;
         HttpSession session = request.getSession();
+
         switch(requestURI) {
             case "/login.in":
                 forward = new LoginAction().execute(request, response);
