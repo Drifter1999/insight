@@ -17,20 +17,392 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<!--================ Start Header Menu Area =================-->
+<header class="header_area">
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand logo_h" href="index.jsp"><img src="img/insightlogo.JPG" alt="" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+                        <c:choose>
+                        <c:when test="${userSession eq null}">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.jsp">홈</a>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="category.jsp">카테고리</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item active submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.jsp">로그인</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="register.jsp">회원가입</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </c:when>
+                        <c:otherwise>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mainhome.jsp">홈</a>
+                        </li>
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.jsp'">카테고리</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item active submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='MyShop.jsp'">나의 상점</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">구매신청</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul> <%-- 수정된 버튼 --%>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="button button-header" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>판매하기</a>
+                        </li>
+                    </ul>
+                    </c:otherwise>
+                    </c:choose>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<!--================ End Header Menu Area =================-->
+
+<!-- ================ start banner area ================= -->
+<section class="blog-banner-area" id="category">
+    <div class="container h-100">
+        <div class="blog-banner">
+            <div class="text-center">
+                <h1>${userSession.username}의 상점</h1>
+                <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">부자가 되고싶나요? 지금 상품을 올려보세요!</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ================ end banner area ================= -->
 
 
- 마이샵 으쌰으쌰
+
+<!--================Cart Area =================-->
+<section class="cart_area">
+    <div class="container">
+        <div class="cart_inner">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">목록</th>
+                        <th scope="col">가격</th>
+                        <th scope="col">수량</th>
+                        <th scope="col">총액</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="media">
+                                <div class="d-flex">
+                                    <img src="img/cart/cart1.png" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <p>Minimalistic shop for multipurpose use</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <h5> 가격 적힐곳 </h5>
+                        </td>
+                        <td>
+                            <h5> 수량 적힐곳</h5>
+                        </td>
+                        <td>
+                            <h5> 총액 적힐곳</h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="media">
+                                <div class="d-flex">
+                                    <img src="img/cart/cart2.png" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <p>Minimalistic shop for multipurpose use</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <h5> 가격 적힐곳 </h5>
+                        </td>
+                        <td>
+                            <h5> 수량 적힐곳</h5>
+                        </td>
+                        <td>
+                            <h5> 총액 적힐곳</h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="media">
+                                <div class="d-flex">
+                                    <img src="img/cart/cart3.png" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <p>Minimalistic shop for multipurpose use</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <h5> 가격 적힐곳 </h5>
+                        </td>
+                        <td>
+                            <h5> 수량 적힐곳</h5>
+                        </td>
+                        <td>
+                            <h5> 총액 적힐곳</h5>
+                        </td>
+                    </tr>
+                    <tr class="bottom_button">
+                        <td>
+                            <a class="button" href="#">Update Cart</a>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            <div class="cupon_text d-flex align-items-center">
+                                <input type="text" placeholder="Coupon Code">
+                                <a class="primary-btn" href="#">Apply</a>
+                                <a class="button" href="#">Have a Coupon?</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            <h5>Subtotal</h5>
+                        </td>
+                        <td>
+                            <h5>$2160.00</h5>
+                        </td>
+                    </tr>
+                    <tr class="shipping_area">
+                        <td class="d-none d-md-block">
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            <h5>Shipping</h5>
+                        </td>
+                        <td>
+                            <div class="shipping_box">
+                                <ul class="list">
+                                    <li><a href="#">Flat Rate: $5.00</a></li>
+                                    <li><a href="#">Free Shipping</a></li>
+                                    <li><a href="#">Flat Rate: $10.00</a></li>
+                                    <li class="active"><a href="#">Local Delivery: $2.00</a></li>
+                                </ul>
+                                <h6>Calculate Shipping <i class="fa fa-caret-down" aria-hidden="true"></i></h6>
+                                <select class="shipping_select">
+                                    <option value="1">Bangladesh</option>
+                                    <option value="2">India</option>
+                                    <option value="4">Pakistan</option>
+                                </select>
+                                <select class="shipping_select">
+                                    <option value="1">Select a State</option>
+                                    <option value="2">Select a State</option>
+                                    <option value="4">Select a State</option>
+                                </select>
+                                <input type="text" placeholder="Postcode/Zipcode">
+                                <a class="gray_btn" href="#">Update Details</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="out_button_area">
+                        <td class="d-none-l">
+
+                        </td>
+                        <td class="">
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            <div class="checkout_btn_inner d-flex align-items-center">
+                                <a class="gray_btn" href="#">Continue Shopping</a>
+                                <a class="primary-btn ml-2" href="#">Proceed to checkout</a>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Cart Area =================-->
 
 
 
+<!--================ Start footer Area  =================-->
+<footer class="footer">
+    <div class="footer-area">
+        <div class="container">
+            <div class="row section_gap">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-footer-widget tp_widgets">
+                        <h4 class="footer_title large_title">우리들이 할일</h4>
+                        <p>
+                            4월 12일이 발표이므로 그 떄 까지 중고거래 사이트를
+                            완성시켜야함. 해당 사이트는 유저간 거래 중개 사이트이므로,
+                            우리는 중고거래의 개입하지 않는다.
+                        </p>
+                        <p>
+                            그러므로 거래 시 더 치트 같은 사이트를 이용하여서 사기를
+                            미연에 방지하자.
+                        </p>
+                    </div>
+                </div>
+                <div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
+                    <div class="single-footer-widget tp_widgets">
+                        <h4 class="footer_title">조원 이름</h4>
+                        <ul class="list">
+                            <li><a href="https://github.com/rilac">임대연(조장님)</a></li>
+                            <li><a href="https://github.com/m1nwook">김민욱</a></li>
+                            <li><a href="https://github.com/GEONU-MOON">문건우</a></li>
+                            <li><a href="https://github.com/shinjunsu">신준수</a></li>
+                            <li><a href="https://github.com/Drifter1999">이상기</a></li>
+                            <li><a href="https://github.com/taehalee615">이태하</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="single-footer-widget instafeed">
+                        <h4 class="footer_title">Gallery</h4>
+                        <ul class="list instafeed d-flex flex-wrap">
+                            <li><img src="img/gallery/r1.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r2.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r3.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r5.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r7.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r8.jpg" alt="" /></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 이메일 주소가 길어서 이름이랑 이메일 주소가 한 줄에 표현이 안되는 것 같아서 따로 스타일 선언해서 제가 수정했습니다! 3/31 문건우 -->
+                <div
+                        class="offset-lg-1 col-lg-3 col-md-6 col-sm-6"
+                        style="
+                width: 100px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                padding-bottom: 0.14px;
+              "
+                >
+                    <div class="single-footer-widget tp_widgets">
+                        <h4 class="footer_title">Contact Us</h4>
+                        <div class="ml-40">
+                            <!-- <p class="sm-head">
+                              <span class="fa fa-location-arrow"></span>
+                              본사
+                            </p>
+                            <p>율도국 전우치로49 101</p> -->
 
+                            <p class="sm-head">
+                                <span class="fa fa-phone"></span>
+                                GitHub
+                            </p>
+                            <p>
+                                임대연 : rilac<br />
+                                김민욱 : m1nwook<br />
+                                문건우 : GEONU-MOON<br />
+                                신준수 : shinjunsu<br />
+                                이상기 : Drifter1999<br />
+                                이태하 : taehalee615
+                            </p>
 
+                            <p class="sm-head">
+                                <span class="fa fa-envelope"></span>
+                                이메일
+                            </p>
+                            <p>
+                                임대연 : eodos6480@gmail.com<br />
+                                김민욱 : supermin0317@naver.com<br />
+                                문건우 : moondy2209@naver.com<br />
+                                신준수 : sjs990306@gmail.com<br />
+                                이상기 : yah9600@gmail.com<br />
+                                이태하 : leeari0615@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
-
-
-
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row d-flex">
+                <p class="col-lg-12 footer-text text-center">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    All rights reserved | This template is made with
+                    <i class="fa fa-heart" aria-hidden="true"></i> by
+                    <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--================ End footer Area  =================-->
 
  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
