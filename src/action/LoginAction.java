@@ -21,11 +21,12 @@ public class LoginAction implements Action{
 
 
         if(dao.login(userid, userpw) != null){
-            System.out.println("login success");
-            forward.setPath("/mainhome.in");
             session.setAttribute("userid",userid);
+            forward.setPath("/mainhome.in");
+
         }else{
             try {
+                forward.setRedirect(false);
                 PrintWriter out;
                 out = response.getWriter();
                 out.println("<script>alert('로그인에 실패했습니다. 다시 시도해주세요.');history.back();</script>");

@@ -5,6 +5,7 @@ import action.ActionForward;
 import action.LoginAction;
 import action.RegisterAction;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,17 +25,16 @@ public class InsightFrontController extends HttpServlet {
         doProcess(req, resp);
     }
 
-    protected void doProcess(HttpServletRequest request, HttpServletResponse response){
+    protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String requestURI = request.getRequestURI();
+        System.out.println(requestURI);
         ActionForward forward = null;
 
         switch(requestURI) {
             case "/login.in":
-                System.out.println("login controller");
                 forward = new LoginAction().execute(request, response);
 
                 break;
-
             case "/register.in":
                 System.out.println("register controller");
                 forward = new RegisterAction().execute(request, response);
@@ -42,9 +42,20 @@ public class InsightFrontController extends HttpServlet {
                 break;
 
             case "/mainhome.in":
-                System.out.println("mainhome controller");
-                forward = new ActionForward(true, "mainhome.jsp");
+                forward = new ActionForward(true, "/mainhome.jsp");
                 break;
+        }
+        if( forward != null) {
+            if(forward.isRedirect()) {
+                //true : redirect
+                response.sendRedirect(forward.getPath());
+
+            }else {
+                // false : forward
+                RequestDispatcher disp = request.getRequestDispatcher(forward.getPath());
+                disp.forward(request, response);
+            }
         }
     }
 }
+
