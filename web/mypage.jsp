@@ -14,6 +14,10 @@
     --%>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
+        function editPw() {
+            // 사용자가 입력한 값을 가져와서 변수에 저장합니다.
+            var userInput = document.getElementById("userpw").value;
+        }
         function sample4_execDaumPostcode() {
             new daum.Postcode({
                 oncomplete: function(data) {
@@ -285,7 +289,7 @@
 
 <!--================Cart Area =================-->
 <!-- 이 부분에 마이페이지 정보들 나열-->
-<form action="UserUpdate.in" method="POST" enctype="multipart/form-data" onsubmit="return validateInfo();">
+<form action="UserUpdate.in" method="POST" onsubmit="return validateInfo();">
     <section class="cart_area">
         <div class="container">
             <div class="cart_inner">
@@ -316,7 +320,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="password" name="userpw" id="userpw" required  placeholder= "${userSession.userpw}"><br>
+                                <input type="password" name="userpw" id="userpw" required placeholder="${userSession.userpw}" oninput="editPw()">
                                 <span id="pweditError" style="display:none; color:red;">영문, 숫자, 특수문자 조합의 8~25자리 비밀번호를 사용하세요</span><br>
                             </td>
                         </tr>

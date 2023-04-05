@@ -46,9 +46,10 @@ public class InsightFrontController extends HttpServlet {
                 forward = new productUploadAction().execute(request, response);
                 break;
 
-            case "/UserUpload.in":
+            case "/UserUpdate.in":
                 /*forward = new UserUpdateAction().execute(request, response);*/
-
+                String userpw = request.getParameter("userpw");
+                System.out.println("userpw : "+userpw);
             case "/Logout.in":
                 forward = new LogoutAction().execute(request, response);
                 break;
