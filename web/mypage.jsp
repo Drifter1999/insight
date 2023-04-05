@@ -400,7 +400,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="useremail" id="useremail" required placeholder="${userSession.useremail}" oninput="editEm()"><br>
+                                <input type="text" name="useremail" id="useremail" required value="${userSession.useremail}" oninput="editEm()"><br>
                                 <span id="emerror" style="display:none; color:red;">올바른 이메일을 입력하세요</span><br>
                             </td>
                         </tr>
@@ -434,7 +434,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="userphone" id="userphone" required placeholder="${userSession.userphone}" oninput="editPhone()"><br>
+                                <input type="text" name="userphone" id="userphone" required value="${userSession.userphone}" oninput="editPhone()"><br>
                                 <span id="phoneerror" style="display:none; color:red;">올바른 전화번호를 입력해주세요</span><br>
                             </td>
                         </tr>
