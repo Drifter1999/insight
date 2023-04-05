@@ -95,7 +95,7 @@
                                     <a class="nav-link" href="javascript:void(0)" onclick="location.href='MyShop.jsp'">나의 상점</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">구매신청</a>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='Logout.in'" style="color:red">로그아웃</a>
                                 </li>
                             </ul>
                         </li>

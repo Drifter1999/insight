@@ -23,7 +23,7 @@ public class RegisterAction implements Action{
         String userphone = request.getParameter("userphone");
 
         user.setUserid(userid);
-        user.setUsername(username);
+        user.setUsername(username); 
         user.setUserpw(userpw);
         user.setUseremail(useremail);
         user.setUseraddr(useraddr);

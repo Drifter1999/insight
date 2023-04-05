@@ -1,9 +1,6 @@
 package controller;
 
-import action.ActionForward;
-import action.LoginAction;
-import action.RegisterAction;
-import action.productUploadAction;
+import action.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,7 +26,7 @@ public class InsightFrontController extends HttpServlet {
     protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String requestURI = request.getRequestURI();
         ActionForward forward = null;
-        HttpSession session = request.getSession();
+
 
         switch(requestURI) {
             case "/login.in":
@@ -47,6 +44,13 @@ public class InsightFrontController extends HttpServlet {
 
             case "/productUpload.in":
                 forward = new productUploadAction().execute(request, response);
+                break;
+
+            case "/UserUpload.in":
+                /*forward = new UserUpdateAction().execute(request, response);*/
+
+            case "/Logout.in":
+                forward = new LogoutAction().execute(request, response);
                 break;
         }
 

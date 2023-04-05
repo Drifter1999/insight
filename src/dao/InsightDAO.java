@@ -48,4 +48,15 @@ public class InsightDAO {
 
         return result;
     }
+
+    public boolean UserUpdate(UserDTO userDTO) {
+        boolean result = false;
+
+        if((Integer)sqlSession.update("Insight.UserUpdate", userDTO) != 0){
+            result = true;
+        }
+
+        return result;
+
+    }
 }

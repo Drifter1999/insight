@@ -1,28 +1,19 @@
 
-window.onload = function() {
-    var input = document.querySelector('#productImage');
-    input.addEventListener('change', updateUploadCount);
-};
-
-function updateUploadCount() {
-    var input = document.querySelector('#productImage');
-    document.querySelector('#upload-count').textContent = '업로드된 파일 개수: ' + input.files.length;
-}
-
 function previewImage(event) {
     var input = event.target;
     var previewContainer = document.getElementById("preview-container");
-    previewContainer.innerHTML = ""; // 기존의 미리보기 이미지 제거
+
+    // previewContainer.innerHTML = ""; // 기존의 미리보기 이미지 제거
 
     if (input.files && input.files.length) {
         for (var i = 0; i < input.files.length; i++) {
             var reader = new FileReader();
-            reader.onload = (function(file) {
-                return function(e) {
+            reader.onload = (function (file) {
+                return function (e) {
                     var image = new Image();
                     image.src = e.target.result;
                     image.classList.add("preview");
-                    image.addEventListener("click", function() {
+                    image.addEventListener("click", function () {
                         var imageUrl = image.getAttribute("src");
                         var newWindow = window.open("", "_blank");
                         newWindow.document.write("<img src='" + imageUrl + "' style='max-width: 640px; max-height: 640px;'>");
