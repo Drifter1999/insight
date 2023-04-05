@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Enumeration;
 
 public class productUploadAction implements Action{
@@ -52,10 +49,6 @@ public class productUploadAction implements Action{
             String productDetail = multi.getParameter("productDetail");
             String productPrice = multi.getParameter("productPrice");
             int productQuantity = Integer.parseInt(multi.getParameter("productQuantity"));
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일");
-            LocalDate date = LocalDate.now();
-            String productDate = dtf.format(date);
-
             String userid = multi.getParameter("userid");
 
             String Imagepath1 = location + "/" + fileName1;
@@ -72,7 +65,6 @@ public class productUploadAction implements Action{
             product.setProductimage1(Imagepath1);
             product.setProductimage2(Imagepath2);
             product.setProductimage3(Imagepath3);
-            product.setProductdate(productDate);
             product.setProductstate('Y');
 
             if (dao.productUpload(product)) {
