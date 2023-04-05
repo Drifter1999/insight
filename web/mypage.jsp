@@ -159,6 +159,8 @@
 
             return true;
         }
+
+
     </script>
     <!--	<link rel="icon" href="img/Fevicon.png" type="image/png">-->
     <!--  <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">-->
@@ -323,7 +325,7 @@
 
 <!--================Cart Area =================-->
 <!-- 이 부분에 마이페이지 정보들 나열-->
-<form action="UserUpdate.in" method="POST" onsubmit="return validateInfo();">
+<form action="UserUpdate.in" method="POST" onsubmit="return validateInfo();" name="myPage">
     <section class="cart_area">
         <div class="container">
             <div class="cart_inner">
@@ -461,7 +463,7 @@
                             <td></td>
                             <td>
                                 <div class="checkout_btn_inner d-flex align-items-center">
-                                    <a class="button button-header" href="javascript:void(0)" style="color: red; border-color: red" onclick="location.href='UserDelete.in'";>탈퇴하기</a>
+                                    <a class="button button-header" style="color: red; border-color: red" href="javascript:void(0)" onclick="UserDelete()">탈퇴하기</a>
                                 </div>
                             </td>
                         </tr>
@@ -601,5 +603,20 @@
 <script src="vendors/jquery.ajaxchimp.min.js"></script>
 <script src="vendors/mail-script.js"></script>
 <script src="js/main.js"></script>
+<script>
+    function UserDelete() {
+        let userid = "${userSession.userid}".trim();
+        let userpw = "${userSession.userpw}".trim();
+        let password = prompt("비밀번호 입력 바랍니다.");
+        if (password != userpw) {
+            alert("입력한 정보가 맞지 않음.");
+            location.href = "/mypage.jsp";
+        }else {
+            document.myPage.action = "/UserDelete.in?userid"+userid+"&userpw="+password;
+            document.myPage.submit();
+        }
+
+    }
+</script>
 </body>
 </html>
