@@ -49,6 +49,12 @@ public class InsightFrontController extends HttpServlet {
                 /*forward = new UserUpdateAction().execute(request, response);*/
                 String userpw = request.getParameter("userpw");
                 System.out.println("userpw : "+userpw);
+                String useremail = request.getParameter("useremail");
+                System.out.println("useremail : "+useremail);
+                String userphone = request.getParameter("userphone");
+                System.out.println("userphone : "+userphone);
+                String useraddr = request.getParameter("useraddr");
+                System.out.println("useraddr : "+useraddr);
             case "/Logout.in":
                 forward = new LogoutAction().execute(request, response);
                 break;

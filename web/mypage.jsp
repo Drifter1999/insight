@@ -14,15 +14,35 @@
     --%>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
+
+        function touseraddr(){
+
+           useraddr = document.getElementById("sample4_detailAddress").value ;
+        }
         function editPw() {
             // 사용자가 입력한 값을 가져와서 변수에 저장합니다.
             var userInput = document.getElementById("userpw").value;
+        }
+        function editAddr() {
+            // 사용자가 입력한 값을 가져와서 변수에 저장합니다.
+            var userInput = document.getElementById("useraddr").value;
+        }
+        function editPhone() {
+            // 사용자가 입력한 값을 가져와서 변수에 저장합니다.
+            var userInput = document.getElementById("userphone").value;
+        }
+        function editEm() {
+            // 사용자가 입력한 값을 가져와서 변수에 저장합니다.
+            var userInput = document.getElementById("useremail").value;
         }
         function sample4_execDaumPostcode() {
             new daum.Postcode({
                 oncomplete: function(data) {
                     var roadAddr = data.roadAddress; // 도로명 주소 변수
                     var extraRoadAddr = ''; // 참고 항목 변수
+                    var detailaddr = ' ';
+
+                    if( detailaddr == ' '){ detailadddr = document.getElementById("sample4_detailAddress").value ; }
 
                     if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
                         extraRoadAddr += data.bname;
@@ -45,9 +65,7 @@
                     } else {
                         document.getElementById("sample4_extraAddress").value = '';
                     }
-                    var detailaddr = '';
 
-                    if( detailaddr == ' '){ detailadddr = document.getElementById("sample4_detailAddress").value ; }
 
                     var guideTextBox = document.getElementById("guide");
 
@@ -320,7 +338,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="password" name="userpw" id="userpw" required placeholder="${userSession.userpw}" oninput="editPw()">
+                                <input type="password" name="userpw" id="userpw" required placeholder="${userSession.userpw}" oninput="editPw()"><br>
                                 <span id="pweditError" style="display:none; color:red;">영문, 숫자, 특수문자 조합의 8~25자리 비밀번호를 사용하세요</span><br>
                             </td>
                         </tr>
@@ -334,7 +352,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="password" name="userpw" id="userpw2" required  placeholder= ""><br>
+                                <input type="password" name="userpw" id="userpw2" required oninput="editPw()"><br>
                                 <span id="pweditError2" style="display:none; color:red;">비밀번호가 일치하지 않습니다</span><br>
                             </td>
                         </tr>
@@ -348,7 +366,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="useremail" id="useremail" required  placeholder= "${userSession.useremail}" ><br>
+                                <input type="text" name="useremail" id="useremail" required oninput="editEm()"><br>
                                 <span id="emerror" style="display:none; color:red;">올바른 이메일을 입력하세요</span><br>
                             </td>
                         </tr>
@@ -367,9 +385,9 @@
                                 <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
                                 <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
                                 <span id="guide" style="color:#999;display:none"></span>
-                                <input type="text" id="sample4_detailAddress" placeholder="상세주소">
+                                <input type="text" id="sample4_detailAddress" placeholder="상세주소" required oninput="touseraddr()">
                                 <input type="text" id="sample4_extraAddress" placeholder="참고항목">
-                                <input type="text" id="useraddr" name="useraddr" readonly>
+                                <input type="text" id="useraddr" name="useraddr" readonly required oninput="editAddr()">
                             </td>
                         </tr>
                         <%--                             변경할 전화번호 확인  --%>
@@ -382,7 +400,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="userphone" id="userphone" required  placeholder= "${userSession.userphone}" ><br>
+                                <input type="text" name="userphone" id="userphone" required oninput="editPhone()"><br>
                                 <span id="phoneerror" style="display:none; color:red;">올바른 전화번호를 입력해주세요</span><br>
                             </td>
                         </tr>
