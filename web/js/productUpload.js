@@ -44,10 +44,12 @@ const selectedCategoryElem = document.querySelector('#selectedCategory');
 // 카테고리 업데이트 함수
 function updateSelectedCategory() {
     // 선택된 옵션의 값과 텍스트 가져오기
+    const selectElem = document.getElementById("category-select");
     const selectedValue = selectElem.value;
     const selectedText = selectElem.options[selectElem.selectedIndex].text;
 
     // 선택한 카테고리 업데이트
+    const selectedCategoryElem = document.getElementById("selected-category");
     selectedCategoryElem.textContent = `선택한 카테고리: ${selectedText}`;
 }
 

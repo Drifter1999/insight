@@ -96,7 +96,7 @@
                                     <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='Logout.in'" style="color:red">로그아웃</a>
+                                    <a class="nav-link" href="#">구매신청</a>
                                 </li>
                             </ul>
                         </li>
@@ -151,7 +151,7 @@
                         <tr>
                             <th scope="col">기본정보</th>
                             <th scope="col"> *필수항목</th>
-                            <input type="hidden" id="userid" name="userid" value=" ${userSession.userid}"/>
+                            <input type="hidden" id="userod" name="userid" value=" ${userSession.userid}"/>
                         </tr>
                         </thead>
                         <tbody>
@@ -199,6 +199,7 @@
                             </td>
                             <td>
                                 <select id="productCategoryNum" name="productCategoryNum" onchange="updateSelectedCategory()">
+                                    <option value="">선택해주세요</option>
                                     <option value="1">의류</option>
                                     <option value="2">잡화</option>
                                     <option value="3">전자기기</option>
