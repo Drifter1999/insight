@@ -191,15 +191,15 @@
             <li class="nav-item">
                 <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">상세 설명</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                   aria-selected="false">상품 상세설명</a>
-            </li>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"--%>
+<%--                   aria-selected="false">상품 상세설명</a>--%>
+<%--            </li>--%>
 
-            <li class="nav-item">
-                <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
-                   aria-selected="false">댓글</a>
-            </li>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"--%>
+<%--                   aria-selected="false">댓글</a>--%>
+<%--            </li>--%>
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -216,78 +216,84 @@
                     more than one would suddenly need to learn how to adjust all the cooking practices utilized before into a
                     streamlined plan of cooking that is more efficient for one person creating less</p>
             </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <div class="table-responsive">
-                    <table class="table">
-                        <tbody>
-                        <tr>
-                            <td>
-                                <h5>넓이</h5>
-                            </td>
-                            <td>
-                                <h5>128mm</h5>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>높이</h5>
-                            </td>
-                            <td>
-                                <h5>508mm</h5>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>깊이</h5>
-                            </td>
-                            <td>
-                                <h5>85mm</h5>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>무게</h5>
-                            </td>
-                            <td>
-                                <h5>52gm</h5>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>상태</h5>
-                            </td>
-                            <td>
-                                <h5>A급</h5>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>사용 기간</h5>
-                            </td>
-                            <td>
-                                <h5>03days</h5>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>패키지 포함</h5>
-                            </td>
-                            <td>
-                                <h5>불 포함</h5>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>직거래 계좌이체 거래</h5>
-                            </td>
-                            <td>
-                                <h5>거래 가능</h5>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+
+            <!-- 쓸지안쓸지 몰라서 일단 주석-->
+
+<%--            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">--%>
+<%--                <div class="table-responsive">--%>
+<%--                    <table class="table">--%>
+<%--                        <tbody>--%>
+<%--                        <tr>--%>
+<%--                            <td>--%>
+<%--                                <h5>넓이</h5>--%>
+<%--                            </td>--%>
+<%--                            <td>--%>
+<%--                                <h5>128mm</h5>--%>
+<%--                            </td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>--%>
+<%--                                <h5>높이</h5>--%>
+<%--                            </td>--%>
+<%--                            <td>--%>
+<%--                                <h5>508mm</h5>--%>
+<%--                            </td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>--%>
+<%--                                <h5>깊이</h5>--%>
+<%--                            </td>--%>
+<%--                            <td>--%>
+<%--                                <h5>85mm</h5>--%>
+<%--                            </td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>--%>
+<%--                                <h5>무게</h5>--%>
+<%--                            </td>--%>
+<%--                            <td>--%>
+<%--                                <h5>52gm</h5>--%>
+<%--                            </td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>--%>
+<%--                                <h5>상태</h5>--%>
+<%--                            </td>--%>
+<%--                            <td>--%>
+<%--                                <h5>A급</h5>--%>
+<%--                            </td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>--%>
+<%--                                <h5>사용 기간</h5>--%>
+<%--                            </td>--%>
+<%--                            <td>--%>
+<%--                                <h5>03days</h5>--%>
+<%--                            </td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>--%>
+<%--                                <h5>패키지 포함</h5>--%>
+<%--                            </td>--%>
+<%--                            <td>--%>
+<%--                                <h5>불 포함</h5>--%>
+<%--                            </td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>--%>
+<%--                                <h5>직거래 계좌이체 거래</h5>--%>
+<%--                            </td>--%>
+<%--                            <td>--%>
+<%--                                <h5>거래 가능</h5>--%>
+<%--                            </td>--%>
+<%--                        </tr>--%>
+<%--                        </tbody>--%>
+<%--                    </table>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+            <!-- 쓸지안쓸지모르는 끝-->
+
+
             <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                 <div class="row">
                     <div class="col-lg-6">
@@ -372,232 +378,241 @@
                 </div>
             </div> -->
             <!-- 컨택트탭에서 살릴게 있으면 살림  리뷰탭이랑 둘중 하나를 골라서 사용해야 할듯-->
-            <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="row total_rate">
-                            <div class="col-6">
-                                <div class="box_total">
-                                    <h5>평균? </h5>
-                                    <h4>4.0</h4>
 
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="rating_list">
-                                    <h3>리뷰 평점</h3>
-                                    <ul class="list">
-                                        <li><a href="#">5 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-                                        <li><a href="#">4 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-                                        <li><a href="#">3 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-                                        <li><a href="#">2 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-                                        <li><a href="#">1 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="review_list">
-                            <div class="review_item">
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <img src="img/product/review-1.png" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <h4>김철수</h4>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                                <p>제가 데려 가고 싶네요</p>
-                            </div>
-                            <div class="review_item">
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <img src="img/product/review-2.png" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <h4>신준수</h4>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                                <p>상태가 새것 같아요</p>
-                            </div>
-                            <div class="review_item">
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <img src="img/product/review-3.png" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <h4>홍길동</h4>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                                <p>제품이 너무 이뻐요</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="review_box">
-                            <h4>리뷰 쓰기</h4>
-                            <p>평가 혹은 댓글:</p>
-                            <form action="#/" class="form-contact form-review mt-3">
-                                <div class="form-group">
-                                    <input class="form-control" name="name" type="text" placeholder="회원 이름" required>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" name="email" type="email" placeholder="연락처 연락 방법" required>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" name="subject" type="text" placeholder="글 제목">
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control different-control w-100" name="textarea" id="textarea" cols="30" rows="5" placeholder="글내용"></textarea>
-                                </div>
-                                <div class="form-group text-center text-md-right mt-3">
-                                    <button type="submit" class="button button--active button-review">구매 요청</button>
-                                    <!-- 판매자에게 알림 이나 문자 전송? -->
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            <!-- 쓸지안쓸지모르는 댓글 -->
+<%--            <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">--%>
+<%--                <div class="row">--%>
+<%--                    <div class="col-lg-6">--%>
+<%--                        <div class="row total_rate">--%>
+<%--                            <div class="col-6">--%>
+<%--                                <div class="box_total">--%>
+<%--                                    <h5>평균? </h5>--%>
+<%--                                    <h4>4.0</h4>--%>
+
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="col-6">--%>
+<%--                                <div class="rating_list">--%>
+<%--                                    <h3>리뷰 평점</h3>--%>
+<%--                                    <ul class="list">--%>
+<%--                                        <li><a href="#">5 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i--%>
+<%--                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>--%>
+<%--                                        <li><a href="#">4 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i--%>
+<%--                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>--%>
+<%--                                        <li><a href="#">3 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i--%>
+<%--                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>--%>
+<%--                                        <li><a href="#">2 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i--%>
+<%--                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>--%>
+<%--                                        <li><a href="#">1 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i--%>
+<%--                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>--%>
+<%--                                    </ul>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                        <div class="review_list">--%>
+<%--                            <div class="review_item">--%>
+<%--                                <div class="media">--%>
+<%--                                    <div class="d-flex">--%>
+<%--                                        <img src="img/product/review-1.png" alt="">--%>
+<%--                                    </div>--%>
+<%--                                    <div class="media-body">--%>
+<%--                                        <h4>김철수</h4>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                                <p>제가 데려 가고 싶네요</p>--%>
+<%--                            </div>--%>
+<%--                            <div class="review_item">--%>
+<%--                                <div class="media">--%>
+<%--                                    <div class="d-flex">--%>
+<%--                                        <img src="img/product/review-2.png" alt="">--%>
+<%--                                    </div>--%>
+<%--                                    <div class="media-body">--%>
+<%--                                        <h4>신준수</h4>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                                <p>상태가 새것 같아요</p>--%>
+<%--                            </div>--%>
+<%--                            <div class="review_item">--%>
+<%--                                <div class="media">--%>
+<%--                                    <div class="d-flex">--%>
+<%--                                        <img src="img/product/review-3.png" alt="">--%>
+<%--                                    </div>--%>
+<%--                                    <div class="media-body">--%>
+<%--                                        <h4>홍길동</h4>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                        <i class="fa fa-star"></i>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                                <p>제품이 너무 이뻐요</p>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-lg-6">--%>
+<%--                        <div class="review_box">--%>
+<%--                            <h4>리뷰 쓰기</h4>--%>
+<%--                            <p>평가 혹은 댓글:</p>--%>
+<%--                            <form action="#/" class="form-contact form-review mt-3">--%>
+<%--                                <div class="form-group">--%>
+<%--                                    <input class="form-control" name="name" type="text" placeholder="회원 이름" required>--%>
+<%--                                </div>--%>
+<%--                                <div class="form-group">--%>
+<%--                                    <input class="form-control" name="email" type="email" placeholder="연락처 연락 방법" required>--%>
+<%--                                </div>--%>
+<%--                                <div class="form-group">--%>
+<%--                                    <input class="form-control" name="subject" type="text" placeholder="글 제목">--%>
+<%--                                </div>--%>
+<%--                                <div class="form-group">--%>
+<%--                                    <textarea class="form-control different-control w-100" name="textarea" id="textarea" cols="30" rows="5" placeholder="글내용"></textarea>--%>
+<%--                                </div>--%>
+<%--                                <div class="form-group text-center text-md-right mt-3">--%>
+<%--                                    <button type="submit" class="button button--active button-review">구매 요청</button>--%>
+<%--                                    <!-- 판매자에게 알림 이나 문자 전송? -->--%>
+<%--                                </div>--%>
+<%--                            </form>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+
+            <!-- 쓸지안쓸지모르는 댓글 끝 -->
+
         </div>
     </div>
 </section>
 <!--================End Product Description Area =================-->
 
+
+<!-- 쓸지안쓸지모름 -- >
 <!--================ Start related Product area =================-->
-<section class="related-product-area section-margin--small mt-0">
-    <div class="container">
-        <div class="section-intro pb-60px">
-            <p>다른 인기 아이템</p>
-            <h2>급상승 <span class="section-intro__style">인기 상품</span></h2>
-        </div>
-        <div class="row mt-30">
-            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-                <div class="single-search-product-wrapper">
-                    <div class="single-search-product d-flex">
-                        <a href="#"><img src="img/product/product-sm-1.png" alt=""></a>
-                        <div class="desc">
-                            <a href="#" class="title">Gray Coffee Cup</a>
-                            <div class="price">$170.00</div>
-                        </div>
-                    </div>
-                    <div class="single-search-product d-flex">
-                        <a href="#"><img src="img/product/product-sm-2.png" alt=""></a>
-                        <div class="desc">
-                            <a href="#" class="title">Gray Coffee Cup</a>
-                            <div class="price">$170.00</div>
-                        </div>
-                    </div>
-                    <div class="single-search-product d-flex">
-                        <a href="#"><img src="img/product/product-sm-3.png" alt=""></a>
-                        <div class="desc">
-                            <a href="#" class="title">Gray Coffee Cup</a>
-                            <div class="price">$170.00</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<%--<section class="related-product-area section-margin--small mt-0">--%>
+<%--    <div class="container">--%>
+<%--        <div class="section-intro pb-60px">--%>
+<%--            <p>다른 인기 아이템</p>--%>
+<%--            <h2>급상승 <span class="section-intro__style">인기 상품</span></h2>--%>
+<%--        </div>--%>
+<%--        <div class="row mt-30">--%>
+<%--            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">--%>
+<%--                <div class="single-search-product-wrapper">--%>
+<%--                    <div class="single-search-product d-flex">--%>
+<%--                        <a href="#"><img src="img/product/product-sm-1.png" alt=""></a>--%>
+<%--                        <div class="desc">--%>
+<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
+<%--                            <div class="price">$170.00</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="single-search-product d-flex">--%>
+<%--                        <a href="#"><img src="img/product/product-sm-2.png" alt=""></a>--%>
+<%--                        <div class="desc">--%>
+<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
+<%--                            <div class="price">$170.00</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="single-search-product d-flex">--%>
+<%--                        <a href="#"><img src="img/product/product-sm-3.png" alt=""></a>--%>
+<%--                        <div class="desc">--%>
+<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
+<%--                            <div class="price">$170.00</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
 
-            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-                <div class="single-search-product-wrapper">
-                    <div class="single-search-product d-flex">
-                        <a href="#"><img src="img/product/product-sm-4.png" alt=""></a>
-                        <div class="desc">
-                            <a href="#" class="title">Gray Coffee Cup</a>
-                            <div class="price">$170.00</div>
-                        </div>
-                    </div>
-                    <div class="single-search-product d-flex">
-                        <a href="#"><img src="img/product/product-sm-5.png" alt=""></a>
-                        <div class="desc">
-                            <a href="#" class="title">Gray Coffee Cup</a>
-                            <div class="price">$170.00</div>
-                        </div>
-                    </div>
-                    <div class="single-search-product d-flex">
-                        <a href="#"><img src="img/product/product-sm-6.png" alt=""></a>
-                        <div class="desc">
-                            <a href="#" class="title">Gray Coffee Cup</a>
-                            <div class="price">$170.00</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<%--            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">--%>
+<%--                <div class="single-search-product-wrapper">--%>
+<%--                    <div class="single-search-product d-flex">--%>
+<%--                        <a href="#"><img src="img/product/product-sm-4.png" alt=""></a>--%>
+<%--                        <div class="desc">--%>
+<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
+<%--                            <div class="price">$170.00</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="single-search-product d-flex">--%>
+<%--                        <a href="#"><img src="img/product/product-sm-5.png" alt=""></a>--%>
+<%--                        <div class="desc">--%>
+<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
+<%--                            <div class="price">$170.00</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="single-search-product d-flex">--%>
+<%--                        <a href="#"><img src="img/product/product-sm-6.png" alt=""></a>--%>
+<%--                        <div class="desc">--%>
+<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
+<%--                            <div class="price">$170.00</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
 
-            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-                <div class="single-search-product-wrapper">
-                    <div class="single-search-product d-flex">
-                        <a href="#"><img src="img/product/product-sm-7.png" alt=""></a>
-                        <div class="desc">
-                            <a href="#" class="title">Gray Coffee Cup</a>
-                            <div class="price">$170.00</div>
-                        </div>
-                    </div>
-                    <div class="single-search-product d-flex">
-                        <a href="#"><img src="img/product/product-sm-8.png" alt=""></a>
-                        <div class="desc">
-                            <a href="#" class="title">Gray Coffee Cup</a>
-                            <div class="price">$170.00</div>
-                        </div>
-                    </div>
-                    <div class="single-search-product d-flex">
-                        <a href="#"><img src="img/product/product-sm-9.png" alt=""></a>
-                        <div class="desc">
-                            <a href="#" class="title">Gray Coffee Cup</a>
-                            <div class="price">$170.00</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<%--            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">--%>
+<%--                <div class="single-search-product-wrapper">--%>
+<%--                    <div class="single-search-product d-flex">--%>
+<%--                        <a href="#"><img src="img/product/product-sm-7.png" alt=""></a>--%>
+<%--                        <div class="desc">--%>
+<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
+<%--                            <div class="price">$170.00</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="single-search-product d-flex">--%>
+<%--                        <a href="#"><img src="img/product/product-sm-8.png" alt=""></a>--%>
+<%--                        <div class="desc">--%>
+<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
+<%--                            <div class="price">$170.00</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="single-search-product d-flex">--%>
+<%--                        <a href="#"><img src="img/product/product-sm-9.png" alt=""></a>--%>
+<%--                        <div class="desc">--%>
+<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
+<%--                            <div class="price">$170.00</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
 
-            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-                <div class="single-search-product-wrapper">
-                    <div class="single-search-product d-flex">
-                        <a href="#"><img src="img/product/product-sm-1.png" alt=""></a>
-                        <div class="desc">
-                            <a href="#" class="title">Gray Coffee Cup</a>
-                            <div class="price">$170.00</div>
-                        </div>
-                    </div>
-                    <div class="single-search-product d-flex">
-                        <a href="#"><img src="img/product/product-sm-2.png" alt=""></a>
-                        <div class="desc">
-                            <a href="#" class="title">Gray Coffee Cup</a>
-                            <div class="price">$170.00</div>
-                        </div>
-                    </div>
-                    <div class="single-search-product d-flex">
-                        <a href="#"><img src="img/product/product-sm-3.png" alt=""></a>
-                        <div class="desc">
-                            <a href="#" class="title">Gray Coffee Cup</a>
-                            <div class="price">$170.00</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<%--            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">--%>
+<%--                <div class="single-search-product-wrapper">--%>
+<%--                    <div class="single-search-product d-flex">--%>
+<%--                        <a href="#"><img src="img/product/product-sm-1.png" alt=""></a>--%>
+<%--                        <div class="desc">--%>
+<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
+<%--                            <div class="price">$170.00</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="single-search-product d-flex">--%>
+<%--                        <a href="#"><img src="img/product/product-sm-2.png" alt=""></a>--%>
+<%--                        <div class="desc">--%>
+<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
+<%--                            <div class="price">$170.00</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="single-search-product d-flex">--%>
+<%--                        <a href="#"><img src="img/product/product-sm-3.png" alt=""></a>--%>
+<%--                        <div class="desc">--%>
+<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
+<%--                            <div class="price">$170.00</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</section>--%>
 <!--================ end related Product area =================-->
+<!-- 쓸지안쓸지모름 끝 -->
 
 <!--================ Start footer Area  =================-->
 <footer class="footer">
