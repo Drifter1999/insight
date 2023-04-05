@@ -74,7 +74,7 @@
     <insert id="ProductInsert" parameterType="PDTO">
         insert into PRODUCT values (
             product_seq.NEXTVAL,
-            #{productCategoryNum},
+            #{productcategorynum},
             #{userid},
             #{productname},
             #{producttitle},
@@ -86,7 +86,7 @@
             #{productimage3},
             to_char(sysdate, 'YYYY"년"MM"월"DD"일"'),
             'Y'
-        );
+        )
     </insert>
 
     <!--상품 상세 내역-->

@@ -76,7 +76,7 @@ public class productUploadAction implements Action{
 
 
         product.setProductcategorynum(productCategoryNum);
-        product.setUserid(userid);
+        product.setUserid(userid.trim());
         product.setProductname(productName);
         product.setProducttitle(productTitle);
         product.setProductdetail(productDetail);
