@@ -18,7 +18,6 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 <style>
-
     label {
         display: inline-flex;
         align-items: center;
@@ -168,12 +167,6 @@
         font-size:15px;
         font-weight:bold;
     }
-
-
-
-
-
-
 </style>
 <body>
 <!--================ Start Header Menu Area =================-->
@@ -308,7 +301,7 @@
                         <td class="table_css">
                             <h5> 카테고리 </h5>
                         </td>
-                        <td>
+                        <td class="table_css">
                             <label class="switch">
                                 <input type="checkbox">
                                 <span class="slider round"></span>
@@ -465,7 +458,6 @@
 </section>
 <!-- 토글 스위치 판매중/ 판매완료-->
 <script>
-
     var check = $("input[type='checkbox']");
     check.click(function(){
         $("p").toggle();
