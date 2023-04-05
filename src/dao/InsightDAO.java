@@ -6,7 +6,9 @@ import mybatis.SqlMapConfig;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class InsightDAO {
     SqlSessionFactory factory = SqlMapConfig.getFactory();
@@ -73,4 +75,10 @@ public class InsightDAO {
         }
         return  result;
     }
+
+    public List<ProductDTO> getProduct() {
+        return (ArrayList) sqlSession.selectList("Insight.ProductSelectDESC");
+    }
 }
+
+
