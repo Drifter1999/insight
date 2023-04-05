@@ -56,10 +56,10 @@
     <!-- product  -->
     <!--등록된 판매중인 상품 조회 (가장 최근 순)-->
     <select id="ProductSelectDESC" resultType="PDTO">
-        select  *
-        from    product
-        where   productstate = 'Y'
-        order by productdate desc
+        SELECT PRODUCTIMAGE1 , PRODUCTCATEGORYNAME, PRODUCTNAME , PRODUCTPRICE
+        FROM PRODUCT p NATURAL join PRODUCTCATEGORY p2
+        WHERE rownum between 1 and 8 and productstate='Y'
+        ORDER BY productdate DESC
     </select>
 
     <!--등록된 판매중인 상품 조회 (오래된 순)-->
