@@ -52,14 +52,15 @@ public class InsightFrontController extends HttpServlet {
                 System.out.println("userid : "+userid);
 
                 forward = new UserUpdateAction().execute(request, response);
+                break;
             case "/Logout.in":
                 forward = new LogoutAction().execute(request, response);
                 break;
 
-            case "/Category.in" :
+            /*case "/Category.in" :
 
                 forward = new CategoryAction().execute(request, response);
-                break;
+                break;*/
         }
 
         if( forward != null) {
