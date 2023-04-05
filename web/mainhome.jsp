@@ -186,14 +186,14 @@
                     <div class="col-md-6 col-lg-4 col-xl-3">
                         <div class="card text-center card-product">
                             <div class="card-product__img">
-                                <img class="card-img" src="${product.productimage1}" alt="${product.productname}">
+                                <img class="card-img" src="${pageContext.request.contextPath}/productimage${product.productimage1}" alt="${product.productname}">
                                 <ul class="card-product__imgOverlay">
                                     <li><button><i class="ti-search"></i></button></li>
                                 </ul>
                             </div>
                             <div class="card-body">
                                 <p id="category">${product.productCategoryname}</p>
-                                <h4 class="card-product__title"><a href="productdetail.jsp">${product.productname}</a></h4>
+                                <h4 class="card-product__title"><a href="productdetail.jsp">${product.productprice}</a></h4>
                                 <p class="card-product__price">${product.productprice}</p>
                             </div>
                         </div>

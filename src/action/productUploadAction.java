@@ -18,7 +18,7 @@ public class productUploadAction implements Action{
         InsightDAO dao = new InsightDAO();
         ProductDTO product = new ProductDTO();
 
-        String location = "C:\\insight\\productimage";
+        String location = "C:\\insight\\web\\productimage";
         int maxSize = 1024 * 1024 * 5 ;
 
         try {
@@ -35,13 +35,14 @@ public class productUploadAction implements Action{
                 String name = (String) files.nextElement();
                 String filename = multi.getFilesystemName(name);
                 if (name.equals("productImage1")) {
-                    fileName1 = filename;
+                    fileName1 = "/" + filename;
                 } else if (name.equals("productImage2")) {
-                    fileName2 = filename;
+                    fileName2 = "/" + filename;
                 } else if (name.equals("productImage3")) {
-                    fileName3 = filename;
+                    fileName3 = "/" + filename;
                 }
             }
+
 
             int productCategoryNum = Integer.parseInt(multi.getParameter("productCategoryNum"));
             String productTitle = multi.getParameter("productTitle");
@@ -51,10 +52,6 @@ public class productUploadAction implements Action{
             int productQuantity = Integer.parseInt(multi.getParameter("productQuantity"));
             String userid = multi.getParameter("userid");
 
-            String Imagepath1 = location + "/" + fileName1;
-            String Imagepath2 = location + "/" + fileName2;
-            String Imagepath3 = location + "/" + fileName3;
-
             product.setProductcategorynum(productCategoryNum);
             product.setUserid(userid.trim());
             product.setProductname(productName);
@@ -62,9 +59,9 @@ public class productUploadAction implements Action{
             product.setProductdetail(productDetail);
             product.setProductquantity(productQuantity);
             product.setProductprice(productPrice);
-            product.setProductimage1(Imagepath1);
-            product.setProductimage2(Imagepath2);
-            product.setProductimage3(Imagepath3);
+            product.setProductimage1(fileName1);
+            product.setProductimage2(fileName2);
+            product.setProductimage3(fileName3);
             product.setProductstate('Y');
 
             if (dao.productUpload(product)) {
