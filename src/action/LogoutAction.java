@@ -15,6 +15,7 @@ public class LogoutAction implements Action {
         HttpSession session = request.getSession();
         session.invalidate();
 
+
         forward.setRedirect(false);
         forward.setPath("index.jsp");
 
