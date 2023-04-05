@@ -285,7 +285,7 @@
 
 <!--================Cart Area =================-->
 <!-- 이 부분에 마이페이지 정보들 나열-->
-<form action="mypage.in" method="POST" enctype="multipart/form-data" onsubmit="return validateInfo();">
+<form action="UserUpdate.in" method="POST" enctype="multipart/form-data" onsubmit="return validateInfo();">
     <section class="cart_area">
         <div class="container">
             <div class="cart_inner">
@@ -302,8 +302,8 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="userid" id="userid" required  placeholder= "${userSession.userid}" readonly><br>
-                                <span id="ideditError" style="display:none; color:red;">아이디는 2~20자 이내의 영문, 숫자를 사용하세요</span><br>
+                                <span name="userid" id="userid" >${userSession.userid}</span>
+                                <%--<span id="ideditError" style="display:none; color:red;">아이디는 2~20자 이내의 영문, 숫자를 사용하세요</span><br>--%>
                             </td>
                         </tr>
                         <%--                           변경할 비밀번호--%>
@@ -398,6 +398,13 @@
                                     <input class="button button-header" type="submit" value="변경하기">
                                 </div>
                             </td>
+
+                            <td>
+                                <div class="checkout_btn_inner d-flex align-items-center">
+                                    <input class="button button-header" type="submit" value="변경하기">
+                                </div>
+                            </td>
+
                         </tr>
 
                         </tbody>
