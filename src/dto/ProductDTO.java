@@ -9,7 +9,7 @@ public class ProductDTO {
     private String productname;
     private String producttitle;
     private String productdetail;
-    private String productquantity;
+    private int productquantity;
     private String productprice;
     private String productimage1;
     private String productimage2;
@@ -65,11 +65,11 @@ public class ProductDTO {
         this.productdetail = productdetail;
     }
 
-    public String getProductquantity() {
+    public int getProductquantity() {
         return productquantity;
     }
 
-    public void setProductquantity(String productquantity) {
+    public void setProductquantity(int productquantity) {
         this.productquantity = productquantity;
     }
 

@@ -46,6 +46,9 @@ public class InsightDAO {
     public boolean productUpload(ProductDTO product) {
         boolean result = false;
 
+        if(sqlSession.insert("Insight.ProductInsert", product) == 1){
+            result = true;
+        }
         return result;
     }
 

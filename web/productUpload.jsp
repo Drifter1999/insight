@@ -151,7 +151,7 @@
                         <tr>
                             <th scope="col">기본정보</th>
                             <th scope="col"> *필수항목</th>
-                            <input type="hidden" id="userod" name="userid" value=" ${userSession.userid}"/>
+                            <input type="hidden" id="userid" name="userid" value=" ${userSession.userid}"/>
                         </tr>
                         </thead>
                         <tbody>

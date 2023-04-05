@@ -71,7 +71,7 @@
     </select>
 
     <!--상품 등록 -->
-    <insert id="ProductInsert" parameterType="hashmap">
+    <insert id="ProductInsert" parameterType="PDTO">
         insert into PRODUCT values (
             product_seq.NEXTVAL,
             #{productCategoryNum},
@@ -81,9 +81,9 @@
             #{productdetail},
             #{productquantity},
             #{productprice},
-            'none',
-            'none',
-            'none',
+            #{productimage1},
+            #{productimage2},
+            #{productimage3},
             to_char(sysdate, 'YYYY"년"MM"월"DD"일"'),
             'Y'
         );
