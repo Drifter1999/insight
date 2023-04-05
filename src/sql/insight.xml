@@ -84,7 +84,7 @@
             'none',
             'none',
             'none',
-            SYSDATE,
+            to_char(sysdate, 'YYYY"년"MM"월"DD"일"'),
             'Y'
         );
     </insert>
