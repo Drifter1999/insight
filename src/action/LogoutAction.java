@@ -1,4 +1,4 @@
-package controller;
+package action;
 
 import action.Action;
 import action.ActionForward;
@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class LogoutAction implements Action {
     @Override
-    public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public ActionForward execute(HttpServletRequest request, HttpServletResponse response){
         ActionForward forward = new ActionForward();
         HttpSession session = request.getSession();
         session.invalidate();

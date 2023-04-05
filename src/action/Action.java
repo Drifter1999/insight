@@ -5,5 +5,5 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public interface Action {
-    public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public ActionForward execute(HttpServletRequest request, HttpServletResponse response);
 }
