@@ -290,11 +290,11 @@
                                     <img src="img/cart/cart1.png" alt="">
                                 </div>
                                 <div class="media-body">
-                                    <p class="text_maxlength">
+                                    <span class="text_maxlength">
                                         여기에 글 제목 끌어와주세요. 몇자까지 들어갈까요 몇자까지 들어갈까요 몇자까지 들어갈까요
                                         몇자까지 들어갈까요 몇자까지 들어갈까요 몇자까지 들어갈까요 몇자까지 들어갈까요 몇자까지 들어갈까요
                                         몇자까지 들어갈까요 몇자까지 들어갈까요 몇자까지 들어갈까요 몇자까지 들어갈까요 몇자까지 들어갈까요.
-                                    </p>
+                                    </span>
                                 </div>
                             </div>
                         </td>
@@ -324,7 +324,7 @@
                                     <img src="img/cart/cart2.png" alt="">
                                 </div>
                                 <div class="media-body">
-                                    <p lass="text_maxlength">여기에 글 제목 끌어와주세요</p>
+                                    <span lass="text_maxlength">여기에 글 제목 끌어와주세요</span>
                                 </div>
                             </div>
                         </td>
@@ -354,7 +354,7 @@
                                     <img src="img/cart/cart3.png" alt="">
                                 </div>
                                 <div class="media-body">
-                                    <p lass="text_maxlength">여기에 글 제목 끌어와주세요</p>
+                                    <span lass="text_maxlength">여기에 글 제목 끌어와주세요</span>
                                 </div>
                             </div>
                         </td>
@@ -383,7 +383,7 @@
                                     <img src="img/cart/cart3.png" alt="">
                                 </div>
                                 <div class="media-body">
-                                    <p lass="text_maxlength">여기에 글 제목 끌어와주세요</p>
+                                    <span lass="text_maxlength">여기에 글 제목 끌어와주세요</span>
                                 </div>
                             </div>
                         </td>
@@ -412,7 +412,7 @@
                                     <img src="img/cart/cart3.png" alt="">
                                 </div>
                                 <div class="media-body">
-                                    <p lass="text_maxlength">여기에 글 제목 끌어와주세요</p>
+                                    <span lass="text_maxlength">여기에 글 제목 끌어와주세요</span>
                                 </div>
                             </div>
                         </td>
