@@ -6,13 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aroma Shop - Cart</title>
+    <%--
+    해야하는 일
+    1. 스크립트 jsp파일에 심어져있는거 정리.
+    2. 상세주소 입력시 readonly에 반영안되는 이슈 해결
+    3. 유저 정보(아이디, 비번, 이멜, 주소 등) 변경시 유효성 검사를 거쳐 서버에 잘 전송되는지 확인 해야함
+    --%>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
+        function sample4_execDaumPostcode() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    var roadAddr = data.roadAddress; // 도로명 주소 변수
+                    var extraRoadAddr = ''; // 참고 항목 변수
+
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraRoadAddr += data.bname;
+                    }
+
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+
+                    if(extraRoadAddr !== ''){
+                        extraRoadAddr = ' (' + extraRoadAddr + ')';
+                    }
+
+                    document.getElementById('sample4_postcode').value = data.zonecode;
+                    document.getElementById("sample4_roadAddress").value = roadAddr;
+                    document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+
+                    if(roadAddr !== ''){
+                        document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+                    } else {
+                        document.getElementById("sample4_extraAddress").value = '';
+                    }
+                    var detailaddr = '';
+
+                    if( detailaddr == ' '){ detailadddr = document.getElementById("sample4_detailAddress").value ; }
+
+                    var guideTextBox = document.getElementById("guide");
+
+                    if(data.autoRoadAddress) {
+                        var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+                        guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+                        guideTextBox.style.display = 'block';
+
+                    } else if(data.autoJibunAddress) {
+                        var expJibunAddr = data.autoJibunAddress;
+                        guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+                        guideTextBox.style.display = 'block';
+                    } else {
+                        guideTextBox.innerHTML = '';
+                        guideTextBox.style.display = 'none';
+                    }
+
+                    document.getElementById("useraddr").value = roadAddr + " " + data.buildingName + detailaddr;
+
+                    document.getElementById("useraddr").readOnly = true;
+                }
+            }).open();
+        }
         function validateInfo() {
             var userid = document.getElementById("userid").value;
             var userpw = document.getElementById("userpw").value;
             var userpw2 = document.getElementById("userpw2").value;
             var useremail = document.getElementById("useremail").value;
-            var useraddr = document.getElementById("useraddr").value;
             var userphone = document.getElementById("userphone").value;
 
             // 아이디 유효성 검사 (2~20자 이내의 영문, 숫자)
@@ -111,78 +170,75 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-                            <c:choose>
-                                    <c:when test="${userSession eq null}">
+                    <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+                        <c:choose>
+                        <c:when test="${userSession eq null}">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.jsp">홈</a>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                                <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index.jsp">홈</a>
+                                        <a class="nav-link" href="category.jsp">카테고리</a>
                                     </li>
-                                    <li class="nav-item submenu dropdown">
-                                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="category.jsp">카테고리</a>
-                                            </li>
-                                        </ul>
+                                </ul>
+                            </li>
+                            <li class="nav-item active submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.jsp">로그인</a>
                                     </li>
-                                    <li class="nav-item active submenu dropdown">
-                                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="index.jsp">로그인</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="register.jsp">회원가입</a>
-                                            </li>
-                                        </ul>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="register.jsp">회원가입</a>
                                     </li>
-                                </c:when>
-                                <c:otherwise>
+                                </ul>
+                            </li>
+                        </c:when>
+                        <c:otherwise>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mainhome.jsp">홈</a>
+                        </li>
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                            <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="mainhome.jsp">홈</a>
-                                </li>
-                                <li class="nav-item submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.jsp'">카테고리</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item active submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='MyShop.jsp'">나의 상점</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">구매신청</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul> <%-- 수정된 버튼 --%>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="nav-item">
-                                    <a class="button button-header" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>판매하기</a>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.jsp'">카테고리</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="nav-item active submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">구매신청</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul> <%-- 수정된 버튼 --%>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="button button-header" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>판매하기</a>
+                        </li>
+                    </ul>
 
-                            <%-- 기존버튼
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>
-                                        <button type="button" class="btn-custom">
-                                            <i class="fa fa-plus"></i> 상품 등록하기
-                                        </button>
-                                    </a>
-                                </li>
-                            </ul>
-                            --%>
-                            </c:otherwise>
-                        </c:choose>
+                        <%-- 기존버튼
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>
+                                    <button type="button" class="btn-custom">
+                                        <i class="fa fa-plus"></i> 상품 등록하기
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                        --%>
+                    </c:otherwise>
+                    </c:choose>
 
                 </div>
             </div>
@@ -298,8 +354,14 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="useraddr" id="useraddr" required  placeholder= "${userSession.useraddr}" ><br>
-                                <span id="addrerror" style="display:none; color:red;">주소를 입력하세요</span><br>
+                                <input type="text" id="sample4_postcode" placeholder="우편번호">
+                                <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+                                <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+                                <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+                                <span id="guide" style="color:#999;display:none"></span>
+                                <input type="text" id="sample4_detailAddress" placeholder="상세주소">
+                                <input type="text" id="sample4_extraAddress" placeholder="참고항목">
+                                <input type="text" id="useraddr" name="useraddr" readonly>
                             </td>
                         </tr>
                         <%--                             변경할 전화번호 확인  --%>
