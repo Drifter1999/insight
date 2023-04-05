@@ -72,6 +72,7 @@
             var userpw = document.getElementById("userpw").value;
             var userpw2 = document.getElementById("userpw2").value;
             var useremail = document.getElementById("useremail").value;
+            var useraddr = document.getElementById("useraddr").value;
             var userphone = document.getElementById("userphone").value;
 
             // 아이디 유효성 검사 (2~20자 이내의 영문, 숫자)
@@ -218,7 +219,7 @@
                                     <a class="nav-link" href="javascript:void(0)" onclick="location.href='MyShop.jsp'">나의 상점</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">구매신청</a>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='Logout.in'" style="color:red">로그아웃</a>
                                 </li>
                             </ul>
                         </li>
@@ -301,7 +302,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="userid" id="userid" required  placeholder= "${userSession.userid}"><br>
+                                <input type="text" name="userid" id="userid" required  placeholder= "${userSession.userid}" readonly><br>
                                 <span id="ideditError" style="display:none; color:red;">아이디는 2~20자 이내의 영문, 숫자를 사용하세요</span><br>
                             </td>
                         </tr>
@@ -315,7 +316,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="userpw" id="userpw" required  placeholder= "${userSession.userpw}"><br>
+                                <input type="password" name="userpw" id="userpw" required  placeholder= "${userSession.userpw}"><br>
                                 <span id="pweditError" style="display:none; color:red;">영문, 숫자, 특수문자 조합의 8~25자리 비밀번호를 사용하세요</span><br>
                             </td>
                         </tr>
