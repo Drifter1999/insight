@@ -39,7 +39,7 @@ public class InsightFrontController extends HttpServlet {
                 break;
 
             case "/mainhome.in":
-                forward = new ActionForward(true, "/mainhome.jsp");
+                forward = new MainHomeAction().execute(request, response);
                 break;
 
             case "/productUpload.in":

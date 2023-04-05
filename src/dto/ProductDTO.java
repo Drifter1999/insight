@@ -16,6 +16,7 @@ public class ProductDTO {
     private String productimage3;
     private String productdate;
     private char   productstate;
+    private String productcategoryname;
 
     public int getProductnum() {
         return productnum;
@@ -120,4 +121,8 @@ public class ProductDTO {
     public void setProductstate(char productstate) {
         this.productstate = productstate;
     }
+
+    public String getProductcategoryname(){ return productcategoryname;}
+
+    public void setProductcategoryname(){this.productcategoryname = productcategoryname;}
 }

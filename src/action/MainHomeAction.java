@@ -17,6 +17,7 @@ public class MainHomeAction implements Action{
         String userid = request.getParameter("userid");
 
         List<ProductDTO> list =dao.getProduct();
+
         request.setAttribute("productlist",list);
 
         forward.setPath("mainhome.jsp");
