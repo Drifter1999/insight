@@ -47,6 +47,10 @@ public class InsightFrontController extends HttpServlet {
 
             case "/UserUpdate.in":
                 /*forward = new UserUpdateAction().execute(request, response);*/
+                String username = request.getParameter("username");
+                System.out.println("username : "+username);
+                String userid = request.getParameter("userid");
+                System.out.println("userid : "+userid);
                 String userpw = request.getParameter("userpw");
                 System.out.println("userpw : "+userpw);
                 String useremail = request.getParameter("useremail");

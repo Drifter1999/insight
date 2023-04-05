@@ -19,6 +19,14 @@
 
            useraddr = document.getElementById("sample4_detailAddress").value ;
         }
+        function editName() {
+            // 사용자가 입력한 값을 가져와서 변수에 저장합니다.
+            var userInput = document.getElementById("username").value;
+        }
+        function editId() {
+            // 사용자가 입력한 값을 가져와서 변수에 저장합니다.
+            var userInput = document.getElementById("userid").value;
+        }
         function editPw() {
             // 사용자가 입력한 값을 가져와서 변수에 저장합니다.
             var userInput = document.getElementById("userpw").value;
@@ -90,12 +98,20 @@
             }).open();
         }
         function validateInfo() {
+            var username = document.getElementById("username").value;
             var userid = document.getElementById("userid").value;
             var userpw = document.getElementById("userpw").value;
             var userpw2 = document.getElementById("userpw2").value;
             var useremail = document.getElementById("useremail").value;
             var useraddr = document.getElementById("useraddr").value;
             var userphone = document.getElementById("userphone").value;
+
+            // 이름 유효성 검사
+            if (username.value == "") {
+                alert("이름을 입력하세요");
+                username.focus();
+                return false;
+            }
 
             // 아이디 유효성 검사 (2~20자 이내의 영문, 숫자)
             var idRegex = /^(?=.*[a-zA-Z])(?=.*[0-9]).{2,20}$/;
@@ -314,6 +330,20 @@
                 <div class="table-responsive">
                     <table class="table">
                         <tbody>
+                        <%--                        수정할 이름--%>
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="media-body">
+                                        <label for="username">*이름:</label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" name="username" id="username" required placeholder="${userSession.username}" oninput="editName()"><br>
+                                <span id="nameeditError" style="display:none; color:red;">아이디는 2~20자 이내의 영문, 숫자를 사용하세요</span><br>
+                            </td>
+                        </tr>
                         <%--                        수정할 아이디--%>
                         <tr>
                             <td>
@@ -324,8 +354,8 @@
                                 </div>
                             </td>
                             <td>
-                                <span name="userid" id="userid" >${userSession.userid}</span>
-                                <%--<span id="ideditError" style="display:none; color:red;">아이디는 2~20자 이내의 영문, 숫자를 사용하세요</span><br>--%>
+                                <input type="text" name="userid" id="userid" required placeholder="${userSession.userid}" oninput="editId()"><br>
+                                <span id="ideditError" style="display:none; color:red;">아이디는 2~20자 이내의 영문, 숫자를 사용하세요</span><br>
                             </td>
                         </tr>
                         <%--                           변경할 비밀번호--%>
@@ -338,7 +368,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="password" name="userpw" id="userpw" required placeholder="${userSession.userpw}" oninput="editPw()"><br>
+                                <input type="password" name="userpw" id="userpw" required oninput="editPw()"><br>
                                 <span id="pweditError" style="display:none; color:red;">영문, 숫자, 특수문자 조합의 8~25자리 비밀번호를 사용하세요</span><br>
                             </td>
                         </tr>
@@ -366,7 +396,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="useremail" id="useremail" required oninput="editEm()"><br>
+                                <input type="text" name="useremail" id="useremail" required placeholder="${userSession.useremail}" oninput="editEm()"><br>
                                 <span id="emerror" style="display:none; color:red;">올바른 이메일을 입력하세요</span><br>
                             </td>
                         </tr>
@@ -400,7 +430,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="userphone" id="userphone" required oninput="editPhone()"><br>
+                                <input type="text" name="userphone" id="userphone" required placeholder="${userSession.userphone}" oninput="editPhone()"><br>
                                 <span id="phoneerror" style="display:none; color:red;">올바른 전화번호를 입력해주세요</span><br>
                             </td>
                         </tr>
@@ -415,12 +445,6 @@
                             <td>
 
                             </td>
-                            <td>
-                                <div class="checkout_btn_inner d-flex align-items-center">
-                                    <input class="button button-header" type="submit" value="변경하기">
-                                </div>
-                            </td>
-
                             <td>
                                 <div class="checkout_btn_inner d-flex align-items-center">
                                     <input class="button button-header" type="submit" value="변경하기">
