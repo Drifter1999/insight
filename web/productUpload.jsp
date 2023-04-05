@@ -85,7 +85,7 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascrip:void(0)" onclick="location.href='category.jsp'">카테고리</a>>
+                                    <a class="nav-link" href="javascrip:void(0)" onclick="location.href='category.jsp'">카테고리</a>
                                 </li>
                             </ul>
                         </li>
@@ -100,15 +100,16 @@
                                 </li>
                             </ul>
                         </li>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>
-                                    <button type="button" class="btn-custom">
-                                        <i class="fa fa-plus"></i> 상품 등록하기
-                                    </button>
-                                </a>
-                            </li>
-                        </ul>
+<%--                        필요없는 버튼    --%>
+<%--                        <ul class="nav navbar-nav navbar-right">--%>
+<%--                            <li class="nav-item">--%>
+<%--                                <a class="nav-link" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>--%>
+<%--                                    <button type="button" class="btn-custom">--%>
+<%--                                        <i class="fa fa-plus"></i> 상품 등록하기--%>
+<%--                                    </button>--%>
+<%--                                </a>--%>
+<%--                            </li>--%>
+<%--                        </ul>--%>
                     </c:otherwise>
                 </c:choose>
                     </ul>
