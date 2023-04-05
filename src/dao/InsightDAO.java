@@ -62,4 +62,15 @@ public class InsightDAO {
         return result;
 
     }
+
+    public boolean UserDelete(String userid, String userpw) {
+        boolean result = false;
+        HashMap<String, String> datas = new HashMap<>();
+        datas.put("userid", userid);
+        datas.put("userpw", userpw);
+        if((Integer)sqlSession.delete("Insight.UserDelete",datas) != 0) {
+            result = true;
+        }
+        return  result;
+    }
 }

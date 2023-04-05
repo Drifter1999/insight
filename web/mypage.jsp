@@ -331,6 +331,7 @@
                     <table class="table">
                         <tbody>
                         <%--                        수정할 이름--%>
+
                         <tr>
                             <td>
                                 <div class="media">
@@ -340,10 +341,11 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="username" id="username" required placeholder="${userSession.username}" oninput="editName()"><br>
+                                <input type="text" name="username" id="username" required oninput="editName()" value="${userSession.username}"><br>
                                 <span id="nameeditError" style="display:none; color:red;">아이디는 2~20자 이내의 영문, 숫자를 사용하세요</span><br>
                             </td>
                         </tr>
+
                         <%--                        수정할 아이디--%>
                         <tr>
                             <td>
@@ -354,8 +356,10 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="userid" id="userid" required placeholder="${userSession.userid}" oninput="editId()"><br>
-                                <span id="ideditError" style="display:none; color:red;">아이디는 2~20자 이내의 영문, 숫자를 사용하세요</span><br>
+                                <%--<input type="text" name="userid" id="userid" required placeholder="${userSession.userid}" oninput="editId()"><br>--%>
+                                <%--<span id="ideditError" style="display:none; color:red;">아이디는 2~20자 이내의 영문, 숫자를 사용하세요</span><br>--%>
+                                <span>${userSession.userid}</span>
+                                <input type="hidden" name="userid" id="userid" value="${userSession.userid}">
                             </td>
                         </tr>
                         <%--                           변경할 비밀번호--%>
@@ -435,6 +439,7 @@
                             </td>
                         </tr>
                         <%--                수정하기--%>
+
                         <tr class="out_button_area">
                             <td class="d-none-l">
 
@@ -447,12 +452,19 @@
                             </td>
                             <td>
                                 <div class="checkout_btn_inner d-flex align-items-center">
-                                    <input class="button button-header" type="submit" value="변경하기">
+                                    <input class="button button-header" type="submit" value="변경하기" style="color:dodgerblue; border-color: dodgerblue">
                                 </div>
                             </td>
-
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="checkout_btn_inner d-flex align-items-center">
+                                    <a class="button button-header" href="javascript:void(0)" style="color: red; border-color: red" onclick="location.href='UserDelete.in'";>탈퇴하기</a>
+                                </div>
+                            </td>
                         </tr>
-
                         </tbody>
                     </table>
                 </div>

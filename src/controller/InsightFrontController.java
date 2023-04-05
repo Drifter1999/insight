@@ -1,6 +1,7 @@
 package controller;
 
 import action.*;
+import jdk.jfr.Category;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -46,21 +47,18 @@ public class InsightFrontController extends HttpServlet {
                 break;
 
             case "/UserUpdate.in":
-                /*forward = new UserUpdateAction().execute(request, response);*/
-                String username = request.getParameter("username");
-                System.out.println("username : "+username);
+
                 String userid = request.getParameter("userid");
                 System.out.println("userid : "+userid);
-                String userpw = request.getParameter("userpw");
-                System.out.println("userpw : "+userpw);
-                String useremail = request.getParameter("useremail");
-                System.out.println("useremail : "+useremail);
-                String userphone = request.getParameter("userphone");
-                System.out.println("userphone : "+userphone);
-                String useraddr = request.getParameter("useraddr");
-                System.out.println("useraddr : "+useraddr);
+
+                forward = new UserUpdateAction().execute(request, response);
             case "/Logout.in":
                 forward = new LogoutAction().execute(request, response);
+                break;
+
+            case "/Category.in" :
+
+                forward = new CategoryAction().execute(request, response);
                 break;
         }
 
