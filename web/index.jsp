@@ -46,98 +46,8 @@
                 id="navbarSupportedContent"
         >
           <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-            <%--<li class="nav-item">
-              <a class="nav-link" href="mainhome.jsp">홈</a>
-            </li>
-            <li class="nav-item submenu dropdown">
-              <a
-                      href="#"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-              >상품</a
-              >
-              <ul class="dropdown-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="category.jsp">카테고리</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="productdetail.jsp"
-                    >Blog Details</a
-                  >
-                </li>--%>
-                <!-- <li class="nav-item"><a class="nav-link" href="checkout.jsp">Product Checkout</a></li>
-              <li class="nav-item"><a class="nav-link" href="confirmation.jsp">Confirmation</a></li>
-              <li class="nav-item"><a class="nav-link" href="mypage.jsp">Shopping Cart</a></li> -->
-            <%--  </ul>
-            </li>
-            <li class="nav-item submenu dropdown">
-              <a
-                href="#"
-                class="nav-link dropdown-toggle"
-                data-toggle="dropdown"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Blog</a
-              >
-              <ul class="dropdown-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="blog.jsp">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="single-blog.jsp"
-                    >Blog Details</a
-                  >
-                </li>
-              </ul>
-            </li>--%>
-<%--            <li class="nav-item active submenu dropdown">
-              <a
-                      href="#"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-              >로그인 / 회원가입</a
-              >
-              <ul class="dropdown-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.jsp">로그인</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="register.jsp">회원가입</a>
-                </li>
-                <!-- <li class="nav-item">
-                  <a class="nav-link" href="tracking-order.jsp"
-                    >Tracking</a
-                  >
-                </li> -->
-              </ul>
-            </li>--%>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="contact.jsp">Contact</a>
-            </li>-->
             <li><h4>저희는 회원제 Flea Market 입니다.</h4></li>
           </ul>
-
-          <%--          <ul class="nav-shop">--%>
-          <%--            <li class="nav-item">--%>
-          <%--              <button><i class="ti-search"></i></button>--%>
-          <%--            </li>--%>
-          <%--            <!-- <li class="nav-item">--%>
-          <%--              <button>--%>
-          <%--                <i class="ti-shopping-cart"></i--%>
-          <%--                ><span class="nav-shop__circle">3</span>--%>
-          <%--              </button>--%>
-          <%--            </li> -->--%>
-          <%--            <!-- <li class="nav-item">--%>
-          <%--              <a class="button button-header" href="#">Buy Now</a>--%>
-          <%--            </li> -->--%>
-          <%--          </ul>--%>
         </div>
       </div>
     </nav>
@@ -151,14 +61,6 @@
     <div class="blog-banner">
       <div class="text-center">
         <h1>로그인 / 회원가입</h1>
-        <!-- <nav aria-label="breadcrumb" class="banner-breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">
-              로그인/회원가입
-            </li>
-          </ol>
-        </nav> -->
       </div>
     </div>
   </div>
@@ -288,12 +190,6 @@
           <div class="single-footer-widget tp_widgets">
             <h4 class="footer_title">Contact Us</h4>
             <div class="ml-40">
-              <!-- <p class="sm-head">
-                <span class="fa fa-location-arrow"></span>
-                본사
-              </p>
-              <p>율도국 전우치로49 101</p> -->
-
               <p class="sm-head">
                 <span class="fa fa-phone"></span>
                 GitHub
