@@ -79,6 +79,15 @@ public class InsightDAO {
     public List<ProductDTO> getProduct() {
         return (ArrayList) sqlSession.selectList("Insight.ProductSelectDESC");
     }
+
+    public ProductDTO productDetail(int productnum) {
+        ProductDTO result = new ProductDTO();
+//        if ((ProductDTO)sqlSession.selectOne("Insight.UserCheck", productnum)){
+//
+//            result = true;
+//        }
+        return result;
+    }
 }
 
 
