@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Aroma Shop - Cart</title>
+    <title>INSIGHT - 회원정보</title>
     <%--
     해야하는 일
     1. 스크립트 jsp파일에 심어져있는거 정리.
