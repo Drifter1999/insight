@@ -68,7 +68,7 @@
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.jsp';">
+                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.in';">
                                                 카테고리</a>
                                         </li>
                                     </ul>

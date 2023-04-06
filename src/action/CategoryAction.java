@@ -15,12 +15,10 @@ public class CategoryAction implements Action{
         ActionForward forward = new ActionForward();
         InsightDAO dao = new InsightDAO();
         List<ProductDTO> list = dao.AllProduct();
+        request.setAttribute("AllProduct", list);
 
-        if (list != null) {
-            request.setAttribute("AllProduct", list);
-            forward.setRedirect(false);
-            forward.setPath("/category.jsp");
-        }
+        forward.setRedirect(false);
+        forward.setPath("/category.jsp");
 
         return forward;
     }
