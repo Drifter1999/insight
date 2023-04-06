@@ -36,59 +36,59 @@
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <c:choose>
                         <c:when test="${userSession eq null}">
-                        <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="mainhome.jsp">홈</a>
-                            </li>
-                            <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="category.jsp">카테고리</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item active submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="index.jsp">로그인</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="register.jsp">회원가입</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="mainhome.jsp">홈</a>
+                                </li>
+                                <li class="nav-item submenu dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="category.jsp">카테고리</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item active submenu dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="index.jsp">로그인</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register.jsp">회원가입</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </c:when>
                         <c:otherwise>
-                        <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="mainhome.jsp">홈</a>
-                            </li>
-                            <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.jsp'">카테고리</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item active submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="javascript:void(0)" onclick="location.href='MyShop.jsp'">나의 상점</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="javascript:void(0)" onclick="location.href='Logout.in'" style="color:red">로그아웃</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="mainhome.jsp">홈</a>
+                                </li>
+                                <li class="nav-item submenu dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.jsp'">카테고리</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item active submenu dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='MyShop.jsp'">나의 상점</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='Logout.in'" style="color:red">로그아웃</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="nav-item">
                                     <a class="button button-header" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>판매하기</a>
@@ -135,7 +135,7 @@
 
 
 <!--================Single Product Area =================-->
-<div class="product_image_area">
+<div style="margin-bottom: 100px;" class="product_image_area">
     <div class="container">
         <div class="row s_product_inner">
             <div class="col-lg-6">
@@ -143,39 +143,20 @@
                     <div class="single-prd-item">
                         <img class="img-fluid" src="img/category/s-p1.jpg" alt="">
                     </div>
-                    <!-- <div class="single-prd-item">
-                        <img class="img-fluid" src="img/category/s-p1.jpg" alt="">
-                    </div>
-                    <div class="single-prd-item">
-                        <img class="img-fluid" src="img/category/s-p1.jpg" alt="">
-                    </div> -->
-                    <!-- 이미지 추가해서 여러장 넘겨보는 기능 추가 -->
                 </div>
             </div>
             <div class="col-lg-5 offset-lg-1">
                 <div class="s_product_text">
-                    <h3> 제품 이름! </h3>
-                    <h2> 제품 가격 ! 30,000원</h2>
-                    <ul class="list">
-                        <li><a class="active" href="#"><span>품목</span> : 시계</a></li>
+                    <h3 style="margin-bottom: 20px;"> 제품 이름 가져오기 </h3>
+                    <h2 style="margin-bottom: 20px;"> 제품 가격 가져오기 </h2>
+                    <ul class="list" style="margin-bottom: 40px;">
+                        <li><a class="active" href="#"><span>카테고리</span> : 카테고리명 가져오기</a></li>
                     </ul>
-                    <p>
-                        작년 하와이 갔다가 국내로 돌아올 때 산 샤넬 시계입니다 잘 사용해서
-                        깨끗합니다 네고 가능!
+                    <p style="margin-bottom: 100px;">
+                        상품 설명 가져오기
                     </p>
                     <div class="product_count">
-
-<%--                        <label for="qty">수량선택 :</label--%>
-                        <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                class="increase items-count" type="button"><i class="ti-angle-left"></i></button>
-                        <input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-                        <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                class="reduced items-count" type="button"><i class="ti-angle-right"></i></button>
-                        <a class="button primary-btn" href="#">대화 요청 기능으로 수정해야 함</a>
-                    </div>
-                    <div class="card_area d-flex align-items-center">
-                        <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
-                        <!-- 찜기능을 사용할 것인가? 살리냐 죽이냐 추후에 마이페이지에 연동해서 추가할지도?-->
+                        <a class="button primary-btn" href="#">구매하기</a>
                     </div>
                 </div>
             </div>
@@ -183,436 +164,6 @@
     </div>
 </div>
 <!--================End Single Product Area =================-->
-
-<!--================Product Description Area =================-->
-<section class="product_description_area">
-    <div class="container">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">상세 설명</a>
-            </li>
-<%--            <li class="nav-item">--%>
-<%--                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"--%>
-<%--                   aria-selected="false">상품 상세설명</a>--%>
-<%--            </li>--%>
-
-<%--            <li class="nav-item">--%>
-<%--                <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"--%>
-<%--                   aria-selected="false">댓글</a>--%>
-<%--            </li>--%>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <p>블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라
-                    블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라
-                    블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라
-                    블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라
-                    블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라
-
-                </p>
-                <p>It is often frustrating to attempt to plan meals that are designed for one. Despite this fact, we are seeing
-                    more and more recipe books and Internet websites that are dedicated to the act of cooking for one. Divorce and
-                    the death of spouses or grown children leaving for college are all reasons that someone accustomed to cooking for
-                    more than one would suddenly need to learn how to adjust all the cooking practices utilized before into a
-                    streamlined plan of cooking that is more efficient for one person creating less</p>
-            </div>
-
-            <!-- 쓸지안쓸지 몰라서 일단 주석-->
-
-<%--            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">--%>
-<%--                <div class="table-responsive">--%>
-<%--                    <table class="table">--%>
-<%--                        <tbody>--%>
-<%--                        <tr>--%>
-<%--                            <td>--%>
-<%--                                <h5>넓이</h5>--%>
-<%--                            </td>--%>
-<%--                            <td>--%>
-<%--                                <h5>128mm</h5>--%>
-<%--                            </td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>--%>
-<%--                                <h5>높이</h5>--%>
-<%--                            </td>--%>
-<%--                            <td>--%>
-<%--                                <h5>508mm</h5>--%>
-<%--                            </td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>--%>
-<%--                                <h5>깊이</h5>--%>
-<%--                            </td>--%>
-<%--                            <td>--%>
-<%--                                <h5>85mm</h5>--%>
-<%--                            </td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>--%>
-<%--                                <h5>무게</h5>--%>
-<%--                            </td>--%>
-<%--                            <td>--%>
-<%--                                <h5>52gm</h5>--%>
-<%--                            </td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>--%>
-<%--                                <h5>상태</h5>--%>
-<%--                            </td>--%>
-<%--                            <td>--%>
-<%--                                <h5>A급</h5>--%>
-<%--                            </td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>--%>
-<%--                                <h5>사용 기간</h5>--%>
-<%--                            </td>--%>
-<%--                            <td>--%>
-<%--                                <h5>03days</h5>--%>
-<%--                            </td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>--%>
-<%--                                <h5>패키지 포함</h5>--%>
-<%--                            </td>--%>
-<%--                            <td>--%>
-<%--                                <h5>불 포함</h5>--%>
-<%--                            </td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>--%>
-<%--                                <h5>직거래 계좌이체 거래</h5>--%>
-<%--                            </td>--%>
-<%--                            <td>--%>
-<%--                                <h5>거래 가능</h5>--%>
-<%--                            </td>--%>
-<%--                        </tr>--%>
-<%--                        </tbody>--%>
-<%--                    </table>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-            <!-- 쓸지안쓸지모르는 끝-->
-
-
-            <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="comment_list">
-                            <div class="review_item">
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <img src="img/product/review-1.png" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <h4>Blake Ruiz</h4>
-                                        <h5>12th Feb, 2018 at 05:56 pm</h5>
-                                        <a class="reply_btn" href="#">Reply</a>
-                                    </div>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                    commodo</p>
-                            </div>
-                            <div class="review_item reply">
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <img src="img/product/review-2.png" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <h4>Blake Ruiz</h4>
-                                        <h5>12th Feb, 2018 at 05:56 pm</h5>
-                                        <a class="reply_btn" href="#">Reply</a>
-                                    </div>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                    commodo</p>
-                            </div>
-                            <div class="review_item">
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <img src="img/product/review-3.png" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <h4>Blake Ruiz</h4>
-                                        <h5>12th Feb, 2018 at 05:56 pm</h5>
-                                        <a class="reply_btn" href="#">Reply</a>
-                                    </div>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                    commodo</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="review_box">
-                            <h4>Post a comment</h4>
-                            <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Full name">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="number" name="number" placeholder="Phone Number">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 text-right">
-                                    <button type="submit" value="submit" class="btn primary-btn">Submit Now</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- 컨택트탭에서 살릴게 있으면 살림  리뷰탭이랑 둘중 하나를 골라서 사용해야 할듯-->
-
-
-            <!-- 쓸지안쓸지모르는 댓글 -->
-<%--            <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">--%>
-<%--                <div class="row">--%>
-<%--                    <div class="col-lg-6">--%>
-<%--                        <div class="row total_rate">--%>
-<%--                            <div class="col-6">--%>
-<%--                                <div class="box_total">--%>
-<%--                                    <h5>평균? </h5>--%>
-<%--                                    <h4>4.0</h4>--%>
-
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                            <div class="col-6">--%>
-<%--                                <div class="rating_list">--%>
-<%--                                    <h3>리뷰 평점</h3>--%>
-<%--                                    <ul class="list">--%>
-<%--                                        <li><a href="#">5 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i--%>
-<%--                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>--%>
-<%--                                        <li><a href="#">4 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i--%>
-<%--                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>--%>
-<%--                                        <li><a href="#">3 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i--%>
-<%--                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>--%>
-<%--                                        <li><a href="#">2 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i--%>
-<%--                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>--%>
-<%--                                        <li><a href="#">1 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i--%>
-<%--                                                class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>--%>
-<%--                                    </ul>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                        <div class="review_list">--%>
-<%--                            <div class="review_item">--%>
-<%--                                <div class="media">--%>
-<%--                                    <div class="d-flex">--%>
-<%--                                        <img src="img/product/review-1.png" alt="">--%>
-<%--                                    </div>--%>
-<%--                                    <div class="media-body">--%>
-<%--                                        <h4>김철수</h4>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                                <p>제가 데려 가고 싶네요</p>--%>
-<%--                            </div>--%>
-<%--                            <div class="review_item">--%>
-<%--                                <div class="media">--%>
-<%--                                    <div class="d-flex">--%>
-<%--                                        <img src="img/product/review-2.png" alt="">--%>
-<%--                                    </div>--%>
-<%--                                    <div class="media-body">--%>
-<%--                                        <h4>신준수</h4>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                                <p>상태가 새것 같아요</p>--%>
-<%--                            </div>--%>
-<%--                            <div class="review_item">--%>
-<%--                                <div class="media">--%>
-<%--                                    <div class="d-flex">--%>
-<%--                                        <img src="img/product/review-3.png" alt="">--%>
-<%--                                    </div>--%>
-<%--                                    <div class="media-body">--%>
-<%--                                        <h4>홍길동</h4>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                        <i class="fa fa-star"></i>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                                <p>제품이 너무 이뻐요</p>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="col-lg-6">--%>
-<%--                        <div class="review_box">--%>
-<%--                            <h4>리뷰 쓰기</h4>--%>
-<%--                            <p>평가 혹은 댓글:</p>--%>
-<%--                            <form action="#/" class="form-contact form-review mt-3">--%>
-<%--                                <div class="form-group">--%>
-<%--                                    <input class="form-control" name="name" type="text" placeholder="회원 이름" required>--%>
-<%--                                </div>--%>
-<%--                                <div class="form-group">--%>
-<%--                                    <input class="form-control" name="email" type="email" placeholder="연락처 연락 방법" required>--%>
-<%--                                </div>--%>
-<%--                                <div class="form-group">--%>
-<%--                                    <input class="form-control" name="subject" type="text" placeholder="글 제목">--%>
-<%--                                </div>--%>
-<%--                                <div class="form-group">--%>
-<%--                                    <textarea class="form-control different-control w-100" name="textarea" id="textarea" cols="30" rows="5" placeholder="글내용"></textarea>--%>
-<%--                                </div>--%>
-<%--                                <div class="form-group text-center text-md-right mt-3">--%>
-<%--                                    <button type="submit" class="button button--active button-review">구매 요청</button>--%>
-<%--                                    <!-- 판매자에게 알림 이나 문자 전송? -->--%>
-<%--                                </div>--%>
-<%--                            </form>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-
-            <!-- 쓸지안쓸지모르는 댓글 끝 -->
-
-        </div>
-    </div>
-</section>
-<!--================End Product Description Area =================-->
-
-
-<!-- 쓸지안쓸지모름 -- >
-<!--================ Start related Product area =================-->
-<%--<section class="related-product-area section-margin--small mt-0">--%>
-<%--    <div class="container">--%>
-<%--        <div class="section-intro pb-60px">--%>
-<%--            <p>다른 인기 아이템</p>--%>
-<%--            <h2>급상승 <span class="section-intro__style">인기 상품</span></h2>--%>
-<%--        </div>--%>
-<%--        <div class="row mt-30">--%>
-<%--            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">--%>
-<%--                <div class="single-search-product-wrapper">--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-1.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-2.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-3.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-
-<%--            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">--%>
-<%--                <div class="single-search-product-wrapper">--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-4.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-5.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-6.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-
-<%--            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">--%>
-<%--                <div class="single-search-product-wrapper">--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-7.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-8.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-9.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-
-<%--            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">--%>
-<%--                <div class="single-search-product-wrapper">--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-1.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-2.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-3.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</section>--%>
-<!--================ end related Product area =================-->
-<!-- 쓸지안쓸지모름 끝 -->
 
 <!--================ Start footer Area  =================-->
 <footer class="footer">
