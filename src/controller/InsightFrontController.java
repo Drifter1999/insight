@@ -67,7 +67,6 @@ public class InsightFrontController extends HttpServlet {
             case "productdetail.in":
                 forward = new productdetailAction().execute(request, response);
                 break;
-
         }
 
         if( forward != null) {
