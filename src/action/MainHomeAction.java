@@ -19,7 +19,6 @@ public class MainHomeAction implements Action {
         HttpSession session = request.getSession();
         List<ProductDTO> list = dao.getProduct();
 
-
         session.setAttribute("productlist", list);
         session.setMaxInactiveInterval(60 * 10);
         forward.setRedirect(true);
