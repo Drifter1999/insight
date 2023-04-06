@@ -1,8 +1,6 @@
 package controller;
 
 import action.*;
-import jdk.jfr.Category;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -67,6 +65,8 @@ public class InsightFrontController extends HttpServlet {
                 break;
 
             case "productdetail.in":
+                forward = new productdetailAction().execute(request, response);
+                break;
 
         }
 
