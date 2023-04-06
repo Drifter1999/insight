@@ -188,7 +188,7 @@
                             <div class="card-product__img">
                                 <img class="card-img" src="${pageContext.request.contextPath}/productimage${product.productimage1}" alt="${product.productname}">
                                 <ul class="card-product__imgOverlay">
-                                    <li><button><i class="ti-search"></i></button></li>
+                                    <li><button onclick="location.href='productdetail.in?productNum=${product.productnum}'">><i class="ti-search"></i></button></li>
                                 </ul>
                             </div>
                             <div class="card-body">
