@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="vendors/nice-select/nice-select.css">
     <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
     <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -41,7 +40,7 @@
                                     <a class="nav-link" href="mainhome.jsp">홈</a>
                                 </li>
                                 <li class="nav-item submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
                                             <a class="nav-link" href="category.jsp">카테고리</a>
@@ -49,7 +48,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item active submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
                                             <a class="nav-link" href="index.jsp">로그인</a>
@@ -67,7 +66,7 @@
                                     <a class="nav-link" href="mainhome.jsp">홈</a>
                                 </li>
                                 <li class="nav-item submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
                                             <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.jsp'">카테고리</a>
@@ -75,7 +74,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item active submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
                                             <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
@@ -104,7 +103,6 @@
 </header>
 <!--================ End Header Menu Area =================-->
 
-
 <!--================ 배너  Carousel start =================-->
 <section class="section-margin mt-0">
     <div class="owl-carousel owl-theme hero-carousel">
@@ -132,7 +130,6 @@
     </div>
 </section>
 <!--================ 배너  Carousel end =================-->
-
 
 <!--================Single Product Area =================-->
 <div style="margin-bottom: 100px;" class="product_image_area">
@@ -228,12 +225,6 @@
                     <div class="single-footer-widget tp_widgets">
                         <h4 class="footer_title">Contact Us</h4>
                         <div class="ml-40">
-                            <!-- <p class="sm-head">
-                              <span class="fa fa-location-arrow"></span>
-                              본사
-                            </p>
-                            <p>율도국 전우치로49 101</p> -->
-
                             <p class="sm-head">
                                 <span class="fa fa-phone"></span>
                                 GitHub
@@ -285,8 +276,6 @@
     </div>
 </footer>
 <!--================ End footer Area  =================-->
-
-
 
 <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
 <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
