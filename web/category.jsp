@@ -37,7 +37,7 @@
 
 
 <%--카테고리 전체 품목 저장--%>
-<c:set var="AllProduct" value="${AllProduct}" scope="request"/>
+<c:set var="AllProduct" value="${AllProduct}" scope="session"/>
 
 <!--================ Start Header Menu Area =================-->
 <header class="header_area">
@@ -336,11 +336,10 @@
                 <section class="lattest-product-area pb-40 category-list">
                     <div class="row" id="CategoryList">
                         <c:forEach var="product" items="${AllProduct}">
-                            <h1>야호</h1>
                             <div class="col-md-6 col-lg-4">
                                 <div class="card text-center card-product">
                                     <div class="card-product__img">
-                                        <img class="card-img" src="productimage"+${product.productimage1} alt="">
+                                        <img class="card-img" src="${'productimage'+product.productimage1}" alt="">
                                     </div>
                                     <div class="card-body">
                                         <p>${product.productname}</p>
