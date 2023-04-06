@@ -6,41 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>INSIGHT - 회원정보</title>
-    <%--
-    해야하는 일
-    1. 스크립트 jsp파일에 심어져있는거 정리.
-    2. 상세주소 입력시 readonly에 반영안되는 이슈 해결
-    3. 유저 정보(아이디, 비번, 이멜, 주소 등) 변경시 유효성 검사를 거쳐 서버에 잘 전송되는지 확인 해야함
-    --%>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
-
         function touseraddr(){
-
            useraddr = document.getElementById("sample4_detailAddress").value ;
         }
         function editName() {
-            // 사용자가 입력한 값을 가져와서 변수에 저장합니다.
             var userInput = document.getElementById("username").value;
         }
         function editId() {
-            // 사용자가 입력한 값을 가져와서 변수에 저장합니다.
             var userInput = document.getElementById("userid").value;
         }
         function editPw() {
-            // 사용자가 입력한 값을 가져와서 변수에 저장합니다.
             var userInput = document.getElementById("userpw").value;
         }
         function editAddr() {
-            // 사용자가 입력한 값을 가져와서 변수에 저장합니다.
             var userInput = document.getElementById("useraddr").value;
         }
         function editPhone() {
-            // 사용자가 입력한 값을 가져와서 변수에 저장합니다.
             var userInput = document.getElementById("userphone").value;
         }
         function editEm() {
-            // 사용자가 입력한 값을 가져와서 변수에 저장합니다.
             var userInput = document.getElementById("useremail").value;
         }
         function sample4_execDaumPostcode() {
@@ -74,7 +60,6 @@
                         document.getElementById("sample4_extraAddress").value = '';
                     }
 
-
                     var guideTextBox = document.getElementById("guide");
 
                     if(data.autoRoadAddress) {
@@ -97,6 +82,7 @@
                 }
             }).open();
         }
+
         function validateInfo() {
             var username = document.getElementById("username").value;
             var userid = document.getElementById("userid").value;
@@ -159,21 +145,7 @@
 
             return true;
         }
-
-
     </script>
-    <!--	<link rel="icon" href="img/Fevicon.png" type="image/png">-->
-    <!--  <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">-->
-    <!--  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">-->
-    <!--	<link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">-->
-    <!--	<link rel="stylesheet" href="vendors/linericon/style.css">-->
-    <!--  <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
-      <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-      <link rel="stylesheet" href="vendors/nice-select/nice-select.css">
-      <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">-->
-
-    <!--  <link rel="stylesheet" href="css/style.css">-->
-
     <link rel="stylesheet" href="img/Fevicon.png" type="image/png">
     <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
@@ -188,17 +160,6 @@
 <body>
 <%--세션 저장 --%>
 <c:set var="userSession" value="${userSession}" scope="session"/>
-<%--
-    userSession.userid = 유저아이디.
-    userSession.username = 유저이름.
-    userSession.userpw = 유저비밀번호
-    userSession.useremail = 유저 이메일
-    userSession.useraddr = 유저 주소
-    userSession.userphone = 유저휴대폰 번호
-
-    위의 userSession.~~~~ 은 el문으로 사용하시면 값을 꺼내올 수 있습니다.
-    ex ${userSession.userid} : 세션 상 userid의 값을 꺼내온다
---%>
 <!--================ Start Header Menu Area =================-->
 <header class="header_area">
     <div class="main_menu">
@@ -218,7 +179,7 @@
                                 <a class="nav-link" href="index.jsp">홈</a>
                             </li>
                             <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a class="nav-link" href="category.jsp">카테고리</a>
@@ -226,7 +187,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item active submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a class="nav-link" href="index.jsp">로그인</a>
@@ -242,7 +203,7 @@
                             <a class="nav-link" href="mainhome.jsp">홈</a>
                         </li>
                         <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.jsp'">카테고리</a>
@@ -250,7 +211,7 @@
                             </ul>
                         </li>
                         <li class="nav-item active submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
@@ -269,18 +230,6 @@
                             <a class="button button-header" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>판매하기</a>
                         </li>
                     </ul>
-
-                        <%-- 기존버튼
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>
-                                    <button type="button" class="btn-custom">
-                                        <i class="fa fa-plus"></i> 상품 등록하기
-                                    </button>
-                                </a>
-                            </li>
-                        </ul>
-                        --%>
                     </c:otherwise>
                     </c:choose>
 
@@ -320,8 +269,6 @@
     </div>
 </section>
 <!--================ 배너  Carousel end =================-->
-<!-- ================ end banner area ================= -->
-
 
 <!--================Cart Area =================-->
 <!-- 이 부분에 마이페이지 정보들 나열-->
@@ -333,7 +280,6 @@
                     <table class="table">
                         <tbody>
                         <%--                        수정할 이름--%>
-
                         <tr>
                             <td>
                                 <div class="media">
@@ -347,7 +293,6 @@
                                 <span id="nameeditError" style="display:none; color:red;">아이디는 2~20자 이내의 영문, 숫자를 사용하세요</span><br>
                             </td>
                         </tr>
-
                         <%--                        수정할 아이디--%>
                         <tr>
                             <td>
@@ -358,8 +303,6 @@
                                 </div>
                             </td>
                             <td>
-                                <%--<input type="text" name="userid" id="userid" required placeholder="${userSession.userid}" oninput="editId()"><br>--%>
-                                <%--<span id="ideditError" style="display:none; color:red;">아이디는 2~20자 이내의 영문, 숫자를 사용하세요</span><br>--%>
                                 <span>${userSession.userid}</span>
                                 <input type="hidden" name="userid" id="userid" value="${userSession.userid}">
                             </td>
@@ -536,12 +479,6 @@
                     <div class="single-footer-widget tp_widgets">
                         <h4 class="footer_title">Contact Us</h4>
                         <div class="ml-40">
-                            <!-- <p class="sm-head">
-                              <span class="fa fa-location-arrow"></span>
-                              본사
-                            </p>
-                            <p>율도국 전우치로49 101</p> -->
-
                             <p class="sm-head">
                                 <span class="fa fa-phone"></span>
                                 GitHub
@@ -554,7 +491,6 @@
                                 이상기 : Drifter1999<br />
                                 이태하 : taehalee615
                             </p>
-
                             <p class="sm-head">
                                 <span class="fa fa-envelope"></span>
                                 이메일
@@ -594,7 +530,6 @@
 </footer>
 <!--================ End footer Area  =================-->
 
-
 <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
 <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="vendors/skrollr.min.js"></script>
@@ -610,12 +545,11 @@
         let password = prompt("비밀번호 입력 바랍니다.");
         if (password != userpw) {
             alert("입력한 정보가 맞지 않음.");
-            location.href = "/mypage.jsp";
+            location.href = "mypage.jsp";
         }else {
             document.myPage.action = "/UserDelete.in?userid"+userid+"&userpw="+password;
             document.myPage.submit();
         }
-
     }
 </script>
 </body>
