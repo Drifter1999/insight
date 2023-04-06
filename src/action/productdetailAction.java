@@ -12,14 +12,12 @@ public class productdetailAction implements Action{
     @Override
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
         ActionForward forward = new ActionForward();
-        HttpSession session = request.getSession();
         InsightDAO dao = new InsightDAO();
         int productnum = Integer.parseInt(request.getParameter("productNum"));
         ProductDTO dto = dao.productDetail(productnum);
 
-        session.setAttribute("productlist", dto);
-        session.setMaxInactiveInterval(60 * 10);
-        forward.setRedirect(true);
+        request.setAttribute("productlist", dto);
+        forward.setRedirect(false);
         forward.setPath("/productdetail.jsp");
         return forward;
     }
