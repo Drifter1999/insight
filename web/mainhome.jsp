@@ -192,8 +192,8 @@
                                 </ul>
                             </div>
                             <div class="card-body">
-                                <p id="category">${product.productCategoryname}</p>
-                                <h4 class="card-product__title"><a href="productdetail.jsp">${product.productprice}</a></h4>
+                                <p id="category">${product.productcategorynum}</p>
+                                <h4 class="card-product__title"><a href="productdetail.jsp">${product.producttitle}</a></h4>
                                 <p class="card-product__price">${product.productprice}</p>
                             </div>
                         </div>
