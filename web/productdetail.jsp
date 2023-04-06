@@ -139,9 +139,15 @@
     <div class="container">
         <div class="row s_product_inner">
             <div class="col-lg-6">
-                <div class="owl-carousel owl-theme s_Product_carousel">
+                <div class="owl-carousel owl-theme s_Product_carousel" items="1">
                     <div class="single-prd-item">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/productimage${productlist.productimage1}" alt="${productlist.productname}">
+                    </div>
+                    <div class="single-prd-item">
+                        <img class="img-fluid" src="${pageContext.request.contextPath}/productimage${productlist.productimage2}" alt="${productlist.productname}">
+                    </div>
+                    <div class="single-prd-item">
+                        <img class="img-fluid" src="${pageContext.request.contextPath}/productimage${productlist.productimage3}" alt="${productlist.productname}">
                     </div>
                 </div>
             </div>
@@ -150,7 +156,7 @@
                     <h3 style="margin-bottom: 20px;">${productlist.productname}</h3>
                     <h2 style="margin-bottom: 20px;">${productlist.productprice}원</h2>
                     <ul class="list" style="margin-bottom: 40px;">
-                        <li><a class="active" ><span>카테고리</span> : ${productlist.productcategorynum}</a></li>
+                        <li><a class="active" ><span>카테고리</span> : ${productlist.productcategoryname}</a></li>
                     </ul>
                     <p style="margin-bottom: 100px;">${productlist.productdetail}</p>
                     <div class="product_count">
