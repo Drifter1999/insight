@@ -141,22 +141,20 @@
             <div class="col-lg-6">
                 <div class="owl-carousel owl-theme s_Product_carousel">
                     <div class="single-prd-item">
-                        <img class="img-fluid" src="img/category/s-p1.jpg" alt="">
+                        <img class="img-fluid" src="${pageContext.request.contextPath}/productimage${productlist.productimage1}" alt="${productlist.productname}">
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 offset-lg-1">
                 <div class="s_product_text">
-                    <h3 style="margin-bottom: 20px;"> 제품 이름 가져오기 </h3>
-                    <h2 style="margin-bottom: 20px;"> 제품 가격 가져오기 </h2>
+                    <h3 style="margin-bottom: 20px;">${productlist.productname}</h3>
+                    <h2 style="margin-bottom: 20px;">${productlist.productprice}원</h2>
                     <ul class="list" style="margin-bottom: 40px;">
-                        <li><a class="active" href="#"><span>카테고리</span> : 카테고리명 가져오기</a></li>
+                        <li><a class="active" ><span>카테고리</span> : ${productlist.productcategorynum}</a></li>
                     </ul>
-                    <p style="margin-bottom: 100px;">
-                        상품 설명 가져오기
-                    </p>
+                    <p style="margin-bottom: 100px;">${productlist.productdetail}</p>
                     <div class="product_count">
-                        <a class="button primary-btn" href="#">구매하기</a>
+                        <a class="button primary-btn" style="color: #fafaff">구매하기</a>
                     </div>
                 </div>
             </div>
