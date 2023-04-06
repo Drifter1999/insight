@@ -56,7 +56,7 @@
     <!-- product  -->
     <!--등록된 판매중인 상품 조회 (가장 최근 순)-->
     <select id="ProductSelectDESC" resultType="PDTO">
-        SELECT PRODUCTIMAGE1 , PRODUCTNAME , PRODUCTPRICE, PRODUCTCATEGORYNUM
+        SELECT PRODUCTNUM, PRODUCTIMAGE1 , PRODUCTNAME , PRODUCTPRICE, PRODUCTCATEGORYNUM, PRODUCTTITLE
         FROM PRODUCT p
         WHERE rownum between 1 and 8 and productstate='Y'
         ORDER BY productnum DESC

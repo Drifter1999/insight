@@ -192,8 +192,30 @@
                                 </ul>
                             </div>
                             <div class="card-body">
-                                <p id="category">${product.productcategorynum}</p>
-                                <h4 class="card-product__title"><a href="productdetail.jsp">${product.producttitle}</a></h4>
+                                <c:set var="categoryName" value=""/>
+                                <c:choose>
+                                    <c:when test="${product.productcategorynum == 1}">
+                                        <c:set var="categoryName" value="의류"/>
+                                    </c:when>
+                                    <c:when test="${product.productcategorynum == 2}">
+                                        <c:set var="categoryName" value="잡화"/>
+                                    </c:when>
+                                    <c:when test="${product.productcategorynum == 3}">
+                                        <c:set var="categoryName" value="전자기기"/>
+                                    </c:when>
+                                    <c:when test="${product.productcategorynum == 4}">
+                                        <c:set var="categoryName" value="서적"/>
+                                    </c:when>
+                                    <c:when test="${product.productcategorynum == 5}">
+                                        <c:set var="categoryName" value="악세서리"/>
+                                    </c:when>
+                                    <c:when test="${product.productcategorynum == 6}">
+                                        <c:set var="categoryName" value="기타"/>
+                                    </c:when>
+                                </c:choose>
+
+                                <p id="category">${categoryName}</p>
+                                <h4 class="card-product__title"><a href="productdetail.in?productNum=${product.productnum}">${product.producttitle}</a></h4>
                                 <p class="card-product__price">${product.productprice}</p>
                             </div>
                         </div>
@@ -214,7 +236,7 @@
                         <h2>이용해 주셔서 감사합니다</h2>
                         <h4>저희는 언제나 여러분들의 안전한 거래를 응원합니다.</h4>
                         <p>안전한 거래를 위해서 더 치트 사용 부탁드립니다.</p>
-                        <!--              <a class="button button&#45;&#45;active mt-3 mt-xl-4" href="#">Shop Now</a>-->
+                        <!-- <a class="button button&#45;&#45;active mt-3 mt-xl-4" href="#"> Shop Now </a> -->
                     </div>
                 </div>
             </div>
