@@ -55,8 +55,7 @@ public class InsightFrontController extends HttpServlet {
                 forward = new LogoutAction().execute(request, response);
                 break;
 
-            case "/Category.in" :
-
+            case "/category.in" :
                 forward = new CategoryAction().execute(request, response);
                 break;
 
@@ -83,6 +82,8 @@ public class InsightFrontController extends HttpServlet {
                 RequestDispatcher disp = request.getRequestDispatcher(forward.getPath());
                 disp.forward(request, response);
             }
+        }else {
+            System.out.println("forward 값 없음 :  " + forward);
         }
     }
 }

@@ -96,8 +96,8 @@ public class InsightDAO {
 
 
     public List<ProductDTO> AllProduct() {
-        List<ProductDTO> arr = sqlSession.selectList("Insight.AllProduct");
-        return arr;
+        return sqlSession.selectList("Insight.AllProduct");
+
     }
 
     public List<ProductDTO> MyShop(String userid) {

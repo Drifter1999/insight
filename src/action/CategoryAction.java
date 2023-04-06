@@ -5,6 +5,7 @@ import dto.ProductDTO;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -15,9 +16,11 @@ public class CategoryAction implements Action{
         InsightDAO dao = new InsightDAO();
         List<ProductDTO> list = dao.AllProduct();
 
-        request.setAttribute("AllProduct", list);
-        forward.setRedirect(true);
-        forward.setPath("/category.jsp");
+        if (list != null) {
+            request.setAttribute("AllProduct", list);
+            forward.setRedirect(false);
+            forward.setPath("/category.jsp");
+        }
 
         return forward;
     }
