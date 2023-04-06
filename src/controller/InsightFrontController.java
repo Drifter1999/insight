@@ -1,8 +1,6 @@
 package controller;
 
 import action.*;
-import jdk.jfr.Category;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -64,6 +62,10 @@ public class InsightFrontController extends HttpServlet {
 
             case "/UserDelete.in":
                 forward = new UserDeleteAction().execute(request, response);
+                break;
+
+            case "productdetail.in":
+                forward = new productdetailAction().execute(request, response);
                 break;
         }
 
