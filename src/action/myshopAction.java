@@ -17,15 +17,11 @@ public class myshopAction implements Action{
         InsightDAO dao = new InsightDAO();
         List<ProductDTO> myshoplist = dao.getProduct();
         String userid = request.getParameter("userid");
-//        ProductDTO dto = dao.productDetail(productnum);
-//        System.out.println(productnum);
-//        System.out.println(dto.getProductdetail());
-//        System.out.println(dto.getProductprice());
+        myshoplist = dao.MyShop(userid);
+        request.setAttribute("myshoplist", myshoplist);
 
-//        session.setAttribute("productlist", dto);
-        session.setMaxInactiveInterval(60 * 10);
-        forward.setRedirect(true);
-        forward.setPath("/productdetail.jsp");
+        forward.setRedirect(false);
+        forward.setPath("/MyShop.jsp");
         return forward;
     }
 }

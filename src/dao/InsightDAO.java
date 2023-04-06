@@ -99,6 +99,10 @@ public class InsightDAO {
         List<ProductDTO> arr = sqlSession.selectList("Insight.AllProduct");
         return arr;
     }
+
+    public List<ProductDTO> MyShop(String userid) {
+        return (ArrayList) sqlSession.selectList("Insight.MyShop", userid);
+    }
 }
 
 
