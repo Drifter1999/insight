@@ -417,13 +417,13 @@
                             </td>
                             <td class="input_width">
                                 <input type="text" id="sample4_postcode" placeholder="우편번호">
-                                <input style="position: absolute; left: 45.5%" type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+                                <input style="position: absolute; left: 45.4%" type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
                                 <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
-                                <input style="position: absolute; left: 45.5%" type="text" id="sample4_jibunAddress" placeholder="지번주소">
+                                <input style="position: absolute; left: 45.4%" type="text" id="sample4_jibunAddress" placeholder="지번주소">
                                 <span id="guide" style="color:#999;display:none"></span>
-                                <input style="position: absolute; left: 55.65%" type="text" id="sample4_extraAddress" placeholder="참고항목">
+                                <input style="position: absolute; left: 55.495%" type="text" id="sample4_extraAddress" placeholder="참고항목">
                                 <input type="text" id="useraddr" name="useraddr" readonly required oninput="editAddr()">
-                                <input style="position: absolute; left: 45.5%" type="text" id="sample4_detailAddress" placeholder="상세주소" required oninput="touseraddr()">
+                                <input style="position: absolute; left: 45.4%" type="text" id="sample4_detailAddress" placeholder="상세주소" required oninput="touseraddr()">
                             </td>
                         </tr>
                         <%--                             변경할 전화번호 확인  --%>
