@@ -92,7 +92,7 @@
     <!--상품 상세 내역-->
     <select id="ProductDetail" resultType="PDTO" parameterType="_int">
         select  *
-        from    FROM PRODUCT p NATURAL join PRODUCTCATEGORY p2
+        from    PRODUCT p NATURAL join PRODUCTCATEGORY p2
         where   productnum = #{productnum}
     </select>
 
