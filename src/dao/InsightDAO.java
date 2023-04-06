@@ -85,6 +85,20 @@ public class InsightDAO {
 
         return result;
     }
+
+    public List<ProductDTO> OneCategory(String cname) {
+        int categorynum = sqlSession.selectOne("Insight.SelectCategoryNumber", cname);
+        List<ProductDTO> arr =new ArrayList<>();
+        arr = sqlSession.selectList("Insight.OneCategory", categorynum);
+
+        return arr;
+    }
+
+
+    public List<ProductDTO> AllProduct() {
+        List<ProductDTO> arr = sqlSession.selectList("Insight.AllProduct");
+        return arr;
+    }
 }
 
 

@@ -88,6 +88,22 @@
             'Y'
         )
     </insert>
+    <!-- 제품 카테고리 번호 찾기-->
+    <select id="SelectCategoryNumber" parameterType="string" resultType="_int">
+        SELECT  PRODUCTCATEGORYNUM
+        FROM    PRODUCTCATEGORY
+        WHERE   PRODUCTCATEGORYNAME = #{cname}
+    </select>
+
+    <!-- 제품 해당 카테고리 찾기-->
+    <select id="OneCategory" parameterType="_int" resultType="PDTO">
+        SELECT	*
+        FROM 	PRODUCT p
+        WHERE 	PRODUCTCATEGORYNUM = #{categorynum}
+        AND		PRODUCTSTATE ='Y'
+        ORDER BY PRODUCTNUM DESC
+    </select>
+
 
     <!--상품 상세 내역-->
     <select id="ProductDetail" resultType="PDTO" parameterType="_int">
@@ -119,6 +135,14 @@
         delete from product
         where productnum = #{productnum}
     </delete>
+
+    <!--카테고리 페이지에서 보이는 모든 제품군 -->
+    <select id="AllProduct" resultType="PDTO">
+        select  *
+        from    product
+        where   productstate = 'Y'
+        ORDER BY productnum DESC
+    </select>
 </mapper>
 
 
