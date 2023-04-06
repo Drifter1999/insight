@@ -35,8 +35,8 @@
         }
 
         .preview {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
             margin-right: 10px;
             margin-bottom: 10px;
@@ -85,7 +85,7 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascrip:void(0)" onclick="location.href='category.jsp'">카테고리</a>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.jsp'">카테고리</a>
                                 </li>
                             </ul>
                         </li>
@@ -226,7 +226,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="productTitle" id="productTitle" required  placeholder= "제목을 입력해주세요." oninput="checkTitle()"><br>
+                                <input class="textarea_prodetail2" type="text" name="productTitle" id="productTitle" required  placeholder= "제목을 입력해주세요." oninput="checkTitle()"><br>
                                 <span id="titleError" style="display:none; color:red;">상품명을 2자 이상 입력해주세요.</span><br>
                             </td>
                         </tr>
@@ -240,7 +240,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="productName" id="productName" required>
+                                <input class="textarea_prodetail2" type="text" name="productName" id="productName" required>
                             </td>
                         </tr>
 <%--                            상품 설명--%>
@@ -253,7 +253,7 @@
                                 </div>
                             </td>
                             <td>
-                                <textarea name="productDetail" id="productDetail" required></textarea>
+                                <textarea class="textarea_prodetail" name="productDetail" id="productDetail" required></textarea>
                             </td>
                         </tr>
 <%--                             상품 가격--%>

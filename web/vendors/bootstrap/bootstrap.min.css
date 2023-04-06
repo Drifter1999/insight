@@ -5097,6 +5097,27 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     -webkit-box-orient: vertical;
 }
 
+/* 추가 */
+.textarea_prodetail{
+    width: 80%;
+    height: 200px;
+}
+
+.textarea_prodetail2{
+    width: 80%;
+    height: 34px;
+}
+
+.label_width{
+    width: 115px;
+}
+
+.input_width{
+    width: 300px;
+}
+
+/* 여기까지 */
+
 .media {
     display: -ms-flexbox;
     display: flex;

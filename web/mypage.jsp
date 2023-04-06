@@ -338,7 +338,7 @@
                             <td>
                                 <div class="media">
                                     <div class="media-body">
-                                        <label for="username">*이름:</label>
+                                        <label class="label_width" for="username">*이름:</label>
                                     </div>
                                 </div>
                             </td>
@@ -374,7 +374,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="password" name="userpw" id="userpw" required oninput="editPw()"><br>
+                                <input class="input_width" type="password" name="userpw" id="userpw" required oninput="editPw()"><br>
                                 <span id="pweditError" style="display:none; color:red;">영문, 숫자, 특수문자 조합의 8~25자리 비밀번호를 사용하세요</span><br>
                             </td>
                         </tr>
@@ -383,12 +383,12 @@
                             <td>
                                 <div class="media">
                                     <div class="media-body">
-                                        <label for="userpw">*비밀번호 확인:</label>
+                                        <label class="label_width" for="userpw">*비밀번호 확인:</label>
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                <input type="password" name="userpw" id="userpw2" required oninput="editPw()"><br>
+                                <input class="input_width" type="password" name="userpw" id="userpw2" required oninput="editPw()"><br>
                                 <span id="pweditError2" style="display:none; color:red;">비밀번호가 일치하지 않습니다</span><br>
                             </td>
                         </tr>
@@ -402,7 +402,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="useremail" id="useremail" required value="${userSession.useremail}" oninput="editEm()"><br>
+                                <input class="input_width" type="text" name="useremail" id="useremail" required value="${userSession.useremail}" oninput="editEm()"><br>
                                 <span id="emerror" style="display:none; color:red;">올바른 이메일을 입력하세요</span><br>
                             </td>
                         </tr>
@@ -415,15 +415,15 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>
+                            <td class="input_width">
                                 <input type="text" id="sample4_postcode" placeholder="우편번호">
-                                <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+                                <input style="position: absolute; left: 45.5%" type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
                                 <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
-                                <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+                                <input style="position: absolute; left: 45.5%" type="text" id="sample4_jibunAddress" placeholder="지번주소">
                                 <span id="guide" style="color:#999;display:none"></span>
-                                <input type="text" id="sample4_detailAddress" placeholder="상세주소" required oninput="touseraddr()">
-                                <input type="text" id="sample4_extraAddress" placeholder="참고항목">
+                                <input style="position: absolute; left: 55.65%" type="text" id="sample4_extraAddress" placeholder="참고항목">
                                 <input type="text" id="useraddr" name="useraddr" readonly required oninput="editAddr()">
+                                <input style="position: absolute; left: 45.5%" type="text" id="sample4_detailAddress" placeholder="상세주소" required oninput="touseraddr()">
                             </td>
                         </tr>
                         <%--                             변경할 전화번호 확인  --%>
@@ -436,7 +436,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="userphone" id="userphone" required value="${userSession.userphone}" oninput="editPhone()"><br>
+                                <input class="input_width" type="text" name="userphone" id="userphone" required value="${userSession.userphone}" oninput="editPhone()"><br>
                                 <span id="phoneerror" style="display:none; color:red;">올바른 전화번호를 입력해주세요</span><br>
                             </td>
                         </tr>
@@ -454,7 +454,7 @@
                             </td>
                             <td>
                                 <div class="checkout_btn_inner d-flex align-items-center">
-                                    <input class="button button-header" type="submit" value="변경하기" style="color:dodgerblue; border-color: dodgerblue">
+                                    <input class="button button-header" type="submit" value="변경하기" >
                                 </div>
                             </td>
                             <td></td>
@@ -463,7 +463,7 @@
                             <td></td>
                             <td>
                                 <div class="checkout_btn_inner d-flex align-items-center">
-                                    <a class="button button-header" style="color: red; border-color: red" href="javascript:void(0)" onclick="UserDelete()">탈퇴하기</a>
+                                    <a class="buttonR buttonR-header" href="javascript:void(0)" onclick="UserDelete()">탈퇴하기</a>
                                 </div>
                             </td>
                         </tr>

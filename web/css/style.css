@@ -1304,6 +1304,128 @@ a {
     color: #222
 }
 
+/*================= 빨강버튼 ================================================================================*/
+
+.buttonR {
+    display: inline-block;
+    border: 1px solid #ff0000;
+    border-radius: 30px;
+    color: #222;
+    font-weight: 500;
+    padding: 12px 50px;
+    background: #ff0000;
+    color: #fff;
+    transition: all .4s ease
+}
+
+@media (max-width: 767px) {
+    .buttonR {
+        padding: 8px 25px !important
+    }
+}
+
+.buttonR-subscribe {
+    font-size: 14px;
+    padding: 10px 20px
+}
+
+@media (min-width: 800px) {
+    .buttonR-subscribe {
+        padding: 12px 35px;
+        font-size: 15px
+    }
+}
+
+.buttonR-blog {
+    padding: 5px 31px;
+    font-size: 14px;
+    background: #f9f9ff;
+    border-color: #EEEEEE;
+    border-radius: 0;
+    color: #222
+}
+
+.buttonR-blog:hover {
+    background: #ff0000 !important;
+    color: #fff !important
+}
+
+.buttonR-postComment {
+    border-radius: 4px;
+    font-size: 14px;
+    margin-top: 5px
+}
+
+.buttonR-contact {
+    border-radius: 0;
+    padding: 12px 26px
+}
+
+.buttonR-tracking {
+    font-size: 14px;
+    padding: 8px 42px
+}
+
+.buttonR-login {
+    font-size: 15px;
+    padding: 7px 44px
+}
+
+.buttonR-coupon {
+    font-size: 15px;
+    padding: 6px 45px
+}
+
+.buttonR-paypal {
+    width: 100%;
+    padding: 8px 30px
+}
+
+.buttonR-account {
+    padding: 7px 42px;
+    background: transparent;
+    border-color: #fff
+}
+
+.buttonR-account:hover {
+    border-color: #fff !important
+}
+
+.buttonR-header {
+    padding: 10px 45px;
+    background: transparent;
+    color: #222;
+    border-color: #EEEEEE
+}
+
+.buttonR-hero {
+    padding: 12px 41px
+}
+
+.buttonR--active {
+    background: #ff0000;
+    color: #fff
+}
+
+.buttonR-contactForm {
+    border: 1px solid #ff0000 !important;
+    border-radius: 0;
+    padding: 11px 26px
+}
+
+.buttonR-review {
+    padding: 12px 40px;
+    border-radius: 30px
+}
+
+.buttonR:hover {
+    border-color: #ff0000;
+    background: transparent;
+    color: #222
+}
+
+/*=================================================================================================*/
+
 .button-register {
     font-size: 14px;
     border: 0;
