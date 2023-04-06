@@ -6,18 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>INSIGHT - 상품 업로드</title>
-    <!--   <link rel="icon" href="img/Fevicon.png" type="image/png">-->
-    <!--  <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">-->
-    <!--  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">-->
-    <!--   <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">-->
-    <!--   <link rel="stylesheet" href="vendors/linericon/style.css">-->
-    <!--  <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
-      <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-      <link rel="stylesheet" href="vendors/nice-select/nice-select.css">
-      <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">-->
-
-    <!--  <link rel="stylesheet" href="css/style.css">-->
-
     <link rel="stylesheet" href="img/Fevicon.png" type="image/png">
     <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
@@ -66,7 +54,7 @@
                             <a class="nav-link" href="index.jsp">홈</a>
                         </li>
                         <li class="nav-item active submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.jsp">로그인</a>
@@ -82,7 +70,7 @@
                             <a class="nav-link" href="mainhome.jsp">홈</a>
                         </li>
                         <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.jsp'">카테고리</a>
@@ -90,7 +78,7 @@
                             </ul>
                         </li>
                         <li class="nav-item active submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username}님</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username}님</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
@@ -100,16 +88,6 @@
                                 </li>
                             </ul>
                         </li>
-<%--                        필요없는 버튼    --%>
-<%--                        <ul class="nav navbar-nav navbar-right">--%>
-<%--                            <li class="nav-item">--%>
-<%--                                <a class="nav-link" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>--%>
-<%--                                    <button type="button" class="btn-custom">--%>
-<%--                                        <i class="fa fa-plus"></i> 상품 등록하기--%>
-<%--                                    </button>--%>
-<%--                                </a>--%>
-<%--                            </li>--%>
-<%--                        </ul>--%>
                     </c:otherwise>
                 </c:choose>
                     </ul>
@@ -129,7 +107,7 @@
                 <h1>환영합니다!</h1>
                 <nav aria-label="breadcrumb" class="banner-breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">홈</a></li>
+                        <li class="breadcrumb-item"><a>홈</a></li>
                         <li class="breadcrumb-item active" aria-current="page">안녕하세요 ${userSession.username}님</li>
                     </ol>
                 </nav>
@@ -138,7 +116,6 @@
     </div>
 </section>
 <!-- ================ end banner area ================= -->
-
 
 <!--================Cart Area =================-->
 <!-- 이 부분에 마이페이지 정보들 나열-->
@@ -316,7 +293,6 @@
 
 <!--================End Cart Area =================-->
 
-
 <!--================ Start footer Area  =================-->
 <footer class="footer">
     <div class="footer-area">
@@ -376,12 +352,6 @@
                     <div class="single-footer-widget tp_widgets">
                         <h4 class="footer_title">Contact Us</h4>
                         <div class="ml-40">
-                            <!-- <p class="sm-head">
-                              <span class="fa fa-location-arrow"></span>
-                              본사
-                            </p>
-                            <p>율도국 전우치로49 101</p> -->
-
                             <p class="sm-head">
                                 <span class="fa fa-phone"></span>
                                 GitHub
