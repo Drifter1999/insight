@@ -19,36 +19,6 @@
 <body>
 <%--세션 저장 --%>
 <c:set var="userSession" value="${userSession}" scope="session"/>
-
-
-
-<!-- ================ Start Header Menu Area =================
-   <header class="header_area">
-   <div class="main_menu">
-     <nav class="navbar navbar-expand-lg navbar-light">
-       <div class="container">
-         <a class="navbar-brand logo_h" href="index.jsp"><img src="img/logo.png" alt=""></a>
-
-
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-         </button>
-         <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-           <ul class="nav navbar-nav menu_nav ml-auto mr-auto"></ul>
-
-           <ul class="nav-shop">
-             <li class="nav-item"><button><i class="ti-search"></i></button></li>
-             <li class="nav-item"><a class="button button-header" href="#">~~~님</a></li>
-           </ul>
-         </div>
-       </div>
-     </nav>
-   </div>
- </header>
-   ================ End Header Menu Area =================-->
 <!--================ Start Header Menu Area =================-->
 <header class="header_area">
     <div class="main_menu">
@@ -65,7 +35,7 @@
                         <c:choose>
                             <c:when test="${userSession eq null}">
                                 <li class="nav-item submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                                    <a  class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
                                             <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.in';">
@@ -74,7 +44,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item active submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
                                             <a class="nav-link" href="index.jsp">로그인</a>
@@ -98,7 +68,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item active submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
                                             <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
@@ -109,9 +79,6 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="javascript:void(0)" onclick="location.href='Logout.in'" style="color:red">로그아웃</a>
                                         </li>
-                                        <li>
-                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='productdetail.jsp'" style="color:deepskyblue">임시 프로덕트 디테일 접근 버튼</a>
-                                        </li>
                                     </ul>
                                 </li>
                                 </ul> <%-- 수정된 버튼 --%>
@@ -120,7 +87,6 @@
                                         <a class="button button-header" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>판매하기</a>
                                     </li>
                                 </ul>
-
                                 <%-- 기존버튼
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="nav-item">
@@ -141,9 +107,6 @@
 </header>
 <!--================ End Header Menu Area =================-->
 <main class="site-main">
-
-
-
     <!--================ 배너  Carousel start =================-->
     <section class="section-margin mt-0">
         <div class="owl-carousel owl-theme hero-carousel">
@@ -236,248 +199,13 @@
                         <h2>이용해 주셔서 감사합니다</h2>
                         <h4>저희는 언제나 여러분들의 안전한 거래를 응원합니다.</h4>
                         <p>안전한 거래를 위해서 더 치트 사용 부탁드립니다.</p>
-                        <!-- <a class="button button&#45;&#45;active mt-3 mt-xl-4" href="#"> Shop Now </a> -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- ================ offer section end ================= -->
-
-    <!-- ================ Best Selling item  carousel ================= -->
-    <!-- <section class="section-margin calc-60px">
-       <div class="container">
-         <div class="section-intro pb-60px">
-           <p>Popular Item in the market</p>
-           <h2>Best <span class="section-intro__style">Sellers</span></h2>
-         </div>
-         <div class="owl-carousel owl-theme" id="bestSellerCarousel">
-           <div class="card text-center card-product">
-             <div class="card-product__img">
-               <img class="img-fluid" src="img/product/product1.png" alt="">
-               <ul class="card-product__imgOverlay">
-                 <li><button><i class="ti-search"></i></button></li>
-                 <li><button><i class="ti-shopping-cart"></i></button></li>
-                 <li><button><i class="ti-heart"></i></button></li>
-               </ul>
-             </div>
-             <div class="card-body">
-               <p>Accessories</p>
-               <h4 class="card-product__title"><a href="productdetail.jsp">Quartz Belt Watch</a></h4>
-               <p class="card-product__price">$150.00</p>
-             </div>
-           </div>
-
-           <div class="card text-center card-product">
-             <div class="card-product__img">
-               <img class="img-fluid" src="img/product/product2.png" alt="">
-               <ul class="card-product__imgOverlay">
-                 <li><button><i class="ti-search"></i></button></li>
-                 <li><button><i class="ti-shopping-cart"></i></button></li>
-                 <li><button><i class="ti-heart"></i></button></li>
-               </ul>
-             </div>
-             <div class="card-body">
-               <p>Beauty</p>
-               <h4 class="card-product__title"><a href="productdetail.jsp">Women Freshwash</a></h4>
-               <p class="card-product__price">$150.00</p>
-             </div>
-           </div>
-
-           <div class="card text-center card-product">
-             <div class="card-product__img">
-               <img class="img-fluid" src="img/product/product3.png" alt="">
-               <ul class="card-product__imgOverlay">
-                 <li><button><i class="ti-search"></i></button></li>
-                 <li><button><i class="ti-shopping-cart"></i></button></li>
-                 <li><button><i class="ti-heart"></i></button></li>
-               </ul>
-             </div>
-             <div class="card-body">
-               <p>Decor</p>
-               <h4 class="card-product__title"><a href="productdetail.jsp">Room Flash Light</a></h4>
-               <p class="card-product__price">$150.00</p>
-             </div>
-           </div>
-
-           <div class="card text-center card-product">
-             <div class="card-product__img">
-               <img class="img-fluid" src="img/product/product4.png" alt="">
-               <ul class="card-product__imgOverlay">
-                 <li><button><i class="ti-search"></i></button></li>
-                 <li><button><i class="ti-shopping-cart"></i></button></li>
-                 <li><button><i class="ti-heart"></i></button></li>
-               </ul>
-             </div>
-             <div class="card-body">
-               <p>Decor</p>
-               <h4 class="card-product__title"><a href="productdetail.jsp">Room Flash Light</a></h4>
-               <p class="card-product__price">$150.00</p>
-             </div>
-           </div>
-
-           <div class="card text-center card-product">
-             <div class="card-product__img">
-               <img class="img-fluid" src="img/product/product1.png" alt="">
-               <ul class="card-product__imgOverlay">
-                 <li><button><i class="ti-search"></i></button></li>
-                 <li><button><i class="ti-shopping-cart"></i></button></li>
-                 <li><button><i class="ti-heart"></i></button></li>
-               </ul>
-             </div>
-             <div class="card-body">
-               <p>Accessories</p>
-               <h4 class="card-product__title"><a href="productdetail.jsp">Quartz Belt Watch</a></h4>
-               <p class="card-product__price">$150.00</p>
-             </div>
-           </div>
-
-           <div class="card text-center card-product">
-             <div class="card-product__img">
-               <img class="img-fluid" src="img/product/product2.png" alt="">
-               <ul class="card-product__imgOverlay">
-                 <li><button><i class="ti-search"></i></button></li>
-                 <li><button><i class="ti-shopping-cart"></i></button></li>
-                 <li><button><i class="ti-heart"></i></button></li>
-               </ul>
-             </div>
-             <div class="card-body">
-               <p>Beauty</p>
-               <h4 class="card-product__title"><a href="productdetail.jsp">Women Freshwash</a></h4>
-               <p class="card-product__price">$150.00</p>
-             </div>
-           </div>
-
-           <div class="card text-center card-product">
-             <div class="card-product__img">
-               <img class="img-fluid" src="img/product/product3.png" alt="">
-               <ul class="card-product__imgOverlay">
-                 <li><button><i class="ti-search"></i></button></li>
-                 <li><button><i class="ti-shopping-cart"></i></button></li>
-                 <li><button><i class="ti-heart"></i></button></li>
-               </ul>
-             </div>
-             <div class="card-body">
-               <p>Decor</p>
-               <h4 class="card-product__title"><a href="productdetail.jsp">Room Flash Light</a></h4>
-               <p class="card-product__price">$150.00</p>
-             </div>
-           </div>
-
-           <div class="card text-center card-product">
-             <div class="card-product__img">
-               <img class="img-fluid" src="img/product/product4.png" alt="">
-               <ul class="card-product__imgOverlay">
-                 <li><button><i class="ti-search"></i></button></li>
-                 <li><button><i class="ti-shopping-cart"></i></button></li>
-                 <li><button><i class="ti-heart"></i></button></li>
-               </ul>
-             </div>
-             <div class="card-body">
-               <p>Decor</p>
-               <h4 class="card-product__title"><a href="productdetail.jsp">Room Flash Light</a></h4>
-               <p class="card-product__price">$150.00</p>
-             </div>
-           </div>
-         </div>
-       </div>
-     </section>-->
-    <!-- ================ Best Selling item  carousel end ================= -->
-
-    <!-- ================ Blog section start ================= -->
-    <!--<section class="blog">
-      <div class="container">
-        <div class="section-intro pb-60px">
-          <p>Popular Item in the market</p>
-          <h2>Latest <span class="section-intro__style">News</span></h2>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="card card-blog">
-              <div class="card-blog__img">
-                <img class="card-img rounded-0" src="img/blog/blog1.png" alt="">
-              </div>
-              <div class="card-body">
-                <ul class="card-blog__info">
-                  <li><a href="#">By Admin</a></li>
-                  <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
-                </ul>
-                <h4 class="card-blog__title"><a href="single-blog.jsp">The Richland Center Shooping News and weekly shooper</a></h4>
-                <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-                <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="card card-blog">
-              <div class="card-blog__img">
-                <img class="card-img rounded-0" src="img/blog/blog2.png" alt="">
-              </div>
-              <div class="card-body">
-                <ul class="card-blog__info">
-                  <li><a href="#">By Admin</a></li>
-                  <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
-                </ul>
-                <h4 class="card-blog__title"><a href="single-blog.jsp">The Shopping News also offers top-quality printing services</a></h4>
-                <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-                <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="card card-blog">
-              <div class="card-blog__img">
-                <img class="card-img rounded-0" src="img/blog/blog3.png" alt="">
-              </div>
-              <div class="card-body">
-                <ul class="card-blog__info">
-                  <li><a href="#">By Admin</a></li>
-                  <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
-                </ul>
-                <h4 class="card-blog__title"><a href="single-blog.jsp">Professional design staff and efficient equipment you’ll find we offer</a></h4>
-                <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-                <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>-->
-    <!-- ================ Blog section end ================= -->
-
-    <!-- ================ Subscribe section start ================= -->
-    <!--<section class="subscribe-position">
-      <div class="container">
-        <div class="subscribe text-center">
-          <h3 class="subscribe__title">Get Update From Anywhere</h3>
-          <p>Bearing Void gathering light light his eavening unto dont afraid</p>
-          <div id="mc_embed_signup">
-            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe-form form-inline mt-5 pt-1">
-              <div class="form-group ml-sm-auto">
-                <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '" >
-                <div class="info"></div>
-              </div>
-              <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
-              <div style="position: absolute; left: -5000px;">
-                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-              </div>
-
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </section>-->
-    <!-- ================ Subscribe section end ================= -->
-
-
-
 </main>
-
-
 <!--================ Start footer Area  =================-->
 <footer class="footer">
     <div class="footer-area">
@@ -537,12 +265,6 @@
                     <div class="single-footer-widget tp_widgets">
                         <h4 class="footer_title">Contact Us</h4>
                         <div class="ml-40">
-                            <!-- <p class="sm-head">
-                              <span class="fa fa-location-arrow"></span>
-                              본사
-                            </p>
-                            <p>율도국 전우치로49 101</p> -->
-
                             <p class="sm-head">
                                 <span class="fa fa-phone"></span>
                                 GitHub
@@ -574,7 +296,6 @@
             </div>
         </div>
     </div>
-
     <div class="footer-bottom">
         <div class="container">
             <div class="row d-flex">
@@ -594,8 +315,6 @@
     </div>
 </footer>
 <!--================ End footer Area  =================-->
-
-
 
 <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
 <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
