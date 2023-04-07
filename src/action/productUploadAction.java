@@ -43,6 +43,13 @@ public class productUploadAction implements Action{
                 }
             }
 
+            if(fileName2 == null){
+                fileName2 = "";
+            }
+            if(fileName3 == null){
+                fileName3 = "";
+            }
+
 
             int productCategoryNum = Integer.parseInt(multi.getParameter("productCategoryNum"));
             String productTitle = multi.getParameter("productTitle");
