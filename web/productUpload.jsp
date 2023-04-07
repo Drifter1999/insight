@@ -146,6 +146,8 @@
                                 <input type="button" id="productImage" value="이미지 추가" onclick="addImageUploadField()">
                                 <div id="imageUploadFields"></div>
 <%--                                request.getParameter("productImage0"), request.getParameter("fileUploads1"), ...--%>
+                                <p> </p>
+                                <p> 사진 최소 한 장은 필수입니다!! </p>
                                 <p> 최대 3개 까지 업로드 가능합니다.</p>
                             </td>
                         </tr>
