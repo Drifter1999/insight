@@ -416,10 +416,10 @@
         console.log(val);
         if(val.length > 0) {
             let Sname = "productnum" + productnum;
-            $('span[name="' + Sname + '"]').text("open");
+            $('span[name="' + Sname + '"]').text("판매중");
         } else {
             let Fname = "productnum" + productnum;
-            $('span[name="' + Fname + '"]').text("close");
+            $('span[name="' + Fname + '"]').text("판매완경");
         }
     }
 </script>
