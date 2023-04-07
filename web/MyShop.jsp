@@ -207,14 +207,18 @@
                                 <h5>   ${myItems.productcategoryname} </h5>
                             </td>
 
+
                             <td class="table_css">
                                 <label class="switch">
-                                    <input type="checkbox">
+                                    <input type="checkbox" checked>
                                     <span class="slider round"></span>
                                 </label>
-                                <p>${myItems.productstate}</p>
-                                <p style="display:none;">${myItems.productstate}</p>
+                                <div>
+                                    <p class="switch-p">open</p>
+                                    <p class="switch-p" style="display:none;">close</p>
+                                </div>
                             </td>
+
 
                             <td class="table_css">
                                 <h5> ${myItems.productprice}</h5>
@@ -370,9 +374,16 @@
 <script src="vendors/mail-script.js"></script>
 <script src="js/main.js"></script>
 <!-- 토글 스위치 판매중/ 판매완료-->
+<%--<script>--%>
+<%--    $(".switch input[type='checkbox']").click(function(){--%>
+<%--        $(this).siblings("p").toggle();--%>
+<%--    });--%>
+<%--</script>--%>
+
 <script>
-    $(".switch input[type='checkbox']").click(function(){
-        $(this).siblings("p").toggle();
+    var check = $("input[type='checkbox']" );
+    check.click(function(){
+        $(".switch-p").toggle();
     });
 </script>
 
@@ -381,10 +392,10 @@
     function confirmDelete() {
         if(confirm("데이터를 삭제하시겠습니까?")) {
             // 여기에 데이터 삭제 코드를 작성합니다.
+            <%--location.href="/productdelete.in?productnum=${productnum}&${userid}&#{username}";--%>
         }
     }
 </script>
-
 
 </body>
 </html>
