@@ -192,7 +192,8 @@
                             <td>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <img src="${pageContext.request.contextPath}/productimage${myItems.productimage1}" alt="">
+                                        <img src="${pageContext.request.contextPath}/productimage${myItems.productimage1}" alt="" style="width: 150px; height: 150px; object-fit: cover; margin-right: 10px; margin-bottom: 10px;">
+
                                     </div>
                                     <div class="media-body">
                                             <span class="text_maxlength">
