@@ -184,6 +184,7 @@
                         <th scope="col"><b>카테고리</b></th>
                         <th scope="col"><b>판매여부</b></th>
                         <th scope="col"><b>금액</b></th>
+                        <th scope="col"><b>게시글삭제</b></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -205,6 +206,7 @@
                             <td class="table_css">
                                 <h5>   ${myItems.productcategoryname} </h5>
                             </td>
+
                             <td class="table_css">
                                 <label class="switch">
                                     <input type="checkbox">
@@ -217,6 +219,7 @@
                             <td class="table_css">
                                 <h5> ${myItems.productprice}</h5>
                             </td>
+                            <td class="align-middle"><button class="btn btn-sm btn-primary" onclick="confirmDelete()"><i class="fa fa-times"></i></button></td>
                         </tr>
                     </c:forEach>
                     <tr class="bottom_button">
@@ -235,12 +238,8 @@
         </div>
     </div>
 </section>
-<!-- 토글 스위치 판매중/ 판매완료-->
-<script>
-    $(".switch input[type='checkbox']").click(function(){
-        $(this).siblings("p").toggle();
-    });
-</script>
+
+
 <!--================End Cart Area =================-->
 
 
@@ -360,7 +359,7 @@
         </div>
     </div>
 </footer>
-<!--================ End footer Area  =================-->
+<!—================ End footer Area  =================—>
 
 <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
 <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
@@ -370,5 +369,22 @@
 <script src="vendors/jquery.ajaxchimp.min.js"></script>
 <script src="vendors/mail-script.js"></script>
 <script src="js/main.js"></script>
+<!-- 토글 스위치 판매중/ 판매완료-->
+<script>
+    $(".switch input[type='checkbox']").click(function(){
+        $(this).siblings("p").toggle();
+    });
+</script>
+
+
+<script>
+    function confirmDelete() {
+        if(confirm("데이터를 삭제하시겠습니까?")) {
+            // 여기에 데이터 삭제 코드를 작성합니다.
+        }
+    }
+</script>
+
+
 </body>
 </html>
