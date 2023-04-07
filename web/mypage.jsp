@@ -7,145 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>INSIGHT - 회원정보</title>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script>
-        function touseraddr(){
-           useraddr = document.getElementById("sample4_detailAddress").value ;
-        }
-        function editName() {
-            var userInput = document.getElementById("username").value;
-        }
-        function editId() {
-            var userInput = document.getElementById("userid").value;
-        }
-        function editPw() {
-            var userInput = document.getElementById("userpw").value;
-        }
-        function editAddr() {
-            var userInput = document.getElementById("useraddr").value;
-        }
-        function editPhone() {
-            var userInput = document.getElementById("userphone").value;
-        }
-        function editEm() {
-            var userInput = document.getElementById("useremail").value;
-        }
-        function sample4_execDaumPostcode() {
-            new daum.Postcode({
-                oncomplete: function(data) {
-                    var roadAddr = data.roadAddress; // 도로명 주소 변수
-                    var extraRoadAddr = ''; // 참고 항목 변수
-                    var detailaddr = ' ';
-
-                    if( detailaddr == ' '){ detailadddr = document.getElementById("sample4_detailAddress").value ; }
-
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraRoadAddr += data.bname;
-                    }
-
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-
-                    if(extraRoadAddr !== ''){
-                        extraRoadAddr = ' (' + extraRoadAddr + ')';
-                    }
-
-                    document.getElementById('sample4_postcode').value = data.zonecode;
-                    document.getElementById("sample4_roadAddress").value = roadAddr;
-                    document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
-
-                    if(roadAddr !== ''){
-                        document.getElementById("sample4_extraAddress").value = extraRoadAddr;
-                    } else {
-                        document.getElementById("sample4_extraAddress").value = '';
-                    }
-
-                    var guideTextBox = document.getElementById("guide");
-
-                    if(data.autoRoadAddress) {
-                        var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
-                        guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
-                        guideTextBox.style.display = 'block';
-
-                    } else if(data.autoJibunAddress) {
-                        var expJibunAddr = data.autoJibunAddress;
-                        guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
-                        guideTextBox.style.display = 'block';
-                    } else {
-                        guideTextBox.innerHTML = '';
-                        guideTextBox.style.display = 'none';
-                    }
-
-                    document.getElementById("useraddr").value = roadAddr + " " + data.buildingName + detailaddr;
-
-                    document.getElementById("useraddr").readOnly = true;
-                }
-            }).open();
-        }
-
-        function validateInfo() {
-            var username = document.getElementById("username").value;
-            var userid = document.getElementById("userid").value;
-            var userpw = document.getElementById("userpw").value;
-            var userpw2 = document.getElementById("userpw2").value;
-            var useremail = document.getElementById("useremail").value;
-            var useraddr = document.getElementById("useraddr").value;
-            var userphone = document.getElementById("userphone").value;
-
-            // 이름 유효성 검사
-            if (username.value == "") {
-                alert("이름을 입력하세요");
-                username.focus();
-                return false;
-            }
-
-            // 아이디 유효성 검사 (2~20자 이내의 영문, 숫자)
-            var idRegex = /^(?=.*[a-zA-Z])(?=.*[0-9]).{2,20}$/;
-            if (!idRegex.test(userid)) {
-                document.getElementById("ideditError").style.display = "block";
-                return false;
-            } else {
-                document.getElementById("ideditError").style.display = "none";
-            }
-
-            // 비밀번호 유효성 검사 (영문, 숫자, 특수문자 조합의 8~25자리 비밀번호)
-            var pwRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
-            if (!pwRegex.test(userpw)) {
-                document.getElementById("pweditError").style.display = "block";
-                return false;
-            } else {
-                document.getElementById("pweditError").style.display = "none";
-            }
-
-            // 비밀번호 확인
-            if (userpw !== userpw2) {
-                document.getElementById("pweditError2").style.display = "block";
-                return false;
-            } else {
-                document.getElementById("pweditError2").style.display = "none";
-            }
-
-            // 이메일 유효성 검사
-            var emailRegex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-            if (!emailRegex.test(useremail)) {
-                document.getElementById("emerror").style.display = "block";
-                return false;
-            } else {
-                document.getElementById("emerror").style.display = "none";
-            }
-
-            // 전화번호 유효성 검사
-            var phoneRegex = /^[0-9]{2,3}[0-9]{3,4}[0-9]{4}$/;
-            if (!phoneRegex.test(userphone)) {
-                document.getElementById("phoneerror").style.display = "block";
-                return false;
-            } else {
-                document.getElementById("phoneerror").style.display = "none";
-            }
-
-            return true;
-        }
-    </script>
     <link rel="stylesheet" href="img/Fevicon.png" type="image/png">
     <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
@@ -272,7 +133,7 @@
 
 <!--================Cart Area =================-->
 <!-- 이 부분에 마이페이지 정보들 나열-->
-<form action="UserUpdate.in" method="POST" onsubmit="return validateInfo();" name="myPage">
+<form action="UserUpdate.in" method="POST" name="myPage">
     <section class="cart_area">
         <div class="container">
             <div class="cart_inner">
@@ -289,8 +150,8 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" name="username" id="username" required oninput="editName()" value="${userSession.username}"><br>
-                                <span id="nameeditError" style="display:none; color:red;">아이디는 2~20자 이내의 영문, 숫자를 사용하세요</span><br>
+                                <input type="text" name="username" id="username" required onchange="editName()" value="${userSession.username}"><br>
+
                             </td>
                         </tr>
                         <%--                        수정할 아이디--%>
@@ -317,7 +178,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input class="input_width" type="password" name="userpw" id="userpw" required oninput="editPw()"><br>
+                                <input class="input_width" type="password" name="userpw" id="userpw" required onchange="editPw()"><br>
                                 <span id="pweditError" style="display:none; color:red;">영문, 숫자, 특수문자 조합의 8~25자리 비밀번호를 사용하세요</span><br>
                             </td>
                         </tr>
@@ -331,7 +192,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input class="input_width" type="password" name="userpw" id="userpw2" required oninput="editPw()"><br>
+                                <input class="input_width" type="password" name="userpw" id="userpw2" required onchange="editPw()"><br>
                                 <span id="pweditError2" style="display:none; color:red;">비밀번호가 일치하지 않습니다</span><br>
                             </td>
                         </tr>
@@ -345,7 +206,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input class="input_width" type="text" name="useremail" id="useremail" required value="${userSession.useremail}" oninput="editEm()"><br>
+                                <input class="input_width" type="text" name="useremail" id="useremail" required value="${userSession.useremail}" onchange="editEm()"><br>
                                 <span id="emerror" style="display:none; color:red;">올바른 이메일을 입력하세요</span><br>
                             </td>
                         </tr>
@@ -365,8 +226,8 @@
                                 <input style="position: absolute; left: 45.4%" type="text" id="sample4_jibunAddress" placeholder="지번주소">
                                 <span id="guide" style="color:#999;display:none"></span>
                                 <input style="position: absolute; left: 55.495%" type="text" id="sample4_extraAddress" placeholder="참고항목">
-                                <input type="text" id="useraddr" name="useraddr" readonly required oninput="editAddr()">
-                                <input style="position: absolute; left: 45.4%" type="text" id="sample4_detailAddress" placeholder="상세주소" required oninput="touseraddr()">
+                                <input type="text" id="useraddr" name="useraddr" readonly required onchange="editAddr()">
+                                <input style="position: absolute; left: 45.4%" type="text" id="sample4_detailAddress" placeholder="상세주소" required >
                             </td>
                         </tr>
                         <%--                             변경할 전화번호 확인  --%>
@@ -379,7 +240,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input class="input_width" type="text" name="userphone" id="userphone" required value="${userSession.userphone}" oninput="editPhone()"><br>
+                                <input class="input_width" type="text" name="userphone" id="userphone" required value="${userSession.userphone}" onchange="editPhone()"><br>
                                 <span id="phoneerror" style="display:none; color:red;">올바른 전화번호를 입력해주세요</span><br>
                             </td>
                         </tr>
@@ -538,6 +399,7 @@
 <script src="vendors/jquery.ajaxchimp.min.js"></script>
 <script src="vendors/mail-script.js"></script>
 <script src="js/main.js"></script>
+<script src="js/userUpdate.js"></script>
 <script>
     function UserDelete() {
         let userid = "${userSession.userid}".trim();

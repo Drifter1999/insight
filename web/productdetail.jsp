@@ -143,11 +143,14 @@
                     <div class="single-prd-item">
                         <img class="img-fluid" src="${pageContext.request.contextPath}/productimage${productlist.productimage2}" alt="${productlist.productname}">
                     </div>
-                    <div class="single-prd-item">
-                        <img class="img-fluid" src="${pageContext.request.contextPath}/productimage${productlist.productimage3}" alt="${productlist.productname}">
-                    </div>
+                    <c:if test="${not empty productlist.productimage3}">
+                        <div class="single-prd-item">
+                            <img class="img-fluid" src="${pageContext.request.contextPath}/productimage${productlist.productimage3}" alt="${productlist.productname}">
+                        </div>
+                    </c:if>
                 </div>
             </div>
+
             <div class="col-lg-5 offset-lg-1">
                 <div class="s_product_text">
                     <h3 style="margin-bottom: 20px;">${productlist.productname}</h3>
