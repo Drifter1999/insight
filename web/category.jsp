@@ -1,5 +1,6 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -30,14 +31,14 @@
     <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css" />
 
     <link rel="stylesheet" href="css/style.css" />
-</head></head>
+</head>
 <body>
 <%--세션 저장 --%>
 <c:set var="userSession" value="${userSession}" scope="session"/>
 
 
 <%--카테고리 전체 품목 저장--%>
-<c:set var="AllProduct" value="${AllProduct}" scope="session"/>
+<c:set var="AllProduct" value="${AllProduct}" scope="request"/>
 
 <!--================ Start Header Menu Area =================-->
 <header class="header_area">
@@ -56,14 +57,6 @@
                         <c:when test="${userSession eq null}">
                             <li class="nav-item">
                                 <a class="nav-link" href="index.jsp">홈</a>
-                            </li>
-                            <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="category.in">카테고리</a>
-                                    </li>
-                                </ul>
                             </li>
                             <li class="nav-item active submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
@@ -339,34 +332,16 @@
                             <div class="col-md-6 col-lg-4">
                                 <div class="card text-center card-product">
                                     <div class="card-product__img">
-                                        <img class="card-img" src="${'productimage'+product.productimage1}" alt="">
+                                        <img class="card-img" src="${pageContext.request.contextPath}/productimage${product.productimage1}" alt="">
                                     </div>
                                     <div class="card-body">
                                         <p>${product.productname}</p>
-                                        <h4 class="card-product__title"><a href="#">${product.producttitle}</a></h4>
+                                        <h4 class="card-product__title"><a href="">${product.producttitle}</a></h4>
                                         <p class="card-product__price">${product.productprice}</p>
                                     </div>
                                 </div>
                             </div>
                         </c:forEach>
-                        <%--<div class="col-md-6 col-lg-4">
-                            <div class="card text-center card-product">
-                                <div class="card-product__img">
-                                    <img class="card-img" src="img/product/product1.png" alt="">
-                                    <ul class="card-product__imgOverlay">
-                                        <li><button><i class="ti-search"></i></button></li>
-                                        <li><button><i class="ti-shopping-cart"></i></button></li>
-                                        <li><button><i class="ti-heart"></i></button></li>
-                                    </ul>
-                                </div>
-                                <div class="card-body">
-                                    <p>Accessories</p>
-                                    <h4 class="card-product__title"><a href="#">Quartz Belt Watch</a></h4>
-                                    <p class="card-product__price">$150.00</p>
-                                </div>
-                            </div>
-                        </div>
-                        </div>--%>
                     </div>
                 </section>
                 <!-- End Best Seller -->

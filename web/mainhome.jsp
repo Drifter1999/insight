@@ -36,12 +36,6 @@
                             <c:when test="${userSession eq null}">
                                 <li class="nav-item submenu dropdown">
                                     <a  class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.in';">
-                                                카테고리</a>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li class="nav-item active submenu dropdown">
                                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
@@ -87,17 +81,6 @@
                                         <a class="button button-header" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>판매하기</a>
                                     </li>
                                 </ul>
-                                <%-- 기존버튼
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>
-                                            <button type="button" class="btn-custom">
-                                                <i class="fa fa-plus"></i> 상품 등록하기
-                                            </button>
-                                        </a>
-                                    </li>
-                                </ul>
-                                --%>
                             </c:otherwise>
                         </c:choose>
                 </div>
