@@ -18,14 +18,12 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 <style>
-
     label {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
         cursor: pointer;
     }
-
     [type="checkbox"] {
         appearance: none;
         position: relative;
@@ -34,7 +32,6 @@
         width: 2.25em;
         height: 1.25em;
     }
-
     [type="checkbox"]::before {
         content: "";
         position: absolute;
@@ -46,42 +43,33 @@
         background-color: gray;
         transition: left 250ms linear;
     }
-
     [type="checkbox"]:checked {
         background-color: tomato;
         border-color: tomato;
     }
-
     [type="checkbox"]:checked::before {
         background-color: white;
         left: 1em;
     }
-
     [type="checkbox"]:disabled {
         border-color: lightgray;
         opacity: 0.7;
         cursor: not-allowed;
     }
-
     [type="checkbox"]:disabled:before {
         background-color: lightgray;
     }
-
     [type="checkbox"]:disabled + span {
         opacity: 0.7;
         cursor: not-allowed;
     }
-
     [type="checkbox"]:focus-visible {
         outline-offset: max(2px, 0.1em);
         outline: max(2px, 0.1em) solid tomato;
     }
-
     [type="checkbox"]:enabled:hover {
         box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
     }
-
-
 </style>
 <body>
 <c:set var="myShopList" value="${myshoplist}" scope="request"/>
