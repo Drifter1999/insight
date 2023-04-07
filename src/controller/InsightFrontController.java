@@ -70,6 +70,10 @@ public class InsightFrontController extends HttpServlet {
             case "/myshop.in":
                 forward = new myshopAction().execute(request, response);
                 break;
+
+            case "/productdelete.in":
+                forward = new productdeleteAction().execute(request, response);
+                break;
         }
 
         if( forward != null) {
