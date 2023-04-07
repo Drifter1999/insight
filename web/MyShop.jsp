@@ -196,10 +196,10 @@
                                         <img src="${pageContext.request.contextPath}/productimage${myItems.productimage1}" alt="" style="width: 150px; height: 150px; object-fit: cover; margin-right: 10px; margin-bottom: 10px;">
 
                                     </div>
-                                    <div class="media-body">
-                                            <span class="text_maxlength">
+                                    <div class="media-body" >
+                                            <a class="text_maxlength"  href="javascript:void(0)" onclick="location.href='productdetail.in?productNum='+${myItems.productnum}">
                                                     ${myItems.producttitle}
-                                            </span>
+                                            </a>
                                     </div>
                                 </div>
                             </td>
