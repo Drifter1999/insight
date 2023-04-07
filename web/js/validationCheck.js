@@ -12,6 +12,7 @@ var pwcheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/; //비밀�
 var phnum = /^[0-9]{2,3}[0-9]{3,4}[0-9]{4}$/ // 전화번호 정규식, 하이픈만 빠짐
 var emcheck = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i; // 이메일 입력 정규식
 
+
 function nameCheck() {
     if(!nameKor.test(username.value)){
         document.getElementById("nameError").style.display="block";
