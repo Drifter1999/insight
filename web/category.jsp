@@ -568,7 +568,9 @@
                         "</div>" +
                         "<div class='card-body'>" +
                             "<p>"+arr[i].productname+"</p>" +
-                        "<h4 class='card-product__title'><a href='#'>"+arr[i].producttitle+"</a></h4>" +
+                        "<h4 class='card-product__title'>" +
+                        "<a href='productdetail.in?productNum="+arr[i].productnum+"'>" +
+                        ""+arr[i].producttitle+"</a></h4>" +
                             "<p class='card-product__price'>" +
                         ""+arr[i].productprice+"원 <br> 수량 : " + arr[i].productquantity+" </p></div></div></div>";
 
