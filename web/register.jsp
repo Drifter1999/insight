@@ -298,7 +298,7 @@
             <div class="col-lg-6">
                 <div class="login_form_inner register_form_inner">
                     <h3>회원정보를 입력하세요</h3>
-                    <form class="row login_form" action="register.in" name="joinform" method="post">
+                    <form class="row login_form" action="register.in" name="joinform" method="post" onsubmit="return joincheck();">
                         <div class="col-md-12 form-group">
                             <!-- 이름 입력 -->
                             <input
@@ -324,7 +324,7 @@
                                     onblur="this.placeholder = '아이디'"
                                     class="form-control_id"
                             />
-                            <button type="button" onclick="idCheck('#userid')" class="form-control_button">중복확인</button>
+                            <button type="button" onclick="compIdCheck('#userid')" class="form-control_button">중복확인</button>
 
                         </div>
                         <div class="col-md-12 form-group">
@@ -395,8 +395,7 @@
                         <div class="col-md-12 form-group">
                             <!-- 회원가입 버튼 눌렀을때 아이디 중복확인까지 -->
                             <button
-                                    type="button"
-                                    value="submit"
+                                    type="submit"
                                     onclick="joincheck()"
                                     class="button button-register w-100"
                             >
@@ -537,5 +536,6 @@
 <script src="vendors/mail-script.js"></script>
 <script src="js/main.js"></script>
 <script src="js/joincheck.js"></script>
+<script src="js/validationCheck.js"></script>
 </body>
 </html>

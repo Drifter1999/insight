@@ -1,55 +1,72 @@
+var nameKor = /^[가-힣]{2,15}$/; // 이름 한글 입력
+var pwcheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/; //비밀번호 영문자,숫자,특수조합(8~25자리 입력) 정규식
+var phnum = /^[0-9]{2,3}[0-9]{3,4}[0-9]{4}$/ // 전화번호 정규식, 하이픈만 빠짐
+var emcheck = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i; // 이메일 입력 정규식
 
 
-    function validateInfo(){
-        // var editName = editName();
-        var editpw = editPw();
-        var editAddr = editAddr();
-        var editPhone = editPhone();
-        var editEm = editEm();
-        if( !editName || !editpw || !editAddr || !editPhone || !editEm){
+function validateInfo(){
+        var editNameResult = editName();
+        var editpwResult = editPw();
+        var editAddrResult = editAddr();
+        var editPhoneResult = editPhone();
+        var editEmResult = editEm();
+        if( !editNameResult || !editpwResult || !editAddrResult || !editPhoneResult || !editEmResult){
             alert("회원정보를 다시 확인해주세요.");
         }else{
             return true;
         }
     }
+
     function editName() {
         // 이름 유효성 검사
         var username = document.getElementById("username").value;
         if (username == " ") {
             alert("이름을 입력하세요");
-            username.focus();
+            document.getElementById("username").focus();
             return false;
         }
+        if(!nameKor.test(username.value)){
+            alert("한글로 이름을 입력하세요");
+            return false;
+        }
+        return true;
     }
 
     function editPw() {
-        // 비밀번호 유효성 검사 (영문, 숫자, 특수문자 조합의 8~25자리 비밀번호)
         var userpw = document.getElementById("userpw").value;
-        var pwRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
-        if (!pwRegex.test(userpw)) {
+        var userpw2 = document.getElementById("userpw2").value;
+
+        // 비밀번호 유효성 검사 (영문, 숫자, 특수문자 조합의 8~25자리 비밀번호)
+        if (pwcheck.test(userpw)) {
             document.getElementById("pweditError").style.display = "block";
             return false;
-        } else {
-            document.getElementById("pweditError").style.display = "none";
         }
+
         // 비밀번호 확인
-        var userpw2 = document.getElementById("userpw2").value;
         if (userpw !== userpw2) {
             document.getElementById("pweditError2").style.display = "block";
             return false;
-        } else {
-            document.getElementById("pweditError2").style.display = "none";
         }
+        // 비밀번호 입력
+        if (userpw.value == "") {
+            alert("비밀번호를 입력하세요");
+            userpw.focus();
+            return false;
+        }
+
+        document.getElementById("pweditError").style.display = "none";
+        document.getElementById("pweditError2").style.display = "none";
+        return true;
     }
+
     function editPhone() {
         // 전화번호 유효성 검사
-        var phoneRegex = /^[0-9]{2,3}[0-9]{3,4}[0-9]{4}$/;
-        if (!phoneRegex.test(userphone)) {
+        if (!phnum.test(userphone)) {
             document.getElementById("phoneerror").style.display = "block";
             return false;
-        } else {
-            document.getElementById("phoneerror").style.display = "none";
         }
+        document.getElementById("phoneerror").style.display = "none";
+        return true;
     }
     function editEm() {
         // 이메일 유효성 검사
@@ -59,6 +76,7 @@
             return false;
         } else {
             document.getElementById("emerror").style.display = "none";
+            return true;
         }
     }
 

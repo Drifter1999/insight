@@ -133,7 +133,7 @@
 
 <!--================Cart Area =================-->
 <!-- 이 부분에 마이페이지 정보들 나열-->
-<form action="UserUpdate.in" method="POST" name="myPage">
+<form action="UserUpdate.in" method="POST" name="myPage" onsubmit="return validateInfo();">
     <section class="cart_area">
         <div class="container">
             <div class="cart_inner">
@@ -143,14 +143,13 @@
                         <%--                        수정할 이름--%>
                         <tr>
                             <td>
-                                <div class="media">
-                                    <div class="media-body">
+                                    <div class="col-md-12 form-group">
                                         <label class="label_width" for="username">*이름:</label>
                                     </div>
-                                </div>
+
                             </td>
                             <td>
-                                <input type="text" name="username" id="username" required onchange="editName()" value="${userSession.username}"><br>
+                                <input type="text" class="form-control" name="username" id="username" required onchange="nameCheck()" value="${userSession.username}"><br>
 
                             </td>
                         </tr>
@@ -178,7 +177,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input class="input_width" type="password" name="userpw" id="userpw" required onchange="editPw()"><br>
+                                <input class="input_width" type="password" name="userpw" id="userpw" required onchange="pwCheck()"><br>
                                 <span id="pweditError" style="display:none; color:red;">영문, 숫자, 특수문자 조합의 8~25자리 비밀번호를 사용하세요</span><br>
                             </td>
                         </tr>
@@ -192,7 +191,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input class="input_width" type="password" name="userpw" id="userpw2" required onchange="editPw()"><br>
+                                <input class="input_width" type="password" name="userpw" id="userpw2" required onchange="pwCheck()"><br>
                                 <span id="pweditError2" style="display:none; color:red;">비밀번호가 일치하지 않습니다</span><br>
                             </td>
                         </tr>
@@ -206,7 +205,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input class="input_width" type="text" name="useremail" id="useremail" required value="${userSession.useremail}" onchange="editEm()"><br>
+                                <input class="input_width" type="text" name="useremail" id="useremail" required value="${userSession.useremail}" onchange="emailCheck()"><br>
                                 <span id="emerror" style="display:none; color:red;">올바른 이메일을 입력하세요</span><br>
                             </td>
                         </tr>
@@ -220,14 +219,11 @@
                                 </div>
                             </td>
                             <td class="input_width">
-                                <input type="text" id="sample4_postcode" placeholder="우편번호">
-                                <input style="position: absolute; left: 45.4%" type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-                                <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
-                                <input style="position: absolute; left: 45.4%" type="text" id="sample4_jibunAddress" placeholder="지번주소">
-                                <span id="guide" style="color:#999;display:none"></span>
-                                <input style="position: absolute; left: 55.495%" type="text" id="sample4_extraAddress" placeholder="참고항목">
-                                <input type="text" id="useraddr" name="useraddr" readonly required onchange="editAddr()">
-                                <input style="position: absolute; left: 45.4%" type="text" id="sample4_detailAddress" placeholder="상세주소" required onchange="editAddr()">
+                                <input type="text" id="sample6_postcode" placeholder="우편번호">
+                                <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+                                <input type="text" id="useraddr" name="useraddr" required placeholder="주소"><br>
+                                <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+                                <input type="text" id="sample6_extraAddress" placeholder="참고항목">
                             </td>
                         </tr>
                         <%--                             변경할 전화번호 확인  --%>
@@ -240,7 +236,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input class="input_width" type="text" name="userphone" id="userphone" required value="${userSession.userphone}" onchange="editPhone()"><br>
+                                <input class="input_width" type="text" name="userphone" id="userphone" required value="${userSession.userphone}" onchange="phoneCheck()"><br>
                                 <span id="phoneerror" style="display:none; color:red;">올바른 전화번호를 입력해주세요</span><br>
                             </td>
                         </tr>
@@ -259,13 +255,11 @@
                             <td>
                                 <div class="checkout_btn_inner d-flex align-items-center">
                                     <button
-                                            class="button button-header"
-                                            type="button"
-                                            value="submit"
-                                            onclick="validateInfo()"
                                             class="button button-register w-100"
+                                            type="submit"
+                                            onclick="addDetailaddr()"
                                     >
-                                        가입하기
+                                        변경하기
                                     </button>
                                 </div>
                             </td>
@@ -398,7 +392,7 @@
     </div>
 </footer>
 <!--================ End footer Area  =================-->
-
+<script src="js/validationCheck.js"></script>
 <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
 <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="vendors/skrollr.min.js"></script>
@@ -407,20 +401,6 @@
 <script src="vendors/jquery.ajaxchimp.min.js"></script>
 <script src="vendors/mail-script.js"></script>
 <script src="js/main.js"></script>
-<script src="js/userUpdate.js"></script>
-<script>
-    function UserDelete() {
-        let userid = "${userSession.userid}".trim();
-        let userpw = "${userSession.userpw}".trim();
-        let password = prompt("비밀번호 입력 바랍니다.");
-        if (password != userpw) {
-            alert("입력한 정보가 맞지 않음.");
-            location.href = "mypage.jsp";
-        }else {
-            document.myPage.action = "/UserDelete.in?userid"+userid+"&userpw="+password;
-            document.myPage.submit();
-        }
-    }
-</script>
+<%--<script src="js/userUpdate.js"></script>--%>
 </body>
 </html>
