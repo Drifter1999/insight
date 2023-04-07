@@ -34,7 +34,7 @@ public class RegisterAction implements Action{
             try {
                 out = response.getWriter();
                 out.println("<script>alert('회원가입에 성공했습니다. 로그인 페이지로 이동합니다.');</script>");
-                forward.setPath("mainhome.in");
+                forward.setPath("/index.in");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -44,7 +44,7 @@ public class RegisterAction implements Action{
                 PrintWriter out;
                 out = response.getWriter();
                 out.println("<script>alert('회원가입에 실패했습니다. 다시 시도해주세요.');</script>");
-                forward.setPath("mainhome.in");
+                forward.setPath("/index.in");
             } catch (IOException e){
                 throw new RuntimeException(e);
             }
