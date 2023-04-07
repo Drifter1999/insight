@@ -103,6 +103,15 @@ public class InsightDAO {
     public List<ProductDTO> MyShop(String userid) {
         return (ArrayList) sqlSession.selectList("Insight.MyShop", userid);
     }
+
+    public boolean productdelete(int productnum){
+        boolean result = false;
+        if(sqlSession.delete("Insight.ProductDelete",productnum)==1) {
+            result = true;
+        }
+
+        return result;
+    }
 }
 
 
