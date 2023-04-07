@@ -197,6 +197,8 @@
 
                                     </div>
                                     <div class="media-body" >
+                                        <input type="hidden" id="userid" name="userid" value="${userSession.userid}">
+                                        <input type="hidden" id="productnum" name="productnum" value="${myItems.productnum}">
                                             <a class="text_maxlength"  href="javascript:void(0)" onclick="location.href='productdetail.in?productNum='+${myItems.productnum}">
                                                     ${myItems.producttitle}
                                             </a>
@@ -210,13 +212,9 @@
 
                             <td class="table_css">
                                 <label class="switch">
-                                    <input type="checkbox" checked>
-                                    <span class="slider round"></span>
+                                    <input type="checkbox" name="switch${myItems.productnum}" onchange="changeCheck(${myItems.productnum})" checked>
+                                    <span class="slider" name="productnum${myItems.productnum}" ></span>
                                 </label>
-                                <div>
-                                    <p class="switch-p">open</p>
-                                    <p class="switch-p" style="display:none;">close</p>
-                                </div>
                             </td>
 
 
@@ -363,7 +361,7 @@
         </div>
     </div>
 </footer>
-<!—================ End footer Area  =================—>
+<!--================ End footer Area  =================-->
 
 <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
 <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
@@ -381,14 +379,10 @@
 <%--</script>--%>
 
 <script>
-    var check = $("input[type='checkbox']" );
+    /*var check = $("input[type='checkbox']" );
     check.click(function(){
         $(".switch-p").toggle();
-    });
-</script>
-
-
-<script>
+    });*/
     function confirmDelete() {
         if(confirm("데이터를 삭제하시겠습니까?")) {
             // 여기에 데이터 삭제 코드를 작성합니다.
@@ -397,5 +391,37 @@
     }
 </script>
 
+<script>
+    /*let check = $("input[name=switch]:checked");
+    console.log("check : " + check);
+
+    let xhr = new XMLHttpRequest();
+    let userid = $("#userid").val();
+    let productnum = $("#productnum").val();
+    let uri = "OpenAndCloseProduct.jsp?productnum=" + productnum + "&userid="+userid;
+    console.log("userid : " + userid);
+    console.log("productnum : " + productnum);
+    console.log("uri : " + uri);
+*/
+    /*xhr.open("GET", uri, true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){
+            alert("이이이");
+        }
+    }*/
+
+    function changeCheck(productnum) {
+        let val = $('input[name="switch'+productnum+'"]:checked');
+        console.log(val);
+        if(val.length > 0) {
+            let Sname = "productnum" + productnum;
+            $('span[name="' + Sname + '"]').text("open");
+        } else {
+            let Fname = "productnum" + productnum;
+            $('span[name="' + Fname + '"]').text("close");
+        }
+    }
+</script>
 </body>
 </html>
