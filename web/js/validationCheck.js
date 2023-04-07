@@ -13,83 +13,56 @@ var phnum = /^[0-9]{2,3}[0-9]{3,4}[0-9]{4}$/ // 전화번호 정규식, 하이�
 var emcheck = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i; // 이메일 입력 정규식
 
 function nameCheck() {
-    // 이름 유효성 검사
-    // if (username == " ") {
-    //     alert("이름을 입력하세요");
-    //     document.getElementById("username").focus();
-    //     return false;
-    // }
     if(!nameKor.test(username.value)){
-        alert("한글로 이름을 입력하세요");
+        document.getElementById("nameError").style.display="block";
         return false;
     }
+    document.getElementById("nameError").style.display="none";
 }
 function idCheck(){
-    // id 유효성 검사
-    if (userid.value == "") { //해당 입력값이 없을 경우 같은말: if(!userid.value)
-        alert("아이디를 입력하세요");
-        userid.focus(); //focus(): 커서가 깜빡이는 현상, blur(): 커서가 사라지는 현상
-        return false; //return: 반환하다 return false:  아무것도 반환하지 말아라 아래 코드부터 아무것도 진행하지 말것
-    }
-
     if (!idch.test(userid.value)) {
-        alert("아이디는 2~20자 이내의 영문, 숫자를 사용하세요");
         idch.focus();
+        document.getElementById("idError").style.display="block";
         return false;
     }
-
+    document.getElementById("idError").style.display="none";
 }
 function pwCheck(){
     //비밀번호 유효성 검사
-    if (userpw.value == "") {
-        alert("비밀번호를 입력하세요");
-        console.log(userpw.focus());
-        return false;
-    }
-
-
-
     if (!pwcheck.test(userpw.value)) {
-        alert("영문, 숫자, 특수문자 조합의 8~25자리 비밀번호를 사용하세요");
+        document.getElementById("pwError").style.display="block";
         pwcheck.focus();
         return false;
+    }else{
+        document.getElementById("pwError").style.display="none";
     }
-
-
+    //비밀번호 일치 확인
     if (userpw2.value !== userpw.value) {
-        alert("비밀번호가 일치하지 않습니다");
+        document.getElementById("pwError2").style.display = "block";
         userpw2.focus();
         return false;
+    }else{
+        document.getElementById("pwError2").style.display="none";
     }
 }
 
 function emailCheck(){
     //이메일 유효성 검사
-    if (useremail.value == "") {
-        alert("이메일 주소를 입력하세요");
-        useremail.focus();
-        return false;
-    }
-
     if (!emcheck.test(useremail.value)) {
-        alert("올바른 이메일을 입력하세요");
+        document.getElementById("emailError").style.display = "block";
         useremail.focus();
         return false;
     }
+    document.getElementById("emailError").style.display="none";
 }
 function phoneCheck() {
     // 전화번호 유효성 검사
-    if (userphone.value == "") {
-        alert("전화번호를를 입력하세요");
-        userphone.focus();
-        return false;
-    }
     if (!phnum.test(userphone.value)) {
-        alert("올바른 전화번호를 입력해주세요");
+        document.getElementById("phoneError").style.display = "block";
         userphone.focus();
         return false;
     }
-
+    document.getElementById("phoneError").style.display="none";
 }
 
 
@@ -106,7 +79,7 @@ function compIdCheck(selector) {
             }
         }
     }else {
-        alert("아이디을 입력해주세여.");
+        alert("중복된 아이디입니다.");
     }
 }
 
@@ -157,10 +130,17 @@ function sample6_execDaumPostcode() {
         }
     }).open();
 }
+
 function addDetailaddr(){
     document.getElementById("useraddr").value
     = document.getElementById("useraddr").value +" "+ document.getElementById("sample6_detailAddress").value;
 }
+
+function addrcheck() {
+    if(useraddr == " ")
+    return false;
+}
+
 function validateInfo() {
     var nameResult = nameCheck();
     var pwResult = pwCheck();

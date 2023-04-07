@@ -143,14 +143,13 @@
                         <%--                        수정할 이름--%>
                         <tr>
                             <td>
-                                    <div class="col-md-12 form-group">
-                                        <label class="label_width" for="username">*이름:</label>
-                                    </div>
-
+                                <div class="col-md-12 form-group">
+                                    <label class="label_width" for="username">*이름:</label>
+                                </div>
                             </td>
                             <td>
-                                <input type="text" class="form-control" name="username" id="username" required onchange="nameCheck()" value="${userSession.username}"><br>
-
+                                <input type="text" class="input_width" name="username" id="username" required onchange="nameCheck()" value="${userSession.username}"><br>
+                                <span id="nameError" style="display:none; color:red;">올바른 이름을 입력하세요</span><br>
                             </td>
                         </tr>
                         <%--                        수정할 아이디--%>
@@ -164,7 +163,7 @@
                             </td>
                             <td>
                                 <span>${userSession.userid}</span>
-                                <input type="hidden" name="userid" id="userid" value="${userSession.userid}">
+                                <input type="hidden" class="input_width" name="userid" id="userid" value="${userSession.userid}">
                             </td>
                         </tr>
                         <%--                           변경할 비밀번호--%>
@@ -178,7 +177,7 @@
                             </td>
                             <td>
                                 <input class="input_width" type="password" name="userpw" id="userpw" required onchange="pwCheck()"><br>
-                                <span id="pweditError" style="display:none; color:red;">영문, 숫자, 특수문자 조합의 8~25자리 비밀번호를 사용하세요</span><br>
+                                <span id="pwError" style="display:none; color:red;">영문, 숫자, 특수문자 조합의 8~25자리 비밀번호를 사용하세요</span><br>
                             </td>
                         </tr>
                         <%--                            변경할 비밀번호 확인--%>
@@ -192,7 +191,7 @@
                             </td>
                             <td>
                                 <input class="input_width" type="password" name="userpw" id="userpw2" required onchange="pwCheck()"><br>
-                                <span id="pweditError2" style="display:none; color:red;">비밀번호가 일치하지 않습니다</span><br>
+                                <span id="pwError2" style="display:none; color:red;">비밀번호가 일치하지 않습니다</span><br>
                             </td>
                         </tr>
                         <%--                          변경할 이메일 확인   --%>
@@ -206,7 +205,7 @@
                             </td>
                             <td>
                                 <input class="input_width" type="text" name="useremail" id="useremail" required value="${userSession.useremail}" onchange="emailCheck()"><br>
-                                <span id="emerror" style="display:none; color:red;">올바른 이메일을 입력하세요</span><br>
+                                <span id="emailError" style="display:none; color:red;">올바른 이메일을 입력하세요</span><br>
                             </td>
                         </tr>
                         <%--                             변경할 주소 확인  --%>
@@ -219,11 +218,11 @@
                                 </div>
                             </td>
                             <td class="input_width">
-                                <input type="text" id="sample6_postcode" placeholder="우편번호">
-                                <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-                                <input type="text" id="useraddr" name="useraddr" required placeholder="주소"><br>
-                                <input type="text" id="sample6_detailAddress" placeholder="상세주소">
-                                <input type="text" id="sample6_extraAddress" placeholder="참고항목">
+                                <input class="input_width" type="text" id="sample6_postcode" placeholder="우편번호">
+                                <input class="input_width" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+                                <input class="input_width" type="text" id="useraddr" name="useraddr" required placeholder="주소"><br>
+                                <input class="input_width" type="text" id="sample6_detailAddress" placeholder="상세주소">
+                                <input class="input_width" type="text" id="sample6_extraAddress" placeholder="참고항목">
                             </td>
                         </tr>
                         <%--                             변경할 전화번호 확인  --%>
@@ -237,25 +236,16 @@
                             </td>
                             <td>
                                 <input class="input_width" type="text" name="userphone" id="userphone" required value="${userSession.userphone}" onchange="phoneCheck()"><br>
-                                <span id="phoneerror" style="display:none; color:red;">올바른 전화번호를 입력해주세요</span><br>
+                                <span id="phoneError" style="display:none; color:red;">올바른 전화번호를 입력해주세요</span><br>
                             </td>
                         </tr>
                         <%--                수정하기--%>
 
                         <tr class="out_button_area">
-                            <td class="d-none-l">
-
-                            </td>
-                            <td class="">
-
-                            </td>
-                            <td>
-
-                            </td>
                             <td>
                                 <div class="checkout_btn_inner d-flex align-items-center">
                                     <button
-                                            class="button button-register w-100"
+                                            class="button button-header"
                                             type="submit"
                                             onclick="addDetailaddr()"
                                     >
@@ -263,10 +253,6 @@
                                     </button>
                                 </div>
                             </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
                             <td>
                                 <div class="checkout_btn_inner d-flex align-items-center">
                                     <a class="buttonR buttonR-header" href="javascript:void(0)" onclick="UserDelete()">탈퇴하기</a>
