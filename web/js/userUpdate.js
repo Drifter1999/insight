@@ -1,8 +1,21 @@
 
+
+    function validateInfo(){
+        // var editName = editName();
+        var editpw = editPw();
+        var editAddr = editAddr();
+        var editPhone = editPhone();
+        var editEm = editEm();
+        if( !editName || !editpw || !editAddr || !editPhone || !editEm){
+            alert("회원정보를 다시 확인해주세요.");
+        }else{
+            return true;
+        }
+    }
     function editName() {
         // 이름 유효성 검사
         var username = document.getElementById("username").value;
-        if (username == "") {
+        if (username == " ") {
             alert("이름을 입력하세요");
             username.focus();
             return false;
@@ -28,15 +41,6 @@
             document.getElementById("pweditError2").style.display = "none";
         }
     }
-    function editAddr() {
-        // 이름 유효성 검사
-        var useraddr = document.getElementById("useraddr").value;
-        if (username == "") {
-            alert("이름을 입력하세요");
-            addr.focus();
-            return false;
-        }
-    }
     function editPhone() {
         // 전화번호 유효성 검사
         var phoneRegex = /^[0-9]{2,3}[0-9]{3,4}[0-9]{4}$/;
@@ -58,14 +62,26 @@
         }
     }
 
+    function editAddr() {
+        // 이름 유효성 검사
+        var detailaddr = document.getElementById("sample4_detailAddress").value ;
+        var useraddr = document.getElementById("useraddr").value;
+        if (useraddr == "") {
+            alert("주소를 입력하세요");
+            useraddr.focus();
+            return false;
+        }
+        else{
+            document.getElementById("useraddr").value = useraddr+" " +detailaddr;
+            document.getElementById("useraddr").readOnly = true;
+        }
+    }
+
     function sample4_execDaumPostcode() {
     new daum.Postcode({
         oncomplete: function(data) {
             var roadAddr = data.roadAddress; // 도로명 주소 변수
             var extraRoadAddr = ''; // 참고 항목 변수
-            var detailaddr = ' ';
-
-            if( detailaddr == ' '){ detailadddr = document.getElementById("sample4_detailAddress").value ; }
 
             if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
                 extraRoadAddr += data.bname;
@@ -105,7 +121,7 @@
                 guideTextBox.style.display = 'none';
             }
 
-            document.getElementById("useraddr").value = roadAddr + " " + data.buildingName + detailaddr;
+            document.getElementById("useraddr").value = roadAddr + " " + data.buildingName ;
 
             document.getElementById("useraddr").readOnly = true;
         }

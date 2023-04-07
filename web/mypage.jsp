@@ -227,7 +227,7 @@
                                 <span id="guide" style="color:#999;display:none"></span>
                                 <input style="position: absolute; left: 55.495%" type="text" id="sample4_extraAddress" placeholder="참고항목">
                                 <input type="text" id="useraddr" name="useraddr" readonly required onchange="editAddr()">
-                                <input style="position: absolute; left: 45.4%" type="text" id="sample4_detailAddress" placeholder="상세주소" required >
+                                <input style="position: absolute; left: 45.4%" type="text" id="sample4_detailAddress" placeholder="상세주소" required onchange="editAddr()">
                             </td>
                         </tr>
                         <%--                             변경할 전화번호 확인  --%>
@@ -258,7 +258,15 @@
                             </td>
                             <td>
                                 <div class="checkout_btn_inner d-flex align-items-center">
-                                    <input class="button button-header" type="submit" value="변경하기" >
+                                    <button
+                                            class="button button-header"
+                                            type="button"
+                                            value="submit"
+                                            onclick="validateInfo()"
+                                            class="button button-register w-100"
+                                    >
+                                        가입하기
+                                    </button>
                                 </div>
                             </td>
                             <td></td>
