@@ -84,6 +84,7 @@
 
 </style>
 <body>
+<c:set var="myShopList" value="${myshoplist}" scope="request"/>
 <!--================ Start Header Menu Area =================-->
 <header class="header_area">
     <div class="main_menu">
@@ -198,166 +199,40 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>
-                            <div class="media">
-                                <div class="d-flex">
-                                    <img src="img/cart/cart1.png" alt="">
+                    <c:forEach var="myItems" items="${myShopList}">
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="${pageContext.request.contextPath}/productimage${myItems.productimage1}" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                            <span class="text_maxlength">
+                                                    ${myItems.producttitle}
+                                            </span>
+                                    </div>
                                 </div>
-                                <div class="media-body">
-                                    <span class="text_maxlength">
-                                        여기에 글 제목 끌어와주세요. 몇자까지 들어갈까요 몇자까지 들어갈까요 몇자까지 들어갈까요
-                                        몇자까지 들어갈까요 몇자까지 들어갈까요 몇자까지 들어갈까요 몇자까지 들어갈까요 몇자까지 들어갈까요
-                                        몇자까지 들어갈까요 몇자까지 들어갈까요 몇자까지 들어갈까요 몇자까지 들어갈까요 몇자까지 들어갈까요.
-                                    </span>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="table_css">
-                            <h5> 카테고리 </h5>
-                        </td>
-                        <td class="table_css">
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                            <p>판매완료</p><p style="display:none;">판매중</p>
-                            <%--                            <label>--%>
-                            <%--                                <input role="switch" type="checkbox" disabled />--%>
-                            <%--                                <span>알람 (비활성화)</span>--%>
-                            <%--                            </label>--%>
-                        </td>
+                            </td>
+                            <td class="table_css">
+                                <h5>   ${myItems.productcategoryname} </h5>
+                            </td>
+                            <td class="table_css">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                <p>${myItems.productstate}</p>
+                                <p style="display:none;">${myItems.productstate}</p>
+                            </td>
 
-                        <td class="table_css">
-                            <h5> 1000000원 </h5>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="media">
-                                <div class="d-flex">
-                                    <img src="img/cart/cart2.png" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <span class="text_maxlength">여기에 글 제목 끌어와주세요</span>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <h5> 카테고리 </h5>
-                        </td>
-
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                            <p>판매완료</p><p style="display:none;">판매중</p>
-                            <%--                            <label>--%>
-                            <%--                                <input role="switch" type="checkbox" disabled />--%>
-                            <%--                                <span>알람 (비활성화)</span>--%>
-                            <%--                            </label>--%>
-                        </td>
-                        <td>
-                            <h5> 1000000원 </h5>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="media">
-                                <div class="d-flex">
-                                    <img src="img/cart/cart3.png" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <span class="text_maxlength">여기에 글 제목 끌어와주세요</span>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <h5> 카테고리 </h5>
-                        </td>
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                            <p>판매완료</p><p style="display:none;">판매중</p>
-                            <%--                            <label>--%>
-                            <%--                                <input role="switch" type="checkbox" disabled />--%>
-                            <%--                                <span>알람 (비활성화)</span>--%>
-                            <%--                            </label>--%>
-                        </td>
-                        <td>
-                            <h5> 1000000원 </h5>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="media">
-                                <div class="d-flex">
-                                    <img src="img/cart/cart3.png" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <span class="text_maxlength">여기에 글 제목 끌어와주세요</span>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <h5> 카테고리 </h5>
-                        </td>
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                            <p>판매완료</p><p style="display:none;">판매중</p>
-                            <%--                            <label>--%>
-                            <%--                                <input role="switch" type="checkbox" disabled />--%>
-                            <%--                                <span>알람 (비활성화)</span>--%>
-                            <%--                            </label>--%>
-                        </td>
-                        <td>
-                            <h5> 1000000원 </h5>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="media">
-                                <div class="d-flex">
-                                    <img src="img/cart/cart3.png" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <span class="text_maxlength">여기에 글 제목 끌어와주세요</span>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <h5> 카테고리 </h5>
-                        </td>
-
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                            <p>판매완료</p><p style="display:none;">판매중</p>
-                            <%--                            <label>--%>
-                            <%--                                <input role="switch" type="checkbox" disabled />--%>
-                            <%--                                <span>알람 (비활성화)</span>--%>
-                            <%--                            </label>--%>
-                        </td>
-
-                        <td>
-                            <h5> 1000000원 </h5>
-                        </td>
-
+                            <td class="table_css">
+                                <h5> ${myItems.productprice}</h5>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     <tr class="bottom_button">
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <div class="cupon_text d-flex align-items-center">
                                 <a class="primary-btn" href="#">이전 페이지</a>
