@@ -2514,7 +2514,7 @@ a {
 
 .contact-banner-area {
     height: 280px;
-    background: url("../../assets/images/contact-bg.png") center center no-repeat;
+    /*background: url("../../assets/images/contact-bg.png") center center no-repeat;*/
     background-size: cover;
     position: relative;
     z-index: 1
@@ -4008,8 +4008,8 @@ a {
 .cart_inner .table tbody tr td {
     padding-top: 30px;
     padding-bottom: 30px;
-    vertical-align: middle;
-    align-self: center
+    /*vertical-align: middle;*/
+    /*align-self: center*/
 }
 
 .cart_inner .table tbody tr td .media .d-flex {
@@ -4709,7 +4709,7 @@ a {
     position: absolute;
     right: 0px;
     top: 14px;
-    @icnlude transition
+    /* @icnlude transition*/
 }
 
 .review_item .media .media-body .reply_btn:hover {

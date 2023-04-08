@@ -162,7 +162,7 @@ function joinValid() {
     return true;
 }
 
-function DupidCheck(selector) {
+function DupIdCheck(selector) {
     if ($(selector).val() != '') {
         let xhr = new XMLHttpRequest();
         let userid = $(selector).val()

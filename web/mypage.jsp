@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,8 +26,10 @@
     <div class="main_menu">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <a class="navbar-brand logo_h" href="mainhome.jsp"><img src="img/insightlogo.JPG" alt="" /></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand logo_h" href="mainhome.jsp"><img src="img/insightlogo.JPG" alt=""/></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -40,7 +42,8 @@
                                 <a class="nav-link" href="index.jsp">홈</a>
                             </li>
                             <li class="nav-item submenu dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">상품</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a class="nav-link" href="category.jsp">카테고리</a>
@@ -48,7 +51,8 @@
                                 </ul>
                             </li>
                             <li class="nav-item active submenu dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a class="nav-link" href="index.jsp">로그인</a>
@@ -64,31 +68,38 @@
                             <a class="nav-link" href="mainhome.jsp">홈</a>
                         </li>
                         <li class="nav-item submenu dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">상품</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.jsp'">카테고리</a>
+                                    <a class="nav-link" href="javascript:void(0)"
+                                       onclick="location.href='category.jsp'">카테고리</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item active submenu dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='MyShop.jsp'">나의 상점</a>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='MyShop.jsp'">나의
+                                        상점</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='Logout.in'" style="color:red">로그아웃</a>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='Logout.in'"
+                                       style="color:red">로그아웃</a>
                                 </li>
                             </ul>
                         </li>
-                    </ul> <%-- 수정된 버튼 --%>
+                    </ul>
+                        <%-- 수정된 버튼 --%>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
-                            <a class="button button-header" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>판매하기</a>
+                            <a class="button button-header" href="javascript:void(0)"
+                               onclick="location.href='productUpload.jsp'" ;>판매하기</a>
                         </li>
                     </ul>
                     </c:otherwise>
@@ -142,14 +153,17 @@
                         <tbody>
                         <%--                        수정할 이름--%>
                         <tr>
-                            <td>
-                                <div class="col-md-12 form-group">
+                            <td style="width: 150px">
+                                <div class="form-group">
                                     <label class="label_width" for="username">*이름:</label>
                                 </div>
                             </td>
                             <td>
-                                <input type="text" class="input_width" name="username" id="username" required onchange="nameCheck()" value="${userSession.username}"><br>
-                                <span id="nameError" style="display:none; color:red;">올바른 이름을 입력하세요</span><br>
+                                <input style="border: #cccccc 1px solid" type="text" name="username" id="username"
+                                       required
+                                       onchange="nameCheck()" value="${userSession.username}"><br>
+                                <span id="nameError"
+                                      style="display:none; color:red; font-size: 12px">올바른 이름을 입력하세요</span><br>
                             </td>
                         </tr>
                         <%--                        수정할 아이디--%>
@@ -163,7 +177,8 @@
                             </td>
                             <td>
                                 <span>${userSession.userid}</span>
-                                <input type="hidden" class="input_width" name="userid" id="userid" value="${userSession.userid}">
+                                <input style="border: #cccccc 1px solid" type="hidden" class="" name="userid"
+                                       id="userid" value="${userSession.userid}">
                             </td>
                         </tr>
                         <%--                           변경할 비밀번호--%>
@@ -176,8 +191,10 @@
                                 </div>
                             </td>
                             <td>
-                                <input class="input_width" type="password" name="userpw" id="userpw" required onchange="pwCheck()"><br>
-                                <span id="pwError" style="display:none; color:red;">영문, 숫자, 특수문자 조합의 8~25자리 비밀번호를 사용하세요</span><br>
+                                <input style="width: 250px; border: #cccccc 1px solid;" type="password" name="userpw"
+                                       id="userpw" required
+                                       onchange="pwCheck()"><br>
+                                <span id="pwError" style="display:none; color:red; font-size: 12px">영문, 숫자, 특수문자 조합의 8~25자리 비밀번호를 사용하세요</span><br>
                             </td>
                         </tr>
                         <%--                            변경할 비밀번호 확인--%>
@@ -190,8 +207,11 @@
                                 </div>
                             </td>
                             <td>
-                                <input class="input_width" type="password" name="userpw" id="userpw2" required onchange="pwCheck()"><br>
-                                <span id="pwError2" style="display:none; color:red;">비밀번호가 일치하지 않습니다</span><br>
+                                <input style="width: 250px; border: #cccccc 1px solid;" type="password" name="userpw"
+                                       id="userpw2" required
+                                       onchange="pwCheck()"><br>
+                                <span id="pwError2"
+                                      style="display:none; color:red; font-size: 12px">비밀번호가 일치하지 않습니다</span><br>
                             </td>
                         </tr>
                         <%--                          변경할 이메일 확인   --%>
@@ -204,8 +224,11 @@
                                 </div>
                             </td>
                             <td>
-                                <input class="input_width" type="text" name="useremail" id="useremail" required value="${userSession.useremail}" onchange="emailCheck()"><br>
-                                <span id="emailError" style="display:none; color:red;">올바른 이메일을 입력하세요</span><br>
+                                <input style="width: 250px; border: #cccccc 1px solid; " type="text" name="useremail"
+                                       id="useremail" required
+                                       value="${userSession.useremail}" onchange="emailCheck()"><br>
+                                <span id="emailError"
+                                      style="display:none; color:red; font-size: 12px">올바른 이메일을 입력하세요</span><br>
                             </td>
                         </tr>
                         <%--                             변경할 주소 확인  --%>
@@ -217,12 +240,20 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="input_width">
-                                <input class="input_width" type="text" id="sample6_postcode" placeholder="우편번호">
-                                <input class="input_width" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-                                <input class="input_width" type="text" id="useraddr" name="useraddr" required placeholder="주소"><br>
-                                <input class="input_width" type="text" id="sample6_detailAddress" placeholder="상세주소">
-                                <input class="input_width" type="text" id="sample6_extraAddress" placeholder="참고항목">
+                            <td class="">
+                                <input style="width: 125px; border: #cccccc 1px solid;" type="text"
+                                       id="sample6_postcode" placeholder="우편번호">
+                                <input style="width: 125px; border: #cccccc 1px solid;" type="button"
+                                       onclick="sample6_execDaumPostcode()"
+                                       value="우편번호 찾기"><br>
+                                <input style="width: 350px; border: #cccccc 1px solid;" type="text" id="useraddr"
+                                       name="useraddr" required
+                                       placeholder="주소">
+                                <input style="width: 150px; border: #cccccc 1px solid;" type="text"
+                                       id="sample6_extraAddress"
+                                       placeholder="참고항목"><br>
+                                <input style="width: 250px; border: #cccccc 1px solid;" type="text"
+                                       id="sample6_detailAddress" placeholder="상세주소">
                             </td>
                         </tr>
                         <%--                             변경할 전화번호 확인  --%>
@@ -235,15 +266,18 @@
                                 </div>
                             </td>
                             <td>
-                                <input class="input_width" type="text" name="userphone" id="userphone" required value="${userSession.userphone}" onchange="phoneCheck()"><br>
-                                <span id="phoneError" style="display:none; color:red;">올바른 전화번호를 입력해주세요</span><br>
+                                <input style="width: 250px; border: #cccccc 1px solid;" type="text" name="userphone"
+                                       id="userphone" required
+                                       value="${userSession.userphone}" onchange="phoneCheck()"><br>
+                                <span id="phoneError"
+                                      style="display:none; color:red; font-size: 12px">올바른 전화번호를 입력해주세요</span><br>
                             </td>
+                            <%--                수정하기--%>
                         </tr>
-                        <%--                수정하기--%>
-
-                        <tr class="out_button_area">
+                        <tr>
+                            <td></td>
                             <td>
-                                <div class="checkout_btn_inner d-flex align-items-center">
+                                <div style="display:inline;">
                                     <button
                                             class="button button-header"
                                             type="submit"
@@ -252,9 +286,8 @@
                                         변경하기
                                     </button>
                                 </div>
-                            </td>
                             <td>
-                                <div class="checkout_btn_inner d-flex align-items-center">
+                                <div style="display:inline;">
                                     <a class="buttonR buttonR-header" href="javascript:void(0)" onclick="UserDelete()">탈퇴하기</a>
                                 </div>
                             </td>
@@ -305,12 +338,12 @@
                     <div class="single-footer-widget instafeed">
                         <h4 class="footer_title">Gallery</h4>
                         <ul class="list instafeed d-flex flex-wrap">
-                            <li><img src="img/gallery/r1.jpg" alt="" /></li>
-                            <li><img src="img/gallery/r2.jpg" alt="" /></li>
-                            <li><img src="img/gallery/r3.jpg" alt="" /></li>
-                            <li><img src="img/gallery/r5.jpg" alt="" /></li>
-                            <li><img src="img/gallery/r7.jpg" alt="" /></li>
-                            <li><img src="img/gallery/r8.jpg" alt="" /></li>
+                            <li><img src="img/gallery/r1.jpg" alt=""/></li>
+                            <li><img src="img/gallery/r2.jpg" alt=""/></li>
+                            <li><img src="img/gallery/r3.jpg" alt=""/></li>
+                            <li><img src="img/gallery/r5.jpg" alt=""/></li>
+                            <li><img src="img/gallery/r7.jpg" alt=""/></li>
+                            <li><img src="img/gallery/r8.jpg" alt=""/></li>
                         </ul>
                     </div>
                 </div>
@@ -333,11 +366,11 @@
                                 GitHub
                             </p>
                             <p>
-                                임대연 : rilac<br />
-                                김민욱 : m1nwook<br />
-                                문건우 : GEONU-MOON<br />
-                                신준수 : shinjunsu<br />
-                                이상기 : Drifter1999<br />
+                                임대연 : rilac<br/>
+                                김민욱 : m1nwook<br/>
+                                문건우 : GEONU-MOON<br/>
+                                신준수 : shinjunsu<br/>
+                                이상기 : Drifter1999<br/>
                                 이태하 : taehalee615
                             </p>
                             <p class="sm-head">
@@ -345,11 +378,11 @@
                                 이메일
                             </p>
                             <p>
-                                임대연 : eodos6480@gmail.com<br />
-                                김민욱 : supermin0317@naver.com<br />
-                                문건우 : moondy2209@naver.com<br />
-                                신준수 : sjs990306@gmail.com<br />
-                                이상기 : yah9600@gmail.com<br />
+                                임대연 : eodos6480@gmail.com<br/>
+                                김민욱 : supermin0317@naver.com<br/>
+                                문건우 : moondy2209@naver.com<br/>
+                                신준수 : sjs990306@gmail.com<br/>
+                                이상기 : yah9600@gmail.com<br/>
                                 이태하 : leeari0615@gmail.com
                             </p>
                         </div>

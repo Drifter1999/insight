@@ -47,7 +47,7 @@
                     <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
 
                         <li><h4>저희는 회원제 Flea Market 입니다.</h4></li>
-
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -117,7 +117,7 @@
                                     required
                                     onchange="idCheck();"
                             />
-                            <button type="button" onclick="DupidCheck('#userid')" class="form-control_button">중복확인
+                            <button type="button" onclick="DupIdCheck('#userid')" class="form-control_button">중복확인
                             </button>
                             <span id="idError" style="display:none; color:red; font-size: 12px">2~20자 이내의 영문,숫자를 사용하세요</span>
                         </div>
