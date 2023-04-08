@@ -14,48 +14,61 @@ var emcheck = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.
 
 
 function nameCheck() {
-    if(!nameKor.test(username.value)){
-        document.getElementById("nameError").style.display="block";
+    if (!username.value) {
+        username.focus()
         return false;
     }
-    document.getElementById("nameError").style.display="none";
+
+    if (!nameKor.test(username.value)) {
+        document.getElementById("nameError").style.display = "block";
+        return false;
+    }
+    document.getElementById("nameError").style.display = "none";
+    return true;
 }
-function idCheck(){
+
+function idCheck() {
     if (!idch.test(userid.value)) {
-        idch.focus();
-        document.getElementById("idError").style.display="block";
+        userid.focus();
+        document.getElementById("idError").style.display = "block";
         return false;
     }
-    document.getElementById("idError").style.display="none";
+    document.getElementById("idError").style.display = "none";
+    return true;
 }
-function pwCheck(){
+
+function pwCheck() {
     //비밀번호 유효성 검사
     if (!pwcheck.test(userpw.value)) {
-        document.getElementById("pwError").style.display="block";
-        pwcheck.focus();
+        document.getElementById("pwError").style.display = "block";
+        userpw.focus();
         return false;
-    }else{
-        document.getElementById("pwError").style.display="none";
+    } else {
+        document.getElementById("pwError").style.display = "none";
+        return true;
     }
     //비밀번호 일치 확인
     if (userpw2.value !== userpw.value) {
         document.getElementById("pwError2").style.display = "block";
-        userpw2.focus();
+        userpw.focus();
         return false;
-    }else{
-        document.getElementById("pwError2").style.display="none";
+    } else {
+        document.getElementById("pwError2").style.display = "none";
+        return true;
     }
 }
 
-function emailCheck(){
+function emailCheck() {
     //이메일 유효성 검사
     if (!emcheck.test(useremail.value)) {
         document.getElementById("emailError").style.display = "block";
         useremail.focus();
         return false;
     }
-    document.getElementById("emailError").style.display="none";
+    document.getElementById("emailError").style.display = "none";
+    return true;
 }
+
 function phoneCheck() {
     // 전화번호 유효성 검사
     if (!phnum.test(userphone.value)) {
@@ -63,30 +76,29 @@ function phoneCheck() {
         userphone.focus();
         return false;
     }
-    document.getElementById("phoneError").style.display="none";
+    document.getElementById("phoneError").style.display = "none";
+    return true;
+}
+
+function addrCheck() {
+    if (!useraddr.value) {
+        document.getElementById("addrError").style.display = "block";
+        useraddr.focus();
+        return false;
+    }
+    document.getElementById("addrError").style.display = "none";
+    return true;
 }
 
 
-function compIdCheck(selector) {
-    if($(selector).val() != '') {
-        let xhr = new XMLHttpRequest();
-        let userid = $(selector).val()
-        xhr.open("GET", "idCheckService.jsp?userid="+userid, true);
-        xhr.send();
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-                alert(xhr.responseText);
-                alert("사용 가능한 아이디 입니다.");
-            }
-        }
-    }else {
-        alert("중복된 아이디입니다.");
-    }
+function addDetailaddr() {
+    document.getElementById("useraddr").value
+        = document.getElementById("useraddr").value + " " + document.getElementById("sample6_detailAddress").value;
 }
 
 function sample6_execDaumPostcode() {
     new daum.Postcode({
-        oncomplete: function(data) {
+        oncomplete: function (data) {
             // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
             // 각 주소의 노출 규칙에 따라 주소를 조합한다.
@@ -102,18 +114,18 @@ function sample6_execDaumPostcode() {
             }
 
             // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-            if(data.userSelectedType === 'R'){
+            if (data.userSelectedType === 'R') {
                 // 법정동명이 있을 경우 추가한다. (법정리는 제외)
                 // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
                     extraAddr += data.bname;
                 }
                 // 건물명이 있고, 공동주택일 경우 추가한다.
-                if(data.buildingName !== '' && data.apartment === 'Y'){
+                if (data.buildingName !== '' && data.apartment === 'Y') {
                     extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
                 }
                 // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                if(extraAddr !== ''){
+                if (extraAddr !== '') {
                     extraAddr = ' (' + extraAddr + ')';
                 }
                 // 조합된 참고항목을 해당 필드에 넣는다.
@@ -132,30 +144,55 @@ function sample6_execDaumPostcode() {
     }).open();
 }
 
-function addDetailaddr(){
-    document.getElementById("useraddr").value
-    = document.getElementById("useraddr").value +" "+ document.getElementById("sample6_detailAddress").value;
+
+function joinValid() {
+    var nameResult = nameCheck();
+    var idResult = idCheck();
+    var pwResult = pwCheck();
+    var addrResult = addrCheck();
+    var phoneResult = phoneCheck();
+    var emResult = emailCheck();
+
+    if (!nameResult || !idResult || !pwResult || !addrResult || !phoneResult || !emResult) {
+        alert("회원정보를 다시 확인해주세요.");
+        return false;
+    }
+
+    Join_Form.submit();
+    return true;
 }
 
-function addrcheck() {
-    if(useraddr == " ")
-    return false;
+function DupidCheck(selector) {
+    if ($(selector).val() != '') {
+        let xhr = new XMLHttpRequest();
+        let userid = $(selector).val()
+        xhr.open("GET", "idCheckService.jsp?userid=" + userid, true);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                alert(xhr.responseText);
+            }
+        }
+    } else {
+        alert("아이디을 입력해주세요.")
+    }
 }
+
 
 function validateInfo() {
     var nameResult = nameCheck();
     var pwResult = pwCheck();
-    var addrResult = addrcheck();
+    var addrResult = addrCheck();
     var phoneResult = phoneCheck();
     var emResult = emailCheck();
     if (!nameResult || !pwResult || !addrResult || !phoneResult || !emResult) {
         alert("회원정보를 다시 확인해주세요.");
 
         myPage.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const formData = new FormData(myPage);
-                console.log(Object.fromEntries(formData.entries()));
-                myPage.submit();
+            e.preventDefault();
+            const formData = new FormData(myPage);
+            console.log(Object.fromEntries(formData.entries()));
+            myPage.submit();
         });
 
         return false;
@@ -163,8 +200,6 @@ function validateInfo() {
     } else {
         document.myPage.submit();
     }
-
-
 }
 
 function UserDelete() {
@@ -174,8 +209,8 @@ function UserDelete() {
     if (password != userpw) {
         alert("입력한 정보가 맞지 않음.");
         location.href = "mypage.jsp";
-    }else {
-        document.myPage.action = "/UserDelete.in?userid"+userid+"&userpw="+password;
+    } else {
+        document.myPage.action = "/UserDelete.in?userid" + userid + "&userpw=" + password;
         document.myPage.submit();
     }
 }

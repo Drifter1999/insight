@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <html lang="en">
 <head>
@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="vendors/nice-select/nice-select.css">
     <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">
-
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -46,227 +45,15 @@
                         id="navbarSupportedContent"
                 >
                     <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-                        <%--<li class="nav-item">
-                          <a class="nav-link" href="mainhome.jsp">홈</a>
-                        </li>
-                        <li class="nav-item submenu dropdown">
-                          <a
-                                  href="#"
-                                  class="nav-link dropdown-toggle"
-                                  data-toggle="dropdown"
-                                  role="button"
-                                  aria-haspopup="true"
-                                  aria-expanded="false"
-                          >상품</a
-                          >
-                          <ul class="dropdown-menu">
-                            <li class="nav-item">
-                              <a class="nav-link" href="category.jsp">카테고리</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="productdetail.jsp"
-                                >Blog Details</a
-                              >
-                            </li>--%>
-                        <!-- <li class="nav-item"><a class="nav-link" href="checkout.jsp">Product Checkout</a></li>
-                      <li class="nav-item"><a class="nav-link" href="confirmation.jsp">Confirmation</a></li>
-                      <li class="nav-item"><a class="nav-link" href="mypage.jsp">Shopping Cart</a></li> -->
-                        <%--  </ul>
-                        </li>
-                        <li class="nav-item submenu dropdown">
-                          <a
-                            href="#"
-                            class="nav-link dropdown-toggle"
-                            data-toggle="dropdown"
-                            role="button"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            >Blog</a
-                          >
-                          <ul class="dropdown-menu">
-                            <li class="nav-item">
-                              <a class="nav-link" href="blog.jsp">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="single-blog.jsp"
-                                >Blog Details</a
-                              >
-                            </li>
-                          </ul>
-                        </li>--%>
-                        <%--            <li class="nav-item active submenu dropdown">
-                                      <a
-                                              href="#"
-                                              class="nav-link dropdown-toggle"
-                                              data-toggle="dropdown"
-                                              role="button"
-                                              aria-haspopup="true"
-                                              aria-expanded="false"
-                                      >로그인 / 회원가입</a
-                                      >
-                                      <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                          <a class="nav-link" href="index.jsp">로그인</a>
-                                        </li>
-                                        <li class="nav-item">
-                                          <a class="nav-link" href="register.jsp">회원가입</a>
-                                        </li>
-                                        <!-- <li class="nav-item">
-                                          <a class="nav-link" href="tracking-order.jsp"
-                                            >Tracking</a
-                                          >
-                                        </li> -->
-                                      </ul>
-                                    </li>--%>
-                        <!-- <li class="nav-item">
-                          <a class="nav-link" href="contact.jsp">Contact</a>
-                        </li>-->
-                        <li><h4>저희는 회원제 Flea Market 입니다.</h4></li>
-                    </ul>
 
-                    <%--          <ul class="nav-shop">--%>
-                    <%--            <li class="nav-item">--%>
-                    <%--              <button><i class="ti-search"></i></button>--%>
-                    <%--            </li>--%>
-                    <%--            <!-- <li class="nav-item">--%>
-                    <%--              <button>--%>
-                    <%--                <i class="ti-shopping-cart"></i--%>
-                    <%--                ><span class="nav-shop__circle">3</span>--%>
-                    <%--              </button>--%>
-                    <%--            </li> -->--%>
-                    <%--            <!-- <li class="nav-item">--%>
-                    <%--              <a class="button button-header" href="#">Buy Now</a>--%>
-                    <%--            </li> -->--%>
-                    <%--          </ul>--%>
+                        <li><h4>저희는 회원제 Flea Market 입니다.</h4></li>
+
                 </div>
             </div>
         </nav>
     </div>
 </header>
 
-
-
-<%--<header class="header_area">--%>
-<%--    <div class="main_menu">--%>
-<%--        <nav class="navbar navbar-expand-lg navbar-light">--%>
-<%--            <div class="container">--%>
-<%--                <a class="navbar-brand logo_h" href="index.jsp"--%>
-<%--                ><img src="img/insightlogo.JPG" alt=""--%>
-<%--                /></a>--%>
-<%--                <button--%>
-<%--                        class="navbar-toggler"--%>
-<%--                        type="button"--%>
-<%--                        data-toggle="collapse"--%>
-<%--                        data-target="#navbarSupportedContent"--%>
-<%--                        aria-controls="navbarSupportedContent"--%>
-<%--                        aria-expanded="false"--%>
-<%--                        aria-label="Toggle navigation"--%>
-<%--                >--%>
-<%--                    <span class="icon-bar"></span>--%>
-<%--                    <span class="icon-bar"></span>--%>
-<%--                    <span class="icon-bar"></span>--%>
-<%--                </button>--%>
-<%--                <div--%>
-<%--                        class="collapse navbar-collapse offset"--%>
-<%--                        id="navbarSupportedContent"--%>
-<%--                >--%>
-<%--                    <ul class="nav navbar-nav menu_nav ml-auto mr-auto">--%>
-<%--                        <li class="nav-item">--%>
-<%--                            <a class="nav-link" href="mainhome.jsp">홈</a>--%>
-<%--                        </li>--%>
-<%--                        <li class="nav-item submenu dropdown">--%>
-<%--                            <a--%>
-<%--                                    href="#"--%>
-<%--                                    class="nav-link dropdown-toggle"--%>
-<%--                                    data-toggle="dropdown"--%>
-<%--                                    role="button"--%>
-<%--                                    aria-haspopup="true"--%>
-<%--                                    aria-expanded="false"--%>
-<%--                            >상품</a--%>
-<%--                            >--%>
-<%--                            <ul class="dropdown-menu">--%>
-<%--                                <li class="nav-item">--%>
-<%--                                    <a class="nav-link" href="category.jsp">카테고리</a>--%>
-<%--                                </li>--%>
-<%--                                <!-- <li class="nav-item">--%>
-<%--                                  <a class="nav-link" href="productdetail.jsp"--%>
-<%--                                    >Blog Details</a--%>
-<%--                                  >--%>
-<%--                                </li> -->--%>
-<%--                                <!-- <li class="nav-item"><a class="nav-link" href="checkout.jsp">Product Checkout</a></li>--%>
-<%--                              <li class="nav-item"><a class="nav-link" href="confirmation.jsp">Confirmation</a></li>--%>
-<%--                              <li class="nav-item"><a class="nav-link" href="mypage.jsp">Shopping Cart</a></li> -->--%>
-<%--                            </ul>--%>
-<%--                        </li>--%>
-<%--                        <!-- <li class="nav-item submenu dropdown">--%>
-<%--                          <a--%>
-<%--                            href="#"--%>
-<%--                            class="nav-link dropdown-toggle"--%>
-<%--                            data-toggle="dropdown"--%>
-<%--                            role="button"--%>
-<%--                            aria-haspopup="true"--%>
-<%--                            aria-expanded="false"--%>
-<%--                            >Blog</a--%>
-<%--                          >--%>
-<%--                          <ul class="dropdown-menu">--%>
-<%--                            <li class="nav-item">--%>
-<%--                              <a class="nav-link" href="blog.jsp">Blog</a>--%>
-<%--                            </li>--%>
-<%--                            <li class="nav-item">--%>
-<%--                              <a class="nav-link" href="single-blog.jsp"--%>
-<%--                                >Blog Details</a--%>
-<%--                              >--%>
-<%--                            </li>--%>
-<%--                          </ul>--%>
-<%--                        </li> -->--%>
-<%--                        <li class="nav-item active submenu dropdown">--%>
-<%--                            <a--%>
-<%--                                    href="#"--%>
-<%--                                    class="nav-link dropdown-toggle"--%>
-<%--                                    data-toggle="dropdown"--%>
-<%--                                    role="button"--%>
-<%--                                    aria-haspopup="true"--%>
-<%--                                    aria-expanded="false"--%>
-<%--                            >로그인 / 회원가입</a--%>
-<%--                            >--%>
-<%--                            <ul class="dropdown-menu">--%>
-<%--                                <li class="nav-item">--%>
-<%--                                    <a class="nav-link" href="index.jsp">로그인</a>--%>
-<%--                                </li>--%>
-<%--                                <li class="nav-item">--%>
-<%--                                    <a class="nav-link" href="register.jsp">회원가입</a>--%>
-<%--                                </li>--%>
-<%--                                <!-- <li class="nav-item">--%>
-<%--                                  <a class="nav-link" href="tracking-order.jsp"--%>
-<%--                                    >Tracking</a--%>
-<%--                                  >--%>
-<%--                                </li> -->--%>
-<%--                            </ul>--%>
-<%--                        </li>--%>
-<%--                        <!-- <li class="nav-item">--%>
-<%--                          <a class="nav-link" href="contact.jsp">Contact</a>--%>
-<%--                        </li>-->--%>
-<%--                    </ul>--%>
-
-<%--                    &lt;%&ndash;          <ul class="nav-shop">&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;            <li class="nav-item">&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;              <button><i class="ti-search"></i></button>&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;            </li>&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;            <!-- <li class="nav-item">&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;              <button>&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;                <i class="ti-shopping-cart"></i&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;                ><span class="nav-shop__circle">3</span>&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;              </button>&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;            </li> -->&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;            <!-- <li class="nav-item">&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;              <a class="button button-header" href="#">Buy Now</a>&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;            </li> -->&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;          </ul>&ndash;%&gt;--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </nav>--%>
-<%--    </div>--%>
-<%--</header>--%>
 <!--================ End Header Menu Area =================-->
 
 <!-- ================ start banner area ================= -->
@@ -298,7 +85,8 @@
             <div class="col-lg-6">
                 <div class="login_form_inner register_form_inner">
                     <h3>회원정보를 입력하세요</h3>
-                    <form class="row login_form" action="register.in" name="joinform" method="post" onsubmit="return joincheck();">
+                    <form class="row login_form" action="register.in" name="Join_Form" method="post"
+                          onsubmit="return joinValid();">
                         <div class="col-md-12 form-group">
                             <!-- 이름 입력 -->
                             <input
@@ -310,7 +98,10 @@
                                     placeholder="이름"
                                     onfocus="this.placeholder = ''"
                                     onblur="this.placeholder = '이름'"
+                                    required
+                                    onchange="nameCheck();"
                             />
+                            <span id="nameError" style="display:none; color:red; font-size: 12px">올바른 이름을 입력하세요</span>
                         </div>
                         <div class="col-md-12 form-group">
                             <!-- 아이디 입력 -->
@@ -323,9 +114,12 @@
                                     onfocus="this.placeholder = ''"
                                     onblur="this.placeholder = '아이디'"
                                     class="form-control_id"
+                                    required
+                                    onchange="idCheck();"
                             />
-                            <button type="button" onclick="compIdCheck('#userid')" class="form-control_button">중복확인</button>
-
+                            <button type="button" onclick="DupidCheck('#userid')" class="form-control_button">중복확인
+                            </button>
+                            <span id="idError" style="display:none; color:red; font-size: 12px">2~20자 이내의 영문,숫자를 사용하세요</span>
                         </div>
                         <div class="col-md-12 form-group">
                             <!-- 비밀번호 입력 -->
@@ -338,7 +132,10 @@
                                     placeholder="비밀번호"
                                     onfocus="this.placeholder = ''"
                                     onblur="this.placeholder = '비밀번호'"
+                                    required
+                                    onchange="pwCheck();"
                             />
+                            <span id="pwError" style="display:none; color:red; font-size: 12px">영문,숫자,특수문자 조합의 8~25자리 비밀번호를 사용하세요</span>
                         </div>
                         <div class="col-md-12 form-group">
                             <!-- 비밀번호 확인 -->
@@ -346,12 +143,15 @@
                                     type="password"
                                     title="영문,숫자,특수문자 조합의 8~25자리 비밀번호를 사용하세요"
                                     class="form-control"
-                                    id="userpwcheck"
-                                    name="userpwcheck"
+                                    id="userpw2"
+                                    name="userpw2"
                                     placeholder="비밀번호 확인"
                                     onfocus="this.placeholder = ''"
                                     onblur="this.placeholder = '비밀번호 확인'"
+                                    required
+                                    onchange="pwCheck();"
                             />
+                            <span id="pwError2" style="display:none; color:red; font-size: 12px">비밀번호가 일치하지 않습니다.</span>
                         </div>
                         <div class="col-md-12 form-group">
                             <!-- 주소 입력 -->
@@ -364,7 +164,10 @@
                                     placeholder="주소"
                                     onfocus="this.placeholder = ''"
                                     onblur="this.placeholder = '주소'"
+                                    required
+                                    onchange="addrCheck();"
                             />
+                            <span id="addrError" style="display:none; color:red; font-size: 12px">주소를 입력하세요</span>
                         </div>
                         <div class="col-md-12 form-group">
                             <!-- 전화번호 입력 -->
@@ -377,7 +180,10 @@
                                     placeholder="전화번호"
                                     onfocus="this.placeholder = ''"
                                     onblur="this.placeholder = '전화번호'"
+                                    required
+                                    onchange="phoneCheck();"
                             />
+                            <span id="phoneError" style="display:none; color:red; font-size: 12px">-을 제외하고 입력하세요</span>
                         </div>
                         <div class="col-md-12 form-group">
                             <!-- 이메일 입력 -->
@@ -390,13 +196,15 @@
                                     placeholder="이메일"
                                     onfocus="this.placeholder = ''"
                                     onblur="this.placeholder = '이메일'"
+                                    required
+                                    onchange="emailCheck();"
                             />
+                            <span id="emailError" style="display:none; color:red; font-size: 12px">올바른 이메일을 입력하세요</span>
                         </div>
                         <div class="col-md-12 form-group">
                             <!-- 회원가입 버튼 눌렀을때 아이디 중복확인까지 -->
                             <button
                                     type="submit"
-                                    onclick="joincheck()"
                                     class="button button-register w-100"
                             >
                                 가입하기
@@ -535,7 +343,7 @@
 <script src="vendors/jquery.ajaxchimp.min.js"></script>
 <script src="vendors/mail-script.js"></script>
 <script src="js/main.js"></script>
-<script src="js/joincheck.js"></script>
 <script src="js/validationCheck.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>
