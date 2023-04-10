@@ -112,30 +112,46 @@
 <!--================ End Header Menu Area =================-->
 
 <!--================ 배너  Carousel start =================-->
+
 <section class="section-margin mt-0">
     <div class="owl-carousel owl-theme hero-carousel">
         <div class="hero-carousel__slide">
-            <img src="img/home/hero-slide1.png" alt="" class="img-fluid">
+            <img src="productimage/accfront2.JPG" alt="" class="img-fluid">
             <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
-                <h3>Wireless Headphone</h3>
+                <%--                    <h3>Wireless Headphone</h3>--%>
                 <p>Accessories Item</p>
             </a>
         </div>
         <div class="hero-carousel__slide">
-            <img src="img/home/hero-slide2.png" alt="" class="img-fluid">
+            <img src="productimage/accfront6.JPG" alt="" class="img-fluid">
             <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
-                <h3>Wireless Headphone</h3>
+                <%--                    <h3>Wireless Headphone</h3>--%>
                 <p>Accessories Item</p>
             </a>
         </div>
         <div class="hero-carousel__slide">
-            <img src="img/home/hero-slide3.png" alt="" class="img-fluid">
+            <img src="productimage/accfront3.JPG" alt="" class="img-fluid">
             <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
-                <h3>Wireless Headphone</h3>
+                <%--                    <h3>Wireless Headphone</h3>--%>
                 <p>Accessories Item</p>
+            </a>
+        </div>
+        <div class="hero-carousel__slide">
+            <img src="productimage/accfront5.JPG" alt="" class="img-fluid">
+            <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
+                <%--                    <h3>Wireless Headphone</h3>--%>
+                <p>Accessories Item</p>
+            </a>
+        </div>
+        <div class="hero-carousel__slide">
+            <img src="productimage/electrofront3.JPG" alt="" class="img-fluid">
+            <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
+                <%--                    <h3>Wireless Headphone</h3>--%>
+                <p>Electro Item</p>
             </a>
         </div>
     </div>
+
 </section>
 <!--================ 배너  Carousel end =================-->
 
@@ -270,152 +286,6 @@
         </div>
     </div>
 </section>
-<!-- ================ category section end ================= -->
-
-<!-- ================ top product area start ================= -->
-<%--<section class="related-product-area">--%>
-<%--    <div class="container">--%>
-<%--        <div class="section-intro pb-60px">--%>
-<%--            <!--     <p>Popular Item in the market</p> -->--%>
-<%--            <p> 인기품목리스트 </p>--%>
-<%--            <h2>Top <span class="section-intro__style">Product</span></h2>--%>
-<%--        </div>--%>
-<%--        <div class="row mt-30">--%>
-<%--            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">--%>
-<%--                <div class="single-search-product-wrapper">--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-1.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-2.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-3.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-
-<%--            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">--%>
-<%--                <div class="single-search-product-wrapper">--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-4.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-5.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-6.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-
-<%--            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">--%>
-<%--                <div class="single-search-product-wrapper">--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-7.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-8.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-9.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-
-<%--            <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">--%>
-<%--                <div class="single-search-product-wrapper">--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-1.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-2.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="single-search-product d-flex">--%>
-<%--                        <a href="#"><img src="img/product/product-sm-3.png" alt=""></a>--%>
-<%--                        <div class="desc">--%>
-<%--                            <a href="#" class="title">Gray Coffee Cup</a>--%>
-<%--                            <div class="price">$170.00</div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</section>--%>
-<!-- ================ top product area end ================= -->
-
-<!-- ================ Subscribe section start ================= -->
-<!-- <section class="subscribe-position">    신제품 이메일로 보내주는 기능 안쓰기로해서 주석처리
-   <div class="container">
-     <div class="subscribe text-center">
-       <h3 class="subscribe__title">Get Update From Anywhere</h3>
-       <h3 class="subscribe__title"> 신제품 정보를 편하게 받고싶잖아 ?</h3>
-      <p>Bearing Void gathering light light his eavening unto dont afraid</p>
-       <p>그럼 입력해야지 이메일!</p>
-       <div id="mc_embed_signup">
-         <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe-form form-inline mt-5 pt-1">
-           <div class="form-group ml-sm-auto">
-             <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '" >
-             <div class="info"></div>
-           </div>
-           <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
-           <div style="position: absolute; left: -5000px;">
-             <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-           </div>
-
-         </form>
-       </div>
-
-     </div>
-   </div>
- </section> -->
-<!-- ================ Subscribe section end ================= -->
-
 
 <!--================ Start footer Area  =================-->
 <footer class="footer">

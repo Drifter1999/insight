@@ -94,27 +94,42 @@
     <section class="section-margin mt-0">
         <div class="owl-carousel owl-theme hero-carousel">
             <div class="hero-carousel__slide">
-                <img src="img/home/hero-slide1.png" alt="" class="img-fluid">
+                <img src="productimage/accfront2.JPG" alt="" class="img-fluid">
                 <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
-                    <h3>Wireless Headphone</h3>
+                    <%--                    <h3>Wireless Headphone</h3>--%>
                     <p>Accessories Item</p>
                 </a>
             </div>
             <div class="hero-carousel__slide">
-                <img src="img/home/hero-slide2.png" alt="" class="img-fluid">
+                <img src="productimage/accfront6.JPG" alt="" class="img-fluid">
                 <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
-                    <h3>Wireless Headphone</h3>
+                    <%--                    <h3>Wireless Headphone</h3>--%>
                     <p>Accessories Item</p>
                 </a>
             </div>
             <div class="hero-carousel__slide">
-                <img src="img/home/hero-slide3.png" alt="" class="img-fluid">
+                <img src="productimage/accfront3.JPG" alt="" class="img-fluid">
                 <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
-                    <h3>Wireless Headphone</h3>
+                    <%--                    <h3>Wireless Headphone</h3>--%>
                     <p>Accessories Item</p>
+                </a>
+            </div>
+            <div class="hero-carousel__slide">
+                <img src="productimage/accfront5.JPG" alt="" class="img-fluid">
+                <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
+                    <%--                    <h3>Wireless Headphone</h3>--%>
+                    <p>Accessories Item</p>
+                </a>
+            </div>
+            <div class="hero-carousel__slide">
+                <img src="productimage/electrofront3.JPG" alt="" class="img-fluid">
+                <a href="productdetail.jsp" class="hero-carousel__slideOverlay">
+                    <%--                    <h3>Wireless Headphone</h3>--%>
+                    <p>Electro Item</p>
                 </a>
             </div>
         </div>
+
     </section>
     <!--================ 배너  Carousel end =================-->
 
