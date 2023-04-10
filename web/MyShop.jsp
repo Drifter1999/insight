@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <html lang="en">
 <head>
@@ -181,6 +182,7 @@
                     </thead>
                     <tbody>
                     <c:forEach var="myItems" items="${myShopList}">
+                        <c:set var="state" value="${myItems.productstate}"/>
                         <tr>
                             <td>
                                 <div class="media">
@@ -200,15 +202,28 @@
                             <td class="table_css">
                                 <h5>   ${myItems.productcategoryname} </h5>
                             </td>
-
-
+                            <c:if test="${fn:contains(state,'Y')}">
                             <td class="table_css">
                                 <label class="switch">
-                                    <input type="checkbox" name="switch${myItems.productnum}" onchange="changeCheck(${myItems.productnum})" checked></span>
+                                    <input type="checkbox" name="switch${myItems.productnum}" onchange="changeCheck(${myItems.productnum})" checked>
+
+                                    <span name="productnum${myItems.productnum}">
+                                        Open
+                                    </span>
                                 </label>
                             </td>
+                            </c:if>
+                            <c:if test="${fn:contains(state,'N')}">
+                                <td class="table_css">
+                                    <label class="switch">
+                                        <input type="checkbox" name="switch${myItems.productnum}" onchange="changeCheck(${myItems.productnum})">
 
-
+                                        <span name="productnum${myItems.productnum}">
+                                            Close
+                                        </span>
+                                    </label>
+                                </td>
+                            </c:if>
                             <td class="table_css">
                                 <h5> ${myItems.productprice}</h5>
                             </td>
@@ -354,11 +369,6 @@
 <script src="js/main.js"></script>
 
 <script>
-    /*var check = $("input[type='checkbox']" );
-    check.click(function(){
-        $(".switch-p").toggle();
-    });*/
-
     function confirmDelete(productnum) {
         if (confirm("데이터를 삭제하시겠습니까?")) {
             var xhr = new XMLHttpRequest();
