@@ -202,6 +202,7 @@
                             <td class="table_css">
                                 <h5>   ${myItems.productcategoryname} </h5>
                             </td>
+                            <%--state의 상태에 따른 버튼 체크 표시 --%>
                             <c:if test="${fn:contains(state,'Y')}">
                             <td class="table_css">
                                 <label class="switch">
