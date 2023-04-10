@@ -175,7 +175,6 @@ function joinValid() {
         return false;
     }
 
-
     Join_Form.submit();
     return true;
 }
