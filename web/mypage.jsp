@@ -288,7 +288,7 @@
                                 </div>
                             <td>
                                 <div style="display:inline;">
-                                    <a class="buttonR buttonR-header" href="javascript:void(0)" onclick="UserDelete('${userSession.userid}', '${userSession.userpw}')">탈퇴하기</a>
+                                    <a class="buttonR buttonR-header" href="javascript:void(0)" onclick="UserDelete()">탈퇴하기</a>
                                 </div>
                             </td>
                         </tr>
