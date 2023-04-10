@@ -204,8 +204,7 @@
 
                             <td class="table_css">
                                 <label class="switch">
-                                    <input type="checkbox" name="switch${myItems.productnum}" onchange="changeCheck(${myItems.productnum})" checked>
-                                    <span class="slider" name="productnum${myItems.productnum}" ></span>
+                                    <input type="checkbox" name="switch${myItems.productnum}" onchange="changeCheck(${myItems.productnum})" checked></span>
                                 </label>
                             </td>
 
@@ -213,19 +212,9 @@
                             <td class="table_css">
                                 <h5> ${myItems.productprice}</h5>
                             </td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary" onclick="confirmDelete()"><i class="fa fa-times"></i></button></td>
+                            <td class="align-middle"><button class="btn btn-sm btn-primary" onclick="confirmDelete(${myItems.productnum})"><i class="fa fa-times"></i></button></td>
                         </tr>
                     </c:forEach>
-                    <tr class="bottom_button">
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <div class="cupon_text d-flex align-items-center">
-                                <a class="primary-btn" href="#">이전 페이지</a>
-                                <a class="primary-btn" href="#">다음 페이지</a>
-                            </div>
-                        </td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -363,24 +352,30 @@
 <script src="vendors/jquery.ajaxchimp.min.js"></script>
 <script src="vendors/mail-script.js"></script>
 <script src="js/main.js"></script>
-<!-- 토글 스위치 판매중/ 판매완료-->
-<%--<script>--%>
-<%--    $(".switch input[type='checkbox']").click(function(){--%>
-<%--        $(this).siblings("p").toggle();--%>
-<%--    });--%>
-<%--</script>--%>
 
 <script>
     /*var check = $("input[type='checkbox']" );
     check.click(function(){
         $(".switch-p").toggle();
     });*/
-    function confirmDelete() {
-        if(confirm("데이터를 삭제하시겠습니까?")) {
-            // 여기에 데이터 삭제 코드를 작성합니다.
-            <%--location.href="/productdelete.in?productnum=${productnum}&${userid}&#{username}";--%>
+
+    function confirmDelete(productnum) {
+        if (confirm("데이터를 삭제하시겠습니까?")) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "productdelete.in");
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    alert("데이터가 삭제되었습니다.");
+                    location.reload();
+                } else {
+                    alert("데이터 삭제에 실패했습니다.");
+                }
+            };
+            xhr.send("productnum=" + productnum);
         }
     }
+
 </script>
 
 <script>
