@@ -219,9 +219,9 @@ function validateInfo() {
     }
 }
 
-function UserDelete() {
-    let userid = "${userSession.userid}".trim();
-    let userpw = "${userSession.userpw}".trim();
+function UserDelete(id, pw) {
+    let userid = id;
+    let userpw = pw;
     let password = prompt("비밀번호 입력 바랍니다.");
     if (password != userpw) {
         alert("입력한 정보가 맞지 않음.");
