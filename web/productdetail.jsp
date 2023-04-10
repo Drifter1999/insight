@@ -31,72 +31,60 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                    <c:choose>
+                    <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+                        <c:choose>
                         <c:when test="${userSession eq null}">
-                            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="mainhome.jsp">홈</a>
-                                </li>
-                                <li class="nav-item submenu dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="category.jsp">카테고리</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item active submenu dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="index.jsp">로그인</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="register.jsp">회원가입</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <li class="nav-item submenu dropdown">
+                                <a  class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                            </li>
+                            <li class="nav-item active submenu dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.jsp">로그인</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="register.jsp">회원가입</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </c:when>
                         <c:otherwise>
-                            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="mainhome.jsp">홈</a>
+                        </li>
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
+                            <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="mainhome.jsp">홈</a>
-                                </li>
-                                <li class="nav-item submenu dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.jsp'">카테고리</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item active submenu dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='MyShop.jsp'">나의 상점</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="javascript:void(0)" onclick="location.href='Logout.in'" style="color:red">로그아웃</a>
-                                        </li>
-                                    </ul>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.in'">카테고리</a>
                                 </li>
                             </ul>
-                            <ul class="nav navbar-nav navbar-right">
+                        </li>
+                        <li class="nav-item active submenu dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
+                            <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a class="button button-header" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>판매하기</a>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='myshop.in?userid=${userSession.userid}'">나의 상점</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='Logout.in'" style="color:red">로그아웃</a>
                                 </li>
                             </ul>
-                        </c:otherwise>
+                        </li>
+                    </ul> <%-- 수정된 버튼 --%>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="button button-header" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>판매하기</a>
+                        </li>
+                    </ul>
+                    </c:otherwise>
                     </c:choose>
                 </div>
-
             </div>
         </nav>
     </div>

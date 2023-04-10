@@ -88,19 +88,11 @@
                     <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
                         <c:choose>
                         <c:when test="${userSession eq null}">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.jsp">홈</a>
-                            </li>
                             <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="category.jsp">카테고리</a>
-                                    </li>
-                                </ul>
+                                <a  class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
                             </li>
                             <li class="nav-item active submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a class="nav-link" href="index.jsp">로그인</a>
@@ -119,18 +111,18 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.jsp'">카테고리</a>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.in'">카테고리</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item active submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='MyShop.in?userid=${userSession.userid}'">나의 상점</a>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='myshop.in?userid=${userSession.userid}'">나의 상점</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="javascript:void(0)" onclick="location.href='Logout.in'" style="color:red">로그아웃</a>
@@ -145,7 +137,6 @@
                     </ul>
                     </c:otherwise>
                     </c:choose>
-                    </ul>
                 </div>
             </div>
         </nav>

@@ -26,10 +26,8 @@
     <div class="main_menu">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <a class="navbar-brand logo_h" href="mainhome.jsp"><img src="img/insightlogo.JPG" alt=""/></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand logo_h" href="mainhome.jsp"><img src="img/insightlogo.JPG" alt="" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -38,21 +36,11 @@
                     <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
                         <c:choose>
                         <c:when test="${userSession eq null}">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.jsp">홈</a>
-                            </li>
                             <li class="nav-item submenu dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">상품</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="category.jsp">카테고리</a>
-                                    </li>
-                                </ul>
+                                <a  class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
                             </li>
                             <li class="nav-item active submenu dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">로그인 / 회원가입</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a class="nav-link" href="index.jsp">로그인</a>
@@ -68,43 +56,35 @@
                             <a class="nav-link" href="mainhome.jsp">홈</a>
                         </li>
                         <li class="nav-item submenu dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">상품</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">상품</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0)"
-                                       onclick="location.href='category.jsp'">카테고리</a>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='category.in'">카테고리</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item active submenu dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userSession.username} 님</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="javascript:void(0)" onclick="location.href='mypage.jsp'">마이페이지</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='MyShop.jsp'">나의
-                                        상점</a>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='myshop.in?userid=${userSession.userid}'">나의 상점</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='Logout.in'"
-                                       style="color:red">로그아웃</a>
+                                    <a class="nav-link" href="javascript:void(0)" onclick="location.href='Logout.in'" style="color:red">로그아웃</a>
                                 </li>
                             </ul>
                         </li>
-                    </ul>
-                        <%-- 수정된 버튼 --%>
+                    </ul> <%-- 수정된 버튼 --%>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
-                            <a class="button button-header" href="javascript:void(0)"
-                               onclick="location.href='productUpload.jsp'" ;>판매하기</a>
+                            <a class="button button-header" href="javascript:void(0)" onclick="location.href='productUpload.jsp'";>판매하기</a>
                         </li>
                     </ul>
                     </c:otherwise>
                     </c:choose>
-
                 </div>
             </div>
         </nav>
