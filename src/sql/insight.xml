@@ -149,6 +149,15 @@
         FROM PRODUCT p NATURAL JOIN PRODUCTCATEGORY p2
         WHERE USERID = #{userid}
     </select>
+
+    <update id="updateProductState" parameterType="hashmap">
+        UPDATE 	PRODUCT
+        SET 	PRODUCTSTATE = #{stateOne}
+        WHERE 	PRODUCTNUM = #{productnum}
+        AND 	USERID = #{userid}
+        AND 	PRODUCTSTATE = #{stateTwo}
+    </update>
+
 </mapper>
 
 

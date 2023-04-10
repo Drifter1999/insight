@@ -112,6 +112,32 @@ public class InsightDAO {
 
         return result;
     }
+
+    public boolean updateProductState(String userid, String productnum, String state) {
+        boolean result = false;
+        HashMap<String,String> datas = new HashMap<>();
+
+        String stateOne = "";
+        String stateTwo = "";
+        if(state.equals("Y")) {
+            stateOne = "Y";
+            stateTwo = "N";
+        }else if(state.equals("N")) {
+            stateOne = "N";
+            stateTwo = "Y";
+        }
+
+        datas.put("userid", userid);
+        datas.put("productnum", productnum);
+        datas.put("stateOne", stateOne);
+        datas.put("stateTwo", stateTwo);
+
+        if ((Integer)sqlSession.update("Insight.updateProductState", datas) != 0) {
+            result = true;
+        }
+
+        return result;
+    }
 }
 
 

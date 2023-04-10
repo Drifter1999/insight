@@ -137,6 +137,7 @@
                     </ul>
                     </c:otherwise>
                     </c:choose>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -383,34 +384,30 @@
 </script>
 
 <script>
-    /*let check = $("input[name=switch]:checked");
-    console.log("check : " + check);
-
-    let xhr = new XMLHttpRequest();
-    let userid = $("#userid").val();
-    let productnum = $("#productnum").val();
-    let uri = "OpenAndCloseProduct.jsp?productnum=" + productnum + "&userid="+userid;
-    console.log("userid : " + userid);
-    console.log("productnum : " + productnum);
-    console.log("uri : " + uri);
-*/
-    /*xhr.open("GET", uri, true);
-    xhr.send();
-    xhr.onreadystatechange = function () {
-        if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){
-            alert("이이이");
-        }
-    }*/
-
     function changeCheck(productnum) {
-        let val = $('input[name="switch'+productnum+'"]:checked');
-        console.log(val);
-        if(val.length > 0) {
+        let id= "${userSession.userid}";
+        let val = 'input[name="switch'+productnum+'"]';
+        if($(val+':checked').length > 0) {
             let Sname = "productnum" + productnum;
-            $('span[name="' + Sname + '"]').text("판매중");
+            $('span[name="' + Sname + '"]').text("open");
+
+            ajaxChangeCheck("Y", productnum, id)
         } else {
             let Fname = "productnum" + productnum;
-            $('span[name="' + Fname + '"]').text("판매완경");
+            $('span[name="' + Fname + '"]').text("close");
+            ajaxChangeCheck("N", productnum, id)
+        }
+    }
+
+    function ajaxChangeCheck(state, productnum, userid) {
+        let xhr = new XMLHttpRequest();
+        let uri = "OpenAndCloseProduct.jsp?productnum=" + productnum + "&userid="+userid +"&state="+state;
+        xhr.open("GET", uri, true);
+        xhr.send()
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){
+                alert(xhr.responseText);
+            }
         }
     }
 </script>
