@@ -227,7 +227,7 @@
                             <td class="table_css">
                                 <h5> ${myItems.productprice}</h5>
                             </td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary" onclick="confirmDelete(${myItems.productnum})"><i class="fa fa-times"></i></button></td>
+                            <td class="align-middle"><button class="btn btn-sm btn-primary" onclick="confirmDelete('${myItems.productnum}','${userSession.userpw}')"><i class="fa fa-times"></i></button></td>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -369,20 +369,27 @@
 <script src="js/main.js"></script>
 
 <script>
-    function confirmDelete(productnum) {
+    function confirmDelete(productnum,pw) {
+        let userpw = pw;
         if (confirm("데이터를 삭제하시겠습니까?")) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "productdelete.in");
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    alert("데이터가 삭제되었습니다.");
-                    location.reload();
-                } else {
-                    alert("데이터 삭제에 실패했습니다.");
-                }
-            };
-            xhr.send("productnum=" + productnum);
+            let password = prompt("비밀번호 입력 바랍니다.");
+            if (password != userpw) {
+                alert("입력한 정보가 맞지 않음.");
+                location.href = "MyShop.jsp";
+            }else {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "productdelete.in");
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        alert("데이터가 삭제되었습니다.");
+                        location.reload();
+                    } else {
+                        alert("데이터 삭제에 실패했습니다.");
+                    }
+                };
+                xhr.send("productnum=" + productnum);
+            }
         }
     }
 

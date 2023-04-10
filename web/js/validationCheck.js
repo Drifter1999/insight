@@ -5,7 +5,6 @@ var userpw2 = document.getElementById("userpw2");
 var useraddr = document.getElementById("useraddr");
 var userphone = document.getElementById("userphone");
 var useremail = document.getElementById("useremail");
-var userdetailaddr = document.getElementById("sample4_detailAddress");
 var nameKor = /^[가-힣]{2,15}$/; // 이름 한글 입력
 var idch = /^(?=.*[a-zA-Z])(?=.*[0-9]).{2,20}$/; //아이디 영문자+숫자 조합(2~20자리 입력) 정규식
 var pwcheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/; //비밀번호 영문자,숫자,특수조합(8~25자리 입력) 정규식
