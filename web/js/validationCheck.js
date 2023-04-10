@@ -39,6 +39,7 @@ function idCheck() {
 
 function pwCheck() {
     //비밀번호 유효성 검사
+    console.log("pw check start");
     if (!pwcheck.test(userpw.value)) {
         document.getElementById("pwError").style.display = "block";
         userpw.focus();
@@ -47,7 +48,21 @@ function pwCheck() {
         document.getElementById("pwError").style.display = "none";
         return true;
     }
-    //비밀번호 일치 확인
+}
+/*function pwChecktwo() {    //비밀번호 일치 확인
+    if (userpw2.value !== userpw.value) {
+        console.log("pw check two");
+        document.getElementById("pwError2").style.display = "block";
+        userpw.focus();
+        return false;
+    } else {
+        console.log("suc");
+        document.getElementById("pwError2").style.display = "none";
+        return true;
+    }
+}*/
+
+function PwCheckTwo() {
     if (userpw2.value !== userpw.value) {
         document.getElementById("pwError2").style.display = "block";
         userpw.focus();
@@ -57,6 +72,8 @@ function pwCheck() {
         return true;
     }
 }
+
+
 
 function emailCheck() {
     //이메일 유효성 검사

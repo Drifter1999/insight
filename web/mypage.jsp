@@ -209,7 +209,7 @@
                             <td>
                                 <input style="width: 250px; border: #cccccc 1px solid;" type="password" name="userpw"
                                        id="userpw2" required
-                                       onchange="pwCheck()"><br>
+                                       onchange="pwCheck2()"><br>
                                 <span id="pwError2"
                                       style="display:none; color:red; font-size: 12px">비밀번호가 일치하지 않습니다</span><br>
                             </td>
