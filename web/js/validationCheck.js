@@ -98,7 +98,7 @@ function phoneCheck() {
 }
 
 function addrCheck() {
-    if (!useraddr.value) {
+    if (useraddr.value === "") {
         document.getElementById("addrError").style.display = "block";
         useraddr.focus();
         return false;
@@ -205,12 +205,12 @@ function validateInfo() {
     if (!nameResult || !pwResult || !addrResult || !phoneResult || !emResult) {
         alert("회원정보를 다시 확인해주세요.");
 
-        myPage.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const formData = new FormData(myPage);
-            console.log(Object.fromEntries(formData.entries()));
-            myPage.submit();
-        });
+        // myPage.addEventListener('submit', (e) => {
+        //     e.preventDefault();
+        //     const formData = new FormData(myPage);
+        //     console.log(Object.fromEntries(formData.entries()));
+        //     myPage.submit();
+        // });
 
         return false;
 

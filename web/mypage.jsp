@@ -248,7 +248,7 @@
                                        value="우편번호 찾기"><br>
                                 <input style="width: 350px; border: #cccccc 1px solid;" type="text" id="useraddr"
                                        name="useraddr" required
-                                       placeholder="주소">
+                                       placeholder="주소" onchange="addrCheck()">
                                 <input style="width: 150px; border: #cccccc 1px solid;" type="text"
                                        id="sample6_extraAddress"
                                        placeholder="참고항목"><br>
@@ -288,7 +288,7 @@
                                 </div>
                             <td>
                                 <div style="display:inline;">
-                                    <a class="buttonR buttonR-header" href="javascript:void(0)" onclick="UserDelete()">탈퇴하기</a>
+                                    <a class="buttonR buttonR-header" href="javascript:void(0)" onclick="UserDelete() ">탈퇴하기</a>
                                 </div>
                             </td>
                         </tr>
