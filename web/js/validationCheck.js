@@ -178,7 +178,6 @@ function joinValid() {
     Join_Form.submit();
     return true;
 }
-
 function DupIdCheck(selector) {
     if ($(selector).val() != '') {
         let xhr = new XMLHttpRequest();
